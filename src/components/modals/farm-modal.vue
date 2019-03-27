@@ -1,36 +1,48 @@
 <template>
-  <div class="modal-backdrop">
-    <div class="modal">
-      <slot name="header">
-        This is the default title!
-        <button type="button" class="btn-close" @click="close"> x </button>
-      </slot>
+  <transition name="modal-fade">
+    <div class="modal-backdrop">
+      <div class="modal"
+        role="dialog"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDescription"
+      >
+        <header class="modal-header" id="modalTitle">
+          <slot name="header">
+            This is the default tile!
+            <button type="button" class="btn-close" @click="close" aria-label="Close modal"> x </button>
+          </slot>
+        </header>
 
-      <slot name="body">
-        I'm teh default body
-      </slot>
+        <section class="modal-body" id="modalDescription">
+          <slot name="body">
+            I'm the default body!
+          </slot>
+        </section>
 
-      <slot name="footer">
-        Im the default footer <br>
-        <button class="btn"></button>
-      </slot>
+        <footer class="modal-footer">
+          <slot name="footer">
+            I'm the default footer!
+            <button type="button" class="btn-green" @click="close" aria-label="Close modal"> Close me! </button>
+          </slot>
+        </footer>
+
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
   export default {
     name: 'modal',
     methods: {
-      close() {
-        this.$emit('close');
-      },
-    },
+      close () {
+        this.$emit('close')
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-  @import '~styles';
 
   .modal-backdrop {
     position: fixed;
@@ -38,7 +50,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -14,8 +14,8 @@
               <span class="farm__rate">30%</span> in 8 months
             </h4>
             <p class="returns">returns</p>
-            <p><span class="farm__cost">&#8358; 60,000</span> per unit </p>
-            <button class="btn--transparent">View farm</button>
+            <p class="farm__cost"><span>&#8358; 60,000</span> per unit </p>
+            <button class="btn--transparent" @click="showModal">View farm</button>
           </div>
         </div>
       </div>
@@ -31,8 +31,8 @@
               <span class="farm__rate">22%</span> in 2 months
             </h4>
             <p class="returns">returns</p>
-            <p><span class="farm__cost">&#8358; 30,000</span> per unit </p>
-            <button class="btn--transparent">View farm</button>
+            <p class="farm__cost"><span>&#8358; 30,000</span> per unit </p>
+            <button class="btn--transparent" @click="showModal">View farm</button>
           </div>
         </div>
       </div>
@@ -48,19 +48,38 @@
               <span class="farm__rate">35%</span> in 6 months
             </h4>
             <p class="returns">returns</p>
-            <p><span class="farm__cost">&#8358; 54,000</span> per unit </p>
-            <button class="btn--transparent">View farm</button>
+            <p class="farm__cost"><span>&#8358; 54,000</span> per unit </p>
+            <button class="btn--transparent" @click="showModal">View farm</button>
           </div>
         </div>
         
       </div>
     </div>
+
+    <farm-modal v-show="isModalVisible" @close="closeModal"></farm-modal>
   </main>
 </template>
 
 <script>
+  import FarmModal from '../../components/modals/farm-modal'
   export default {
-    name: 'availableFarms'
+    name: 'availableFarms',
+    components: {
+      'farm-modal': FarmModal
+    },
+    data () {
+      return {
+        isModalVisible: false
+      }
+    },
+    methods: {
+      showModal () {
+        this.isModalVisible = true
+      },
+      closeModal () {
+        this.isModalVisible = false
+      }
+    }
   }
 </script>
 
