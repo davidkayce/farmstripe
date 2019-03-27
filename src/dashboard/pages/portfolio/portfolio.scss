@@ -1,0 +1,268 @@
+main {
+  width: 85%;
+  margin: 3rem auto 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+    margin: 4rem auto;
+    flex-direction: row
+  }
+
+  h3 {
+    font-weight: 400;
+    margin: 3rem 0;
+  }
+
+  .main__section {
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+      margin-right: 7rem;
+    }
+  
+    @media (min-width: $breakpoint-desktop) {
+      width: 70%;
+      margin-right: 5rem;
+    }
+  }
+  
+  .sidebar {
+    h2  {
+      display: none
+    }
+  
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      width: 30%;
+    }
+  }
+}
+
+.portfolio__info{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $green-dash;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.3);
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    margin-top: 3rem;
+  }
+
+  hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    opacity: 0.6;
+    border: 1px solid $white;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin: 0;
+      width: 0;
+    }
+
+  }
+
+  .portfolio__blocks {
+
+    p {
+      display: flex;
+      color: white;
+    }
+  
+    .portfolio__options {
+      font-size: 1.2rem;
+      font-weight: 100;
+      margin-bottom: 1rem;
+    }
+  
+    .portfolio__value {
+      font-weight: 600;
+      font-size: 3rem;
+    }
+  }
+}
+
+.investment__info{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #F7F7FF;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    margin-top: 3rem;
+  }
+
+  hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    opacity: 0.6;
+    border: 1px solid $white;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin: 0;
+      width: 0;
+    }
+
+  }
+
+  .investment__blocks {
+    margin-bottom: 1.5rem;
+
+    p {
+      display: flex;
+    }
+    
+    .investment__title {
+      font-weight: 600;
+      color: $dgreen;
+      font-size: 2rem;
+    }
+
+    .investment__units {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+
+    .rate {
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    .returns {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: $grey-light;
+      margin: 0.8rem 0 0 0.7rem;
+    }
+
+    .investment__tenure {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: $grey-light;
+    }
+  
+    .tenure__value {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-bottom: 0;
+
+      &:first-of-type {
+        width: 57%
+      }
+    }
+  }
+}
+
+.mobile {
+  .btn {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    font-weight: 600
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none
+  }
+}
+
+.large__screen{
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block
+  }
+
+  h3 {
+    margin: 1rem 2rem 2rem 0;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-top: 2rem
+    }
+  }
+
+  .card__container {
+    overflow: auto;
+    height: 75rem;
+    
+
+    header {
+      padding: 2rem;
+    }
+
+    .farm__card {
+      border-radius: 0.5rem;
+      box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.1);
+      background-color: #fff;
+      margin: 2rem auto;
+
+
+      .overlay {
+        background-color: rgba(52, 89, 72, 0.65);
+        height: 100%;
+        padding: 2rem;
+      }
+
+      .farm__details {
+        background-image: url('~@/assets/images/maize-field.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 20rem;
+        color: $white;
+    
+        p {
+          color: white;
+        }
+
+        .farm__rate {
+          font-weight: 600;
+          font-size: 2.5rem;
+          margin-right: 1rem;
+        }
+
+        .returns {
+          margin-top: 5rem;
+          font-size: 1.3rem;
+          font-weight: 100;
+          color: $fstrgreen
+        }
+
+      }
+
+      .farm__title {
+        color: $dgreen;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    
+      .farm__cta {
+        display: flex;
+        padding: 2rem;
+        justify-content: space-between;
+
+        button {
+          padding: 2rem 4rem;
+        }
+      }
+    }
+  }
+}
+
+
+

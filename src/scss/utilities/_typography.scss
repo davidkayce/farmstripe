@@ -1,0 +1,54 @@
+p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: $grey;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1.5rem;
+  }
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: $fstrgreen;
+  font-weight: 600;
+}
+
+.auth--header {
+  font-weight: 300;
+  color: $dgreen;
+}
+
+.dashboard--header {
+  font-weight: 400;
+  color: $grey;
+}

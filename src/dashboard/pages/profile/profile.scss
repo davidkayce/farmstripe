@@ -1,0 +1,192 @@
+main {
+  width: 85%;
+  margin: 3rem auto 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+    margin: 4rem auto;
+    flex-direction: row
+  }
+
+  .main__section {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-right: 5rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      flex-direction: row;
+    }
+
+    h1 {
+      margin-top: 2rem;
+
+      @media (min-width: $breakpoint-tablet) {
+        margin-top: 0;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  
+  .sidebar {
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      width: 35%;
+    }
+  }
+}
+
+.profile__info{
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #F7F7FF;
+  padding: 3rem;
+  margin: 2rem 0;
+  height: 50rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.03);
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 80%
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 6rem;
+    margin-right: 3rem;
+  }
+
+  button {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  input,
+  select {
+    margin-bottom: 2rem;
+
+    &:focus {
+      border: 1px solid $dgreen;
+    }
+  }
+
+  input:focus~label,
+  select:focus~label {
+    color: $dgreen;
+  }
+
+
+  .profile__title {
+    font-weight: 400;
+    color: $dgreen;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.mobile {
+  .btn {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    font-weight: 600
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none
+  }
+}
+
+.large__screen{
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block
+  }
+
+  h3 {
+    margin: 1rem 2rem 2rem 0;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-top: 2rem
+    }
+  }
+
+  .card__container {
+    overflow: auto;
+    height: 100vh;
+
+    @media (min-width: $breakpoint-desktop) {
+      height: 55rem;
+    }
+
+    header {
+      padding: 2rem;
+    }
+
+    .farm__card {
+      border-radius: 0.5rem;
+      box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.1);
+      background-color: #fff;
+      margin: 2rem auto;
+
+
+      .overlay {
+        background-color: rgba(52, 89, 72, 0.65);
+        height: 100%;
+        padding: 2rem;
+      }
+
+      .farm__details {
+        background-image: url('~@/assets/images/maize-field.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 20rem;
+        color: $white;
+    
+        p {
+          color: white;
+        }
+
+        .farm__rate {
+          font-weight: 600;
+          font-size: 2.5rem;
+          margin-right: 1rem;
+        }
+
+        .returns {
+          margin-top: 5rem;
+          font-size: 1.3rem;
+          font-weight: 100;
+          color: $fstrgreen
+        }
+
+      }
+
+      .farm__title {
+        color: $dgreen;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    
+      .farm__cta {
+        display: flex;
+        padding: 2rem;
+        justify-content: space-between;
+
+        button {
+          padding: 2rem 4rem;
+        }
+      }
+    }
+  }
+}

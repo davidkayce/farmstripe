@@ -1,0 +1,181 @@
+main {
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 100vh;
+    background: linear-gradient(to right, $fstrgreen-light 45%, $white 30%);
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 12rem;
+    margin: 3rem;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 15rem;
+      margin: 3rem 5rem;
+    }
+  }
+
+  .options {
+    text-align: center;
+    font-weight: 600;
+    margin: 4rem;
+
+    span {
+      display: none;
+
+      @media (min-width: $breakpoint-tablet) {
+        display: inline;
+      }
+    }
+  
+    .btn {
+      font-weight: 600;
+      font-size: 1.5rem;
+      
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 5rem auto 2rem;
+  border: 1px solid $fstrgreen;
+  border-radius: 1rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row-reverse;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.2);
+    width: 70%
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 55%
+  }
+}
+
+.sign-in_container {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  
+  input {
+    margin-bottom: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+  }
+}
+
+.icon {
+  padding: 2rem;
+  text-align: center;
+
+  img {
+    width: 6rem;
+    margin: 0 auto;
+  }
+}
+
+.image {
+  background-image: url('~@/assets/images/maize-field.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 25rem;
+  color: $white;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  .overlay {
+    background-color: rgba(52, 89, 72, 0.65);
+    height: 100%;
+    padding: 3rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    h2 {
+      font-weight: 600;
+      font-size: 3rem;
+
+      @media (min-width: $breakpoint-desktop) {
+        margin-bottom: 2rem;
+        font-size: 4rem;
+      }
+    }
+
+    p  {
+      color: $white;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 50rem;
+      padding: 8rem 4rem;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 50rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.input__field {
+
+  .input__option {
+    position: relative;
+
+    label {
+      background-color: transparent;
+      left: 2rem;
+      top: 1rem;
+      padding: 0.5rem;
+      color: $grey-light;
+      opacity: 0.4;
+      position: absolute;
+      pointer-events: none;
+      transition: 0.2s ease all;
+      -webkit-transition: 0.2s ease all;
+    }
+  }
+
+  .input__option input:not([disabled]):focus~label,
+  .input__option.hasValue input:not([disabled]):valid~label {
+    top: -1rem;
+    left: 1rem;
+    opacity: 1;
+    color: $dgreen;
+    font-size: 1rem;
+    padding: 0rem 0.5rem;
+    background-color: $white;
+  }
+
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

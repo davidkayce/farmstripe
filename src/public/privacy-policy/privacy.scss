@@ -1,0 +1,19 @@
+.privacy__content {
+  width: 85%;
+  margin: 2rem auto;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 80%;
+    margin: 12rem auto;
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  ol {
+    li{
+      margin: 1.5rem 1.5rem;
+    }
+  }
+}

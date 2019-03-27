@@ -1,0 +1,103 @@
+h2 {
+  font-weight: 600;
+  color: $dgreen;
+  text-align: center;
+  margin: 10rem 0 2rem 0;
+}
+
+.line {
+  background: $dgreen;
+  height: 2px;
+  width: 15%;
+  margin: 2rem auto 4rem;
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 7%;
+  }
+}
+
+.card__container {
+  overflow: auto;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 2rem;
+    padding: 3rem;
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 80%;
+    justify-content: space-between;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  .farm__card {
+    width: 80%;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.15);
+    background-color: #fff;
+    margin: 2rem auto;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 60%;
+      margin: 0 1.5rem;
+    }
+
+    .overlay {
+      background-color: rgba(52, 89, 72, 0.75);
+      height: 100%;
+      padding: 3rem 2.5rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    .farm__details {
+      background-image: url('~@/assets/images/maize-field.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 27rem;
+      color: $white;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+  
+      p {
+        color: white;
+      }
+
+      .farm__rate {
+        font-weight: 600;
+        font-size: 4.5rem;
+        margin-right: 1rem;
+      }
+
+      .returns {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        font-weight: 100;
+        color: $fstrgreen
+      }
+
+    }
+
+    .farm__title {
+      display: inline-block;
+      color: $dgreen;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .available {
+      display: inline-block;
+      float: right;
+      color: $fstrgreen;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  }
+}
+

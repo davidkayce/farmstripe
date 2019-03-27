@@ -1,0 +1,33 @@
+//Import from base
+@import '../base/reset';
+
+//Import from utilities
+@import '../utilities/variables';
+@import '../utilities/typography';
+@import '../utilities/fonts';
+
+//Import from components
+@import '../components/buttons';
+@import '../components/forms';
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: $font-family-base, Roboto, sans-serif;
+  font-size: 1.5rem;
+
+  // disable selection for a mobile experience (mainly for iOS)
+  -webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
