@@ -24,12 +24,12 @@
             <form action="" autocomplete="off">
 
               <div class="input__option">
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" v-model="userData.email">
                 <label for="email">E-mail address</label>
               </div>
 
               <div class="input__option">
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" v-model="userData.password">
                 <label for="password">Password</label>
               </div>
 
@@ -40,22 +40,22 @@
           <div class="input__field" v-else>
             <form action="" autocomplete="off">
               <div class="input__option">
-                <input type="text" name="full_name" id="full_name" >
+                <input type="text" name="full_name" id="full_name" v-model="userData.name">
                 <label for="full_name">Full name</label>
               </div>
               
               <div class="input__option">
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" v-model="userData.email">
                 <label for="email">E-mail address</label>
               </div>
 
               <div class="input__option">
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" v-model="userData.password">
                 <label for="password">Password</label>
               </div>
 
               <div class="input__option">
-                <input type="password" name="confirm_password" id="confirm_password">
+                <input type="password" name="confirm_password" id="confirm_password" v-model="confirmPassword">
                 <label for="confirm_password">Confirm password</label>
               </div>
 
@@ -80,9 +80,21 @@
     name: 'signIn',
     data: function () {
       return {
-        signIn: true
+        signIn: false,
+        disabled: true,
+        confirmPassword: '',
+        userData: {
+          name: '',
+          email: '',
+          password: ''
+        }
       }
     },
+    // watch: {
+    //   if (this.userData.password !== this.confirmPassword) {
+    //     this.disabled = true
+    //   }
+    // },
     methods: {
       switchSign () {
         this.signIn = !this.signIn

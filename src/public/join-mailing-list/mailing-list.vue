@@ -8,8 +8,8 @@
         </div>
 
         <div class="get__email">
-          <input type="text" class="transparent" placeholder="Contact email address">
-          <router-link to="/sign-in"><button class="btn">Get Started</button></router-link>
+          <input type="text" class="transparent" placeholder="Contact email address" v-model="email">
+          <router-link to="/sign-in"><button class="btn" @click="sendEmail">Get Started</button></router-link>
         </div>
       </div>
     </div>
@@ -17,9 +17,19 @@
 </template>
 
 <script>
-export default {
-  name: 'metrics'
-}
+  export default {
+    name: 'mailing-list',
+    data () {
+      return {
+        email: ''
+      }
+    },
+    methods: {
+      sendEmail () {
+        console.log('email sent')
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

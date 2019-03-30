@@ -9,7 +9,7 @@
       </label>
 
       <div class="logo">
-        <img src="~@/assets/icons/icon-logo-white-text.png" alt="farmstripe logo">
+        <router-link to="/"><img src="~@/assets/icons/icon-logo-white-text.png" alt="farmstripe logo"></router-link>
       </div>
 
       <div class="nav-wrapper">

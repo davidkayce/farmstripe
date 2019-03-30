@@ -17,6 +17,7 @@
     </header>
 
     <available-farms></available-farms>
+    <why-farmstripe></why-farmstripe>
     <metrics></metrics>
     <mailing-list></mailing-list>
     <app-footer></app-footer>
@@ -29,6 +30,7 @@
   import AvailableFarms from '../../shared/available-farms/available-farms'
   import Metrics from '../metrics-section/metrics'
   import MailingList from '../join-mailing-list/mailing-list'
+  import WhyFarmstripe from '../why-farmstripe/why-farmstripe'
 
   export default {
     name: 'landingPage',
@@ -37,7 +39,8 @@
       'app-footer': AppFooter,
       'available-farms': AvailableFarms,
       'metrics': Metrics,
-      'mailing-list': MailingList
+      'mailing-list': MailingList,
+      'why-farmstripe': WhyFarmstripe
     }
   }
 </script>

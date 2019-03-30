@@ -94,17 +94,16 @@ main {
 }
 
 .image {
-  background-image: url('~@/assets/images/maize-field.jpg');
+  background-image: url('~@/assets/images/farmer-full.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 25rem;
   color: $white;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 
   .overlay {
-    background-color: rgba(52, 89, 72, 0.65);
+    background-color: rgba(52, 89, 72, 0.75);
     height: 100%;
     padding: 3rem;
     border-bottom-left-radius: 1rem;

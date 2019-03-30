@@ -26,17 +26,17 @@
           <form action="#" method="post">
             <div class="padding__vertical">
               <label for="fullname">Full Name</label>
-              <input type="text" name="fullname">
+              <input type="text" name="fullname" v-model="contactInfo.name">
             </div>
             <div class="padding__vertical">
               <label for="email">Email</label>
-              <input type="email" name="email">
+              <input type="email" name="email" v-model="contactInfo.email">
             </div>
             <div class="padding__vertical">
               <label for="message">Message</label>
-              <textarea name="message" rows="5"></textarea>
+              <textarea name="message" rows="5" v-model="contactInfo.message"></textarea>
             </div>
-            <button class="btn" type="submit">Send</button>
+            <button class="btn" type="submit" @click.prevent="sendMessage">Send</button>
           </form>
         </div>
       </div>
@@ -51,9 +51,23 @@
 
   export default {
     name: 'contact',
+    data () {
+      return {
+        contactInfo: {
+          name: '',
+          email: '',
+          message: ''
+        }
+      }
+    },
     components: {
       'app-nav': AppNav,
       'app-footer': AppFooter
+    },
+    methods: {
+      sendMessage () {
+        console.log('message sent')
+      }
     }
   }
 </script>

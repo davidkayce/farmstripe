@@ -39,7 +39,7 @@
   }
 
   &:focus {
-    outline-color: $dgreen-light;
+    outline: none;
   }
 }
 
@@ -51,6 +51,12 @@
   &.--danger {
     color: $danger;
   }
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 
 .btn--border {
@@ -58,6 +64,12 @@
   background: transparent;
   color: $dgreen;
   padding: 1.5rem 4rem;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 
 .btn--icon {

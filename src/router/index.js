@@ -4,7 +4,7 @@ import LandingPage from '../public/landing-page/landing-page'
 import SignInPage from '../public/sign-in/sign-in'
 import PrivacyPolicy from '../public/privacy-policy/privacy'
 import Contact from '../public/contact/contact'
-import AboutUs from '../public/about/about'
+import HowItWorks from '../public/how-it-works/how-it-works'
 import AvailableFarms from '../shared/available-farms/available-farms'
 import Dashboard from '../dashboard/dashboard'
 import Portfolio from '../dashboard/pages/portfolio/portfolio'
@@ -36,9 +36,9 @@ export default new Router({
       component: Contact
     },
     {
-      path: '/about-us',
-      name: 'about',
-      component: AboutUs
+      path: '/how-it-works',
+      name: 'how-it-works',
+      component: HowItWorks
     },
     {
       path: '/dashboard',

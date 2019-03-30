@@ -13,7 +13,7 @@
   import AppFooter from '../../shared/app-footer/app-footer'
 
   export default {
-    name: 'about',
+    name: 'how-it-works',
     components: {
       'app-nav': AppNav,
       'app-footer': AppFooter
@@ -23,6 +23,6 @@
 
 <style lang="scss" scoped>
   @import '~styles';
-  @import 'about.scss';
+  @import 'how-it-works.scss';
 </style>
 
