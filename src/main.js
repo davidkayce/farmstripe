@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import vuex from './store/vuex'
 import Axios from 'axios'
 
 Vue.config.productionTip = false
@@ -41,6 +42,7 @@ Vue.filter('date', {
 new Vue({
   el: '#app',
   router,
+  vuex,
   template: '<App/>',
   components: { App }
 })

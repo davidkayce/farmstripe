@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import vuex from '../store/vuex'
 import LandingPage from '../public/landing-page/landing-page'
 import Dashboard from '../dashboard/dashboard'
-import Profile from '../dashboard/pages/profile/profile'
-import Wallets from '../dashboard/pages/wallets/wallets'
 
 // Lazy loading
 const SignInPage = resolve => {
@@ -73,11 +72,11 @@ export default new Router({
       path: '/sign-in',
       name: 'signIn',
       component: SignInPage,
-      // sign-up guard
-      // to-do: set up function so when signed in it automatically redirects to dashboard
+      // Sign-up guard
       beforeEnter: (to, from, next) => {
-        console.log('Access denied')
-        next()
+        if (vuex.state.signedIn === true) {
+          next('/dashboard')
+        } else { next() }
       }
     },
     {
@@ -94,10 +93,11 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
-      // Setiing router guard  to-do:put up the function
+      // Dashboard guard
       beforeEnter: (to, from, next) => {
-        console.log('Access denied')
-        next('/sign-in')
+        if (vuex.state.signedIn === true) {
+          next()
+        } else { next('/sign-in') }
       },
       children: [
         {
