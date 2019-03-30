@@ -6,6 +6,9 @@ import Axios from 'axios'
 
 Vue.config.productionTip = false
 
+// Global variable
+Vue.prototype.$signedIn = false
+
 // Setting API URL based on environment for http requests
 Axios.defaults.baseURL = process.env.API_ENDPOINT
 

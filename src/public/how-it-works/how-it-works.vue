@@ -1,10 +1,8 @@
 <template>
   <main>
-    <app-nav></app-nav>
-    <div class="about__component">
+    <div class="about__component" id="how">
       <h1>About Farmstripe</h1>
     </div>
-    <app-footer></app-footer>
   </main>
 </template>
 

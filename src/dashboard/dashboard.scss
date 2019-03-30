@@ -70,13 +70,9 @@ nav {
         display: inline-block;
         color: $dgreen;
         font-size: 1.5rem;
-        font-weight: 400;
+        font-weight: 100;
         text-decoration: none;
         cursor: pointer;
-
-        &:active {
-          font-weight: 600;
-        }
 
         @media (min-width: $breakpoint-tablet) {
           color: $white;
@@ -212,3 +208,8 @@ nav {
 .hidden {
   display: none;
 }
+
+.active {
+  font-weight: 600;
+}
+

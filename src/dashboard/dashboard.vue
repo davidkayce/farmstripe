@@ -14,9 +14,9 @@
 
       <div class="nav-wrapper">
         <ul>
-          <li><router-link to="/dashboard" class="nav-link"> Portfolio </router-link></li>
-          <li><router-link to="/dashboard/wallets" class="nav-link"> Wallet </router-link></li></li>
-          <li><router-link to="/dashboard/profile"> Profile </router-link></li></li>
+          <li><router-link to="/dashboard" active-class="active" exact> Portfolio </router-link></li>
+          <li><router-link to="/dashboard/wallets" active-class="active"> Wallet </router-link></li></li>
+          <li><router-link to="/dashboard/profile" active-class="active"> Profile </router-link></li></li>
           <li>Oluchi Hassan</li>
         </ul>
       </div>

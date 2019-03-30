@@ -18,6 +18,7 @@
 
     <available-farms></available-farms>
     <why-farmstripe></why-farmstripe>
+    <how-it-works></how-it-works>
     <metrics></metrics>
     <mailing-list></mailing-list>
     <app-footer></app-footer>
@@ -31,16 +32,18 @@
   import Metrics from '../metrics-section/metrics'
   import MailingList from '../join-mailing-list/mailing-list'
   import WhyFarmstripe from '../why-farmstripe/why-farmstripe'
+  import HowItWorks from '../how-it-works/how-it-works'
 
   export default {
-    name: 'landingPage',
+    name: 'home',
     components: {
       'app-nav': AppNav,
       'app-footer': AppFooter,
       'available-farms': AvailableFarms,
       'metrics': Metrics,
       'mailing-list': MailingList,
-      'why-farmstripe': WhyFarmstripe
+      'why-farmstripe': WhyFarmstripe,
+      'how-it-works': HowItWorks
     }
   }
 </script>
