@@ -2,13 +2,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import vuex from './store/vuex'
+import vuex from './store'
 import Axios from 'axios'
 
 Vue.config.productionTip = false
-
-// Global variable
-Vue.prototype.$signedIn = false
 
 // Setting API URL based on environment for http requests
 Axios.defaults.baseURL = process.env.API_ENDPOINT

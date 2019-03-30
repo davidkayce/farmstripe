@@ -1,20 +1,18 @@
 <template>
   <transition name="modal-fade">
-    <div class="modal-backdrop" @click="close">
+    <div>
+      <div class="modal-backdrop" @click="close"></div>
       <section class="blank-space"></section>
       <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
-
         <section class="modal-description" id="modalDescription">
           <h1>{{farm.name}}</h1>
         </section>
-
         <section class="modal-calculator">
           <label for="units">How many units do you want to buy</label>
           <input type="number" name="units">
-          Each unit of this farm goes for {{farm.cost}} <span v-currency="'naira'"></span>
-
-          <h3>You pay</h3>  and get  after 
-          <button class="btn"> Invest in this farm </button>
+            Each unit of this farm goes for {{farm.cost}} <span v-currency="'naira'"></span>
+            <h3>You pay</h3>  and get  after 
+            <button class="btn" @click=" signedIn? goSign() : '' "> {{ signedIn? 'Invest in this farm' : 'Sign In to Invest '}}</button>
         </section>
       </div>
       <section class="blank-space"></section>
@@ -23,12 +21,21 @@
 </template>
 
 <script>
+  import vuex from '../../store'
   export default {
     name: 'modal',
     props: ['farm'],
+    data () {
+      return {
+        signedIn: vuex.getters.userState
+      }
+    },
     methods: {
       close () {
         this.$emit('close')
+      },
+      goSign () {
+        console.log('you should go to the login page now')
       }
     }
   }
@@ -47,11 +54,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999;
+    z-index: 500;
   }
 
   .modal {
-    position: relative;
+    z-index: 9999;
+    position: fixed;
+    top: 25%;
+    left: 25%;
     height: 40rem;
     width: 90%;
     max-height: 50rem;
