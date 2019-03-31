@@ -21,12 +21,13 @@
         </div>
       </div>
     </div>
-    <farm-modal v-show="isModalVisible" @close="closeModal" :farm="currentFarm"></farm-modal>
+    <farm-modal v-if="isModalVisible" @close="closeModal" :farm="currentFarm"></farm-modal>
   </main>
 </template>
 
 <script>
-  import FarmModal from '../../components/modals/farm-modal'
+  import FarmModal from '../../modals/farm-modal'
+
   export default {
     name: 'availableFarms',
     components: {

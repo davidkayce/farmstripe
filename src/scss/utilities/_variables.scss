@@ -13,6 +13,9 @@ $fstrgreen-light: rgba(157, 203, 59, 0.3);
 $dgreen: rgb(52, 89, 72);
 $dgreen-light: rgba(52, 89, 72, 0.3);
 
+$gradient: linear-gradient(to right, $dgreen -120%, $fstrgreen 130%);
+$gradient-dark: linear-gradient(to right, $dgreen -20%, $fstrgreen 130%);
+
 $green-dash: rgb(89, 156, 125);
 
 $grey: rgb(74, 74, 74);
