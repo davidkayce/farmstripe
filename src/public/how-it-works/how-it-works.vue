@@ -1,7 +1,11 @@
 <template>
   <main>
     <div class="about__component" id="how">
-      <h1>About Farmstripe</h1>
+      <section class="header">
+        <h1>How it works</h1>
+        <div class="line"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae dolores quasi natus voluptates nesciunt ad sed corporis mollitia aliquid ea, impedit numquam</p>
+      </section>
     </div>
   </main>
 </template>

@@ -66,8 +66,7 @@
 
         <div class="image">
           <div class="overlay">
-            <h2>{{signIn ? 'Welcome back':'Create a new account'}}</h2>
-            <p>Make investments in farms over different produce and empower farmers in communinties all over Nigeria</p>
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, fugit? Ad perspiciatis quidem nobis commodi vel blanditiis quos itaque aspernatur officia iste, quod reiciendis! Minima vero consequuntur tenetur est earum!</h3>
           </div>
         </div>
       </div>

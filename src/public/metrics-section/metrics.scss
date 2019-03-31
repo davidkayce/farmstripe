@@ -4,39 +4,34 @@
   background-color: transparent;
   flex-direction: column;
 
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 120%;
-    top: 180%;
-    left: 0;
-    z-index: -999;
-    background-color: $fstrgreen-light;
-    transform-origin: top left;
-    transform: skewY(-15deg)
-  }
-
   .section__header {
-    margin: 1rem auto;
+    margin: 1rem 1rem;
     display: flex;
-    text-align: center;
+    text-align: right;
     flex-direction: column;
     justify-content: space-between;
 
+    @media (min-width: $breakpoint-tablet) {
+      margin: 1rem 7%;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      margin: 1rem 12%;
+    }
+
     .line {
       background: $dgreen;
-      height: 2px;
-      width: 15%;
-      margin: 2rem auto;
+      height: 3px;
+      width: 12%;
+      margin: 1rem 88% 3rem;
 
       @media (min-width: $breakpoint-desktop) {
-        width: 7%;
+        margin: 1rem 94% 3rem;
+        width: 6%;
       }
     }
 
-    h2 {
-      font-weight: 600;
+    h1 {
       color: $dgreen;
     }
 

@@ -1,6 +1,15 @@
 <template>
   <main>
-    
+    <section class="first">
+      Something
+    </section>
+    <section class="second">
+      Something else
+      
+    </section>
+    <section class="third">
+      Something that is third
+    </section>
   </main>
 </template>
 

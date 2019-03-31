@@ -1,11 +1,10 @@
 <template>
   <main>
-    <section class="blank-space"></section>
     <section class="metrics__component">
       <div class="section__header">
-        <h2>Metrics</h2>
+        <h1>Metrics</h1>
         <div class="line"></div>
-        <p>Farmstripe provides the best value for both the partner and the farmer</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae dolores quasi natus voluptates nesciunt ad sed corporis mollitia aliquid ea, impedit numquam, recusandae omnis provident quia voluptatem ipsa. Consectetur.</p>
       </div>
 
       <div class="section__content">

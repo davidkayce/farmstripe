@@ -16,8 +16,8 @@
       </div>
     </header>
 
-    <available-farms></available-farms>
     <why-farmstripe></why-farmstripe>
+    <available-farms></available-farms>
     <how-it-works></how-it-works>
     <metrics></metrics>
     <mailing-list></mailing-list>

@@ -1,18 +1,33 @@
-h2 {
+h1 {
   font-weight: 600;
   color: $dgreen;
-  text-align: center;
-  margin: 10rem 0 2rem 0;
+  text-align: right;
+  margin: 10rem 14% 1.5rem 0;
 }
 
 .line {
   background: $dgreen;
-  height: 2px;
+  display: flex;
+  height: 3px;
   width: 15%;
-  margin: 2rem auto 4rem;
+  margin: 1rem 0 3rem 71%;
 
   @media (min-width: $breakpoint-desktop) {
-    width: 7%;
+    margin: 1rem 0 3rem 76%;
+    width: 10%;
+  }
+}
+
+.title__info {
+  width: 73%;
+  margin: 0 auto 2rem;
+  text-align: right;
+  font-size: 1.5rem;
+  color: $grey-medium;
+  letter-spacing: -0.5px;
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 1.7rem;
   }
 }
 
@@ -23,7 +38,7 @@ h2 {
     margin-top: 2rem;
     padding: 3rem;
     display: flex;
-    width: 85%;
+    width: 95%;
     margin: 0 auto;
   }
 
@@ -34,6 +49,10 @@ h2 {
 
   header {
     padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
   }
 
   .farm__card {
@@ -44,8 +63,12 @@ h2 {
     margin: 2rem auto;
 
     @media (min-width: $breakpoint-tablet) {
-      width: 60%;
+      width: 100%;
       margin: 0 1.5rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      width: 60%;
     }
 
     .overlay {
@@ -67,6 +90,9 @@ h2 {
   
       p {
         color: white;
+        font-weight: 400;
+        font-size: 1.5rem
+
       }
 
       .farm__rate {
@@ -74,14 +100,6 @@ h2 {
         font-size: 4.5rem;
         margin-right: 1rem;
       }
-
-      .returns {
-        font-size: 1.3rem;
-        margin-bottom: 1.2rem;
-        font-weight: 100;
-        color: $fstrgreen
-      }
-
     }
 
     .farm__title {

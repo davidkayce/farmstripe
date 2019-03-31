@@ -34,7 +34,7 @@
                 :callback="callback"
                 :close="close"
                 :embed="false"
-                style="font-size: 1.5rem; color: white; font-weight: 600"
+                class="paystack"
               >Invest in this farm</paystack>
               {{signedIn? '' : 'Sign In to Invest'}}
             </button>
@@ -58,8 +58,8 @@
     },
     data () {
       return {
-        signedIn: vuex.getters.userState,
-        paystackkey: 'pk_test_xxxxxxxxxxxxxxxxxxxxxxx',
+        signedIn: !vuex.getters.userState,
+        paystackkey: 'pk_live_49d15ed209788db731d3170d87a47102a0330848',
         email: 'foobar@example.com',
         amount: 1000000,
         reference: 'hjkfbhsjfshf'
@@ -95,6 +95,19 @@
   .modal-fade-enter-active,
   .modal-fade-leave-active {
     transition: opacity 0.5s ease
+  }
+
+  .paystack {
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none
+    }
   }
 
   //       &::before {
