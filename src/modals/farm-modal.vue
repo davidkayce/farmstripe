@@ -24,9 +24,12 @@
               <h3>You pay</h3>  and get  after 
           </section>
           <section class="footer">
-            <button class="btn-modal" @click=" signedIn? '' : goSign() ">
+            <button 
+            class="btn-modal" 
+            @click=" signedIn? '' : goSign()"
+            :disabled="!farm.available">
               <paystack
-                v-if="signedIn"
+                v-if="signedIn && farm.available"
                 :amount="amount"
                 :email="email"
                 :paystackkey="paystackkey"
@@ -36,7 +39,7 @@
                 :embed="false"
                 class="paystack"
               >Invest in this farm</paystack>
-              {{signedIn? '' : 'Sign In to Invest'}}
+              {{signedIn? (farm.available? '' :'There is no available unit to invest') : 'Sign In to Invest'}}
             </button>
           </section>
         </div>
@@ -109,29 +112,5 @@
       outline: none
     }
   }
-
-  //       &::before {
-  // //       position: absolute;
-  // //       content: "";
-  // //       width: 45%;
-  // //       height: 17%;
-  // //       top: 23.2rem;
-  // //       left: 0;
-  // //       background-color: rgba(52, 89, 72, 0.3);
-  // //       transform-origin: bottom right;
-  // //       transform: skewY(-20deg)
-  // //     }
-  //   &::after {
-  //     position: absolute;
-  //     content: "";
-  //     width: 120%;
-  //     height: 70%;
-  //     top: 10.3rem;
-  //     left: 0;
-  //     background-color: rgba(157, 203, 59, 0.3);
-  //     transform-origin: bottom right;
-  //     transform: skewY(-20deg)
-  //   }
-
 </style>
 

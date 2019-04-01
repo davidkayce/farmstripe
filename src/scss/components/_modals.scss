@@ -13,8 +13,8 @@
   max-height: 400px;
   position: fixed;
   top: 20%;
-  left: 2.5%;
-  width: 95%;
+  left: 5%;
+  width: 90%;
   z-index: 9999;
   box-shadow: 0 16px 39px -10px rgba(157, 203, 59, 0.4);
 
@@ -83,7 +83,7 @@
 
     .btn-modal {
       width: 100%;
-      background: $gradient;
+      background: $dgreen;
       border: 0;
       color: $white;
       font-weight: 600;
@@ -99,11 +99,6 @@
 
       &:focus {
         outline: none
-      }
-
-      &:hover,
-      &:active {
-        background: $gradient-dark
       }
     }
 

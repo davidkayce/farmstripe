@@ -2,22 +2,27 @@
   <main>
     <h1>Available Farms</h1>
     <div class="line"></div>
-    <p class="title__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, accusantium. Saepe molestiae, sapiente aut at vel beatae labore ducimus dolores sed dignissimos voluptas perferendis ad in explicabo, magnam reprehenderit placeat quae doloremque non veniam esse iste assumenda atque. Corporis, atque?</p>
+    <p class="title__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, accusantium. Saepe molestiae, sapiente aut at vel beatae</p>
     <div class="card__container">
       <!-- note that the slice below is to determine how many elements we are showing  -->
-      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">
-        <header>
-          <p class="farm__title">{{farm.name}}</p>
-          <p class="available">{{farm.available? 'AVAILABLE':'SOLD OUT'}}</p>
-        </header>   
+      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">  
         <div class="farm__details">
           <div class="overlay">
-            <p>
-              <span class="farm__rate">{{farm.rate}}%</span> <br> in {{farm.time}}
+            <div class="farm__title">
+              <p>{{farm.name}}</p>
+              <p><strong>{{farm.available? 'AVAILABLE':'SOLD OUT'}}</strong></p>
+            </div>
+            <p class="rate">
+              <span class="farm__rate">{{farm.rate}}%</span> returns
             </p>
-            <p class="farm__cost"><span>&#8358; {{farm.cost}}</span> per unit </p>
+            <p>{{farm.available? farm.units + ' units' : 'No units'}} available</p>
           </div>
         </div>
+        <footer>
+          <p>{{farm.id}}</p>
+          <p><span><strong>&#8358; {{farm.cost}}</strong></span> per unit </p>
+          <p>{{farm.rate}}% returns in {{farm.time}}</p>
+        </footer>
       </div>
     </div>
     <farm-modal v-if="isModalVisible" @close="closeModal" :farm="currentFarm"></farm-modal>
@@ -39,30 +44,33 @@
         currentFarm: {},
         farms: [
           {
-            name: 'Maize farm 1',
+            name: 'Maize',
+            id: 'FSH-567',
             description: 'This maize farm 1 sucks bull',
             available: true,
             rate: 30,
-            time: '8 months',
-            cost: 60000,
-            units: 23
+            time: '6 months',
+            cost: 50000,
+            units: 8
           },
           {
-            name: 'Maize farm 2',
+            name: 'Maize',
+            id: 'FHY-890',
             description: 'This maize farm 2 sucks bull',
             available: false,
             rate: 20,
-            time: '8 months',
-            cost: 60000,
+            time: '6 months',
+            cost: 50000,
             units: 25
           },
           {
-            name: 'Maize farm 3',
+            name: 'Maize',
+            id: 'SDT-678',
             description: 'This maize farm 3 sucks bull',
-            available: true,
+            available: false,
             rate: 30,
-            time: '8 months',
-            cost: 60000,
+            time: '6 months',
+            cost: 50000,
             units: 28
           }
         ]
