@@ -59,6 +59,10 @@
                 <label for="confirm_password">Confirm password</label>
               </div>
 
+              <p>
+                By creating an account, you are agreeing to Farmstripe's <router-link to="/privacy-policy"> terms and conditions</router-link> regarding use of this service. 
+              </p>
+
               <router-link to="/dashboard"><button type="submit" class="btn"> Sign Up for Priority Access</button></router-link>
             </form>
           </div>

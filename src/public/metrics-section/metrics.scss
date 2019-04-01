@@ -1,8 +1,13 @@
 .metrics__component {
-  padding: 3rem 2rem;
+  padding: 8rem 2rem 3rem;
   display: flex;
   background-color: transparent;
   flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 13rem 2rem 3rem;
+  }
+  
 
   .section__header {
     margin: 1rem 1rem;

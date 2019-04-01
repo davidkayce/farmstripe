@@ -104,7 +104,6 @@ main {
 
   .overlay {
     background-color: rgba(52, 89, 72, 0.75);
-    height: 100%;
     padding: 3rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -126,7 +125,7 @@ main {
     }
 
     @media (min-width: $breakpoint-tablet) {
-      height: 50rem;
+      height: 58rem;
       padding: 8rem 4rem;
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
@@ -135,7 +134,7 @@ main {
   }
 
   @media (min-width: $breakpoint-tablet) {
-    height: 50rem;
+    height: 58rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 0;
@@ -172,6 +171,13 @@ main {
     background-color: $white;
   }
 
+  p {
+    font-size: 1.3rem;
+    text-align: center;
+    color: $grey-light;
+    font-weight: 100;
+    margin-bottom: 2rem;
+  }
 
   @media (min-width: $breakpoint-tablet) {
     width: 90%;

@@ -1,14 +1,63 @@
 <template>
   <main>
+    <div class="section__header">
+      <h1>Why Farmstripe ?</h1>
+      <div class="line"></div>
+    </div>
     <section class="first">
-      Something
+      <article>
+        <section class="article_header">
+          <h2>We believe food production is essential for sustainable development</h2>
+          <p>
+            Our mission is to provide platform that ensures a future where challenges for farmers and consumers are subsidized leading to sustainable development of rural communities, reduced hunger and poverty alleviation through increase food production and security in Nigeria and Africa.
+          </p>
+          <p>
+            To achieve this goal we are bound by our core values of <strong>Reliabilty, Accountability, Integrity, Service and Excellence (R.A.I.S.E.)</strong>
+
+          </p>
+        </section>
+      </article>
+      <figure></figure>
     </section>
+
     <section class="second">
-      Something else
-      
+      <article>
+        <section class="article_header">
+          <h2>Our Focus</h2>
+          <p>
+            We are focused on the following Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam fugiat aliquid molestiae nobis qui voluptatem soluta illum expedita amet beatae.
+          </p>
+
+          <p>
+            <h4><strong>REDUCING HUNGER</strong></h4>
+            With Food importation at its height and Africa's growing population. Farmstripe is providing a solution to the continents challenges.
+          </p>
+
+          <p>
+            <h4><strong>DEVELOPING RURAL COMMUNITIES</strong></h4>
+            We work with farming communites and are driving real change by providing what they need to be better farmers and happier people.
+          </p>
+
+          <p>
+            <h4><strong>THE BEST RETURNS FOR YOU</strong></h4>
+            Our Subscribers get exciting returns. Our farmers make *2 what their average yield would have been and the Nation has more food.
+          </p>
+        </section>
+      </article>
+      <figure></figure>
     </section>
+
     <section class="third">
-      Something that is third
+      <article>
+        <section class="article_header">
+          <h2>We are Safe and Insured</h2>
+          <p>
+            With Farmstripe your investment is in safe hands. Our platform was built with the security of your investment as priority and thats is why our farms are comprehensively insured by Leadway Assurance. 
+          </p>
+        </section>
+      </article>
+
+      <figure></figure>
     </section>
   </main>
 </template>

@@ -27,3 +27,19 @@ $black: rgb(0, 0, 0);
 
 $danger: #ff5661;
 $success: #1cce74;
+
+// CARDS **/
+.fstr__card {
+  border: none;
+  background-color: $white;
+  box-shadow: 0 16px 39px -10px rgba(52, 89, 72, 0.3);
+
+  &:focus,
+  &:hover {
+    border: 0.5px solid $fstrgreen;
+    -webkit-transform: translateY(-2rem);
+    transform: translateY(-2rem);
+    transition: all 0.2s ease-in-out;
+    color: $fstrgreen;
+  }
+}

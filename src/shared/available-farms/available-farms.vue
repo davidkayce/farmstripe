@@ -5,7 +5,7 @@
     <p class="title__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, accusantium. Saepe molestiae, sapiente aut at vel beatae labore ducimus dolores sed dignissimos voluptas perferendis ad in explicabo, magnam reprehenderit placeat quae doloremque non veniam esse iste assumenda atque. Corporis, atque?</p>
     <div class="card__container">
       <!-- note that the slice below is to determine how many elements we are showing  -->
-      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)">
+      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">
         <header>
           <p class="farm__title">{{farm.name}}</p>
           <p class="available">{{farm.available? 'AVAILABLE':'SOLD OUT'}}</p>
@@ -16,7 +16,6 @@
               <span class="farm__rate">{{farm.rate}}%</span> <br> in {{farm.time}}
             </p>
             <p class="farm__cost"><span>&#8358; {{farm.cost}}</span> per unit </p>
-            <button class="btn--transparent" @click="showModal(farm)">View farm</button>
           </div>
         </div>
       </div>
