@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import vuex from '../store'
+import store from '../store'
 import LandingPage from '../public/landing-page/landing-page'
 import Dashboard from '../dashboard/dashboard'
 
@@ -73,7 +73,7 @@ export default new Router({
       name: 'signIn',
       component: SignInPage,
       beforeEnter: (to, from, next) => {
-        if (vuex.getters.userState === true) {
+        if (store.getters.userState === true) {
           next('/dashboard')
         } else { next() }
       }
@@ -93,7 +93,7 @@ export default new Router({
       name: 'dashboard',
       component: Dashboard,
       beforeEnter: (to, from, next) => {
-        if (vuex.getters.userState === true) {
+        if (store.getters.userState === true) {
           next()
         } else { next('/sign-in') }
       },

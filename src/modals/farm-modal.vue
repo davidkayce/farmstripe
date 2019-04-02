@@ -41,7 +41,7 @@
                 :embed="false"
                 class="paystack"
               >Invest in this farm</paystack>
-              {{signedIn? (farm.available? '' :'There is no available unit to invest') : 'Sign In to Invest'}}
+              {{signedIn? (farm.available? '' : 'There is no available unit to invest') : 'Sign In to Invest'}}
             </button>
           </section>
         </div>
@@ -52,7 +52,6 @@
 </template>
 
 <script>
-  import vuex from '../store'
   import paystack from 'vue-paystack'
 
   export default {
@@ -64,7 +63,7 @@
     data () {
       return {
         investUnits: 1,
-        signedIn: vuex.getters.userState,
+        signedIn: this.$store.getters.userState,
         paystackkey: 'pk_live_49d15ed209788db731d3170d87a47102a0330848',
         email: 'david@farmstripe.com',
         amount: this.investAmount,

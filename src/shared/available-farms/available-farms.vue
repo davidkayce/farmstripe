@@ -5,7 +5,7 @@
     <p class="title__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, accusantium. Saepe molestiae, sapiente aut at vel beatae</p>
     <div class="card__container">
       <!-- note that the slice below is to determine how many elements we are showing  -->
-      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">  
+      <div class="farm__card" v-for="farm in farms.slice(0, 15)" @click="showModal(farm)" :key="farm.id">  
         <div class="farm__details">
           <div class="overlay">
             <div class="farm__title">
@@ -41,38 +41,7 @@
       return {
         isModalVisible: false,
         currentFarm: {},
-        farms: [
-          {
-            name: 'Maize',
-            id: 'FSH-567',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: true,
-            rate: 30,
-            time: '6 months',
-            cost: 50000,
-            units: 8
-          },
-          {
-            name: 'Maize',
-            id: 'FHY-890',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: false,
-            rate: 20,
-            time: '6 months',
-            cost: 50000,
-            units: 25
-          },
-          {
-            name: 'Maize',
-            id: 'SDT-678',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: false,
-            rate: 35,
-            time: '4 months',
-            cost: 48000,
-            units: 28
-          }
-        ]
+        farms: this.$store.getters.allFarms
       }
     },
     methods: {
@@ -83,6 +52,9 @@
       closeModal () {
         this.isModalVisible = false
       }
+    },
+    created () {
+      this.$store.dispatch('getAllFarms')
     }
   }
 </script>
