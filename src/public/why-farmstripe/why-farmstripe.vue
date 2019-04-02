@@ -49,7 +49,7 @@
           </section>
         </article>
         <figure>
-          <img src="~@/assets/images/investment-girl.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/our-focus.png" alt="Farmstripe logo">
         </figure>
       </section>
 
@@ -64,7 +64,7 @@
         </article>
 
         <figure>
-          <img src="~@/assets/images/money-guy.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/money-secured.png" alt="Farmstripe logo">
         </figure>
       </section>
     </div>

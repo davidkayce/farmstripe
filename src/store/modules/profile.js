@@ -1,7 +1,7 @@
 import axios from 'axios'
 export default {
   state: {
-    signedIn: true,
+    signedIn: false,
     userInfo: {}
   },
 

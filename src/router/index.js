@@ -52,7 +52,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
 
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior (to, savedPosition) {
     if (savedPosition) {
       return savedPosition
     }
@@ -72,7 +72,6 @@ export default new Router({
       path: '/sign-in',
       name: 'signIn',
       component: SignInPage,
-      // Sign-up guard
       beforeEnter: (to, from, next) => {
         if (vuex.getters.userState === true) {
           next('/dashboard')
@@ -93,7 +92,6 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
-      // Dashboard guard
       beforeEnter: (to, from, next) => {
         if (vuex.getters.userState === true) {
           next()

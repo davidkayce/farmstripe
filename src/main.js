@@ -3,18 +3,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vuex from './store'
-import Axios from 'axios'
+import axios from 'axios'
 
 Vue.config.productionTip = false
-Vue.prototype.axios = Axios
 const accessToken = localStorage.getItem('access_token')
 
 if (accessToken) {
-  Vue.prototype.axios.defaults.headers.common['Authorization'] = accessToken
+  axios.defaults.headers.common['Authorization'] = accessToken
 }
 
 // Setting API URL based on environment for http requests
-Axios.defaults.baseURL = process.env.API_ENDPOINT
+axios.defaults.baseURL = process.env.API_ENDPOINT
 
 // Global directives
 Vue.directive('currency', {
