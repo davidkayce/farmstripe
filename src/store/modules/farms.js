@@ -32,8 +32,7 @@ export default {
         available: false,
         rate: 30
       }
-    ],
-    singleFarm: {}
+    ]
   },
 
   getters: {
@@ -51,21 +50,10 @@ export default {
       } catch (error) {
         console.log(error)
       }
-    },
-
-    async getSingleFarm  ({ commit }, id) {
-      try {
-        const response = await axios.get(`/farms/${id}`)
-        console.log(response.data)
-        commit('setSingleFarm', response.data)
-      } catch (error) {
-        console.log(error)
-      }
     }
   },
 
   mutations: {
-    setFarms: (state, farms) => (state.farms = farms),
-    setSingleFarm: (state, singleFarm) => (state.singleFarm = singleFarm)
+    setFarms: (state, farms) => (state.farms = farms)
   }
 }

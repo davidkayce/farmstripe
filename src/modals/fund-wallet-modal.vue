@@ -41,12 +41,10 @@
 </template>
 
 <script>
-  // import vuex from '../store'
   import paystack from 'vue-paystack'
 
   export default {
     name: 'fund-wallet-modal',
-    // props: ['farm'],
     components: {
       paystack
     },

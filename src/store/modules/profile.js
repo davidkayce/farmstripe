@@ -1,13 +1,11 @@
 import axios from 'axios'
 export default {
   state: {
-    signedIn: false,
     userInfo: {}
   },
 
   getters: {
-    // what sends information to the component
-    userState: state => state.signedIn
+    getUserInfo: state => state.userInfo
   },
 
   actions: {
@@ -16,24 +14,6 @@ export default {
         const response = await axios.get('/profile')
         console.log(response.data)
         commit('setUserInfo', response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    },
-
-    async signUp (data) {
-      try {
-        const response = await axios.post('/register', data)
-        console.log(response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    },
-
-    async signIn (data) {
-      try {
-        const response = await axios.post('/login', data)
-        console.log(response.data)
       } catch (error) {
         console.log(error)
       }
@@ -59,7 +39,6 @@ export default {
   },
 
   mutations: {
-    // updates central state
     setUserInfo: (state, userInfo) => (state.userInfo = userInfo)
   }
 }

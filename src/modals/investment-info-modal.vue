@@ -5,7 +5,7 @@
         <section class="blank-space"></section>
         <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
           <header>
-            <h1>Request payout</h1>
+            <h1>MZH-890</h1>
             <img
               class="close-icon"
               src="~@/assets/icons/icon-close.png"
@@ -14,19 +14,16 @@
           </header>
 
           <section class="modal-content --small">
+            <section class="progress_bar">
+
+            </section>
+        
             <h3>How much would you like to withdraw?</h3>
-            <p>
-              Please note that withdrawals from your account would require a fee of 2% of the transaction amount. Thank you for investing with farmstripe
-            </p>
-            <input type="number" v-model="withdrawalAmount" placeholder="Amount to withdraw">
             <span>You can make a minimum payment of <strong>&#8358;100</strong></span> 
           </section>
+
           <section class="footer">
-            <button 
-            class="btn-modal" 
-            :disabled="withdrawalAmount < 100">
-              Request Payout
-            </button>
+            <button class="btn-modal" @click="close"> Done </button>
           </section>
         </div>
       </div>
@@ -38,7 +35,6 @@
     name: 'payout-modal',
     data () {
       return {
-        withdrawalAmount: 100
       }
     },
     methods: {
@@ -58,15 +54,6 @@
 
   h3 {
     margin-bottom: 2rem
-  }
-
-  input {
-    margin-bottom: 2rem;
-
-    &::-webkit-inner-spin-button, 
-    &::-webkit-outer-spin-button { 
-      -webkit-appearance: none;
-    }
   }
 
   span {
