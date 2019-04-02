@@ -6,6 +6,9 @@
         <div class="contact__details _lg">
             <p>1B, Adedeji Adekola Street,<br> Off Freedom Way, Lekki Phase 1,<br> Lagos, Nigeria.</p>
         </div>
+        <div class="contact__details _lg">
+            <p>Insured by Leadway Assurance Company Ltd.</p>
+        </div>
       </div>
 
       <div class="c__footer-lists d--flex">
@@ -28,7 +31,7 @@
     </div>
     </div>
     
-    <p class="c__small-text">Farmstripe Agrotechnology Ltd. All Rights Reserved (c) 2019.</p>
+    <p class="c__small-text">Farmstripe Agrobusiness Ltd. All Rights Reserved (c) 2019.</p>
   </main>
 </template>
 

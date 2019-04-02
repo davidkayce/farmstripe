@@ -1,5 +1,4 @@
-import Axios from 'axios'
-
+import axios from 'axios'
 export default {
   state: {
     farms: {},
@@ -14,7 +13,7 @@ export default {
   actions: {
     async getAllFarms ({ commit }) {
       try {
-        const response = await Axios.get('/farms')
+        const response = await axios.get('/farms')
         console.log(response.data)
         commit('setFarms', response.data)
       } catch (error) {
@@ -24,7 +23,7 @@ export default {
 
     async getSingleFarm  ({ commit }, id) {
       try {
-        const response = await Axios.get(`/farms/${id}`)
+        const response = await axios.get(`/farms/${id}`)
         console.log(response.data)
         commit('setSingleFarm', response.data)
       } catch (error) {

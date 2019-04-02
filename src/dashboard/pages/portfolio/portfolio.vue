@@ -7,17 +7,17 @@
         <div class="portfolio__info">
           <div class="portfolio__blocks">
             <p class="portfolio__options">RETURNS ON INVESTMENTS </p>
-            <p class="portfolio__value">&#8358; 200,000.00</p>
+            <p class="portfolio__value">&#8358; 0.00</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options">INVESTMENT</p>
-            <p class="portfolio__value">&#8358; 120,000.00</p>
+            <p class="portfolio__value">&#8358; 0.00</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options"> WALLET BALANCE </p>
-            <p class="portfolio__value">&#8358; 30,000.00</p>
+            <p class="portfolio__value">&#8358; 0.00</p>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="large__screen">
-        <h3>Available farms</h3>
+        <h4>Available farms</h4>
         <div class="card__container">
           <div class="farm__card">
             <header>

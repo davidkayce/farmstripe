@@ -5,7 +5,7 @@
       <h1 >Terms and Conditions</h1>
 			
       <p>
-        Please read these Terms and Conditions, which set forth the legally binding terms and conditions for your use of the services (the “Service”) offered by Farmstripe Agrotechnology Limited. (“Farmstripe” or the “Company”) and the website at www.farmstripe.com.
+        Please read these Terms and Conditions, which set forth the legally binding terms and conditions for your use of the services (the “Service”) offered by Farmstripe Agrobusiness Limited. (“Farmstripe” or the “Company”) and the website at www.farmstripe.com.
       </p> 
       <p>&nbsp;</p>
       <p>
@@ -107,7 +107,7 @@
       </ul>
       <p>&nbsp;</p>
       <p>
-        The Service and its original content, features and functionality are and will remain the exclusive property of Farmstripe Agrotechnology Limited. The Service is protected by copyright, trademark, and other laws of The Federal Republic of Nigeria. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Farmstripe Agrotechnology Limited.
+        The Service and its original content, features and functionality are and will remain the exclusive property of Farmstripe Agrobusiness Limited. The Service is protected by copyright, trademark, and other laws of The Federal Republic of Nigeria. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Farmstripe Agrobusiness Limited.
       </p>
       <p>&nbsp;</p>
       <p>
@@ -216,7 +216,7 @@
       </ul>
       <p>&nbsp;</p>
       <p>
-        If you have any questions about these Terms &amp; Conditions, please contact us at: hello@farmstripe.com or 1B, Adedeji Adekola Street, Off Freedom Way, Lekki Phase 1, Lagos, Nigeria.
+        If you have any questions about these Terms &amp; Conditions, please contact us at: <a href="mailto:info@farmstripe.com">info@farmstripe.com</a> or 1B, Adedeji Adekola Street, Off Freedom Way, Lekki Phase 1, Lagos, Nigeria.
       </p>
       <p>&nbsp;</p>
       <p><strong>This document was last updated on March 18, 2019</strong></p>                             

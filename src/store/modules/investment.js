@@ -1,5 +1,4 @@
-import Axios from 'axios'
-
+import axios from 'axios'
 export default {
   state: {
     investments: {},
@@ -14,7 +13,7 @@ export default {
   actions: {
     async getInvestments ({ commit }) {
       try {
-        const response = await Axios.get('/investments')
+        const response = await axios.get('/investments')
         console.log(response.data)
         commit('setInvestments', response.data)
       } catch (error) {
@@ -24,7 +23,7 @@ export default {
 
     async getSingleInvestment ({ commit }, id) {
       try {
-        const response = await Axios.get(`/investments/${id}`)
+        const response = await axios.get(`/investments/${id}`)
         console.log(response.data)
         commit('setSingleInvestment', response.data)
       } catch (error) {
@@ -34,7 +33,7 @@ export default {
 
     async createInvestment ({ commit }, id, units) {
       try {
-        const response = await Axios.post(`/investments/${id}`, units)
+        const response = await axios.post(`/investments/${id}`, units)
         console.log(response.data)
         commit('setInvestments', response.data)
       } catch (error) {

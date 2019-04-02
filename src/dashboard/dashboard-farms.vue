@@ -1,44 +1,39 @@
 <template>
   <main>
-    <h1>Available Farms</h1>
-    <div class="line"></div>
-    <p class="title__info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, accusantium. Saepe molestiae, sapiente aut at vel beatae</p>
-    <div class="card__container">
-      <!-- note that the slice below is to determine how many elements we are showing  -->
-      <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">  
-        <div class="farm__details">
-          <div class="overlay">
-            <div class="farm__title">
-              <p>{{farm.name}}</p>
-              <p><strong>{{farm.available? 'AVAILABLE':'SOLD OUT'}}</strong></p>
-            </div>
-            <p class="rate">
-              <span class="farm__rate">{{farm.rate}}%</span> returns
-            </p>
-            <p>{{farm.available? farm.units + ' units' : 'No units'}} available</p>
-          </div>
+    <div class="farm__card" v-for="(farm, index) in farms.slice(0, 15)" @click="showModal(farm)">  
+      <div class="farm__details">
+        <div class="overlay">
+        <div class="farm__title">
+          <p>{{farm.name}}</p>
+          <p><strong>{{farm.available? 'AVAILABLE':'SOLD OUT'}}</strong></p>
         </div>
-        <footer>
-          <p>{{farm.id}}</p>
-          <p><span><strong>&#8358; {{farm.cost}}</strong></span> per unit </p>
-          <p>{{farm.rate}}% returns in {{farm.time}}</p>
-        </footer>
+        <p class="rate">
+          <span class="farm__rate">{{farm.rate}}%</span> returns
+        </p>
+        <p>{{farm.available? farm.units + ' units' : 'No units'}} available</p>
       </div>
+    </div>
+    <footer>
+      <p>{{farm.id}}</p>
+      <p><span><strong>&#8358; {{farm.cost}}</strong></span> per unit </p>
+      <p>{{farm.rate}}% returns in {{farm.time}}</p>
+    </footer>
     </div>
     <farm-modal v-if="isModalVisible" @close="closeModal" :farm="currentFarm"></farm-modal>
   </main>
 </template>
 
 <script>
-  import FarmModal from '../../modals/farm-modal'
+  import FarmModal from '../modals/farm-modal'
 
   export default {
-    name: 'availableFarms',
+    name: 'dashboardFarms',
     components: {
       'farm-modal': FarmModal
     },
     data () {
       return {
+        index: 0,
         isModalVisible: false,
         currentFarm: {},
         farms: [
@@ -89,5 +84,10 @@
 
 <style lang="scss" scoped>
   @import '~styles';
-  @import './available-farms.scss';
+  @import '../shared/available-farms/available-farms.scss';
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 </style>

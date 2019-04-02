@@ -1,5 +1,4 @@
-import Axios from 'axios'
-
+import axios from 'axios'
 export default {
   state: {
     wallet: {}
@@ -12,7 +11,7 @@ export default {
   actions: {
     async getWallet ({ commit }) {
       try {
-        const response = await Axios.get('/wallet')
+        const response = await axios.get('/wallet')
         console.log(response.data)
         commit('setWallet', response.data)
       } catch (error) {

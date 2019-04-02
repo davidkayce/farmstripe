@@ -58,10 +58,10 @@
         <div class="payment__info">
           <div class="payment__blocks">
             <p class="payment__options">WALLET BALANCE</p>
-            <p class="payment__value">&#8358; 30,000.00</p>
+            <p class="payment__value">&#8358; 0.00</p>
           </div>
           <hr>
-          <p class="payment__cta">Fund Wallet</p>
+          <p class="payment__cta" @click="fundModal()">Fund Wallet</p>
         </div>
       </div>
 
@@ -69,22 +69,47 @@
         <div class="payment__info">
           <div class="payment__blocks">
             <p class="payment__options">TOTAL PAYOUT</p>
-            <p class="payment__value">&#8358; 00.00</p>
+            <p class="payment__value">&#8358; 0.00</p>
           </div>
           <hr>
-          <p class="payment__cta">Request payout</p>
+          <p class="payment__cta" @click="payoutModal()">Request payout</p>
         </div>
       </div>
     </div>
+
+    <payout-modal v-if="payoutModalVisible" @close="closePayoutModal"></payout-modal>
+    <fund-modal v-if="fundModalVisible" @close="closeFundModal"></fund-modal>
   </main>
   
 </template>
 
 <script>
+  import PayoutModal from '../../../modals/payout-modal'
+  import FundModal from '../../../modals/fund-wallet-modal'
   export default {
     name: 'wallets',
+    components: {
+      'payout-modal': PayoutModal,
+      'fund-modal': FundModal
+    },
     data: function () {
       return {
+        fundModalVisible: false,
+        payoutModalVisible: false
+      }
+    },
+    methods: {
+      fundModal () {
+        this.fundModalVisible = true
+      },
+      payoutModal () {
+        this.payoutModalVisible = true
+      },
+      closePayoutModal () {
+        this.payoutModalVisible = false
+      },
+      closeFundModal () {
+        this.fundModalVisible = false
       }
     }
   }

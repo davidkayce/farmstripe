@@ -5,7 +5,7 @@ main{
   flex-direction: column;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 15rem 2rem 3rem;
+    padding: 12rem 2rem 3rem;
   }
 
   .section__header {
@@ -55,8 +55,9 @@ main{
 
     @media (min-width: $breakpoint-tablet) {
       max-height: 650px;
-      overflow-y: scroll;
+      overflow-y: auto;
       overflow: -moz-scrollbars-none;
+      overflow-style: marquee,panner;
       -ms-overflow-style: none;
       width: 85%;
       padding-top: 3rem;
@@ -84,7 +85,7 @@ main{
         justify-content: space-between;
 
         &:not(last-of-type) {
-          margin-bottom: 7rem;
+          margin-bottom: 15rem;
         }
       }
 
@@ -96,7 +97,7 @@ main{
         img{
           width: 20rem;
           margin-left: 15%;
-
+          
           @media (min-width: $breakpoint-tablet) {
             margin-left: 3rem;
             width: 100%;
@@ -104,7 +105,7 @@ main{
 
           @media (min-width: 1200px) {
             margin-left: 7rem;
-            width: 90%;
+            width: 80%;
           }
         }
       }

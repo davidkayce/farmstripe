@@ -6,6 +6,12 @@ import vuex from './store'
 import Axios from 'axios'
 
 Vue.config.productionTip = false
+Vue.prototype.axios = Axios
+const accessToken = localStorage.getItem('access_token')
+
+if (accessToken) {
+  Vue.prototype.axios.defaults.headers.common['Authorization'] = accessToken
+}
 
 // Setting API URL based on environment for http requests
 Axios.defaults.baseURL = process.env.API_ENDPOINT
@@ -13,7 +19,6 @@ Axios.defaults.baseURL = process.env.API_ENDPOINT
 // Global directives
 Vue.directive('currency', {
   bind (el, binding) {
-    el.style.fontSize = '13px'
     if (binding.value === 'naira') {
       el.innerHTML = '&#8358;'
     } else if (binding.value === 'dollars') {

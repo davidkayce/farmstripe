@@ -1,8 +1,7 @@
-import Axios from 'axios'
-
+import axios from 'axios'
 export default {
   state: {
-    signedIn: false,
+    signedIn: true,
     userInfo: {}
   },
 
@@ -14,7 +13,7 @@ export default {
   actions: {
     async getProfile ({ commit }) {
       try {
-        const response = await Axios.get('/profile')
+        const response = await axios.get('/profile')
         console.log(response.data)
         commit('setUserInfo', response.data)
       } catch (error) {
@@ -24,7 +23,7 @@ export default {
 
     async signUp (data) {
       try {
-        const response = await Axios.post('/register', data)
+        const response = await axios.post('/register', data)
         console.log(response.data)
       } catch (error) {
         console.log(error)
@@ -33,7 +32,7 @@ export default {
 
     async signIn (data) {
       try {
-        const response = await Axios.post('/login', data)
+        const response = await axios.post('/login', data)
         console.log(response.data)
       } catch (error) {
         console.log(error)
@@ -42,7 +41,7 @@ export default {
 
     async updateProfile (data) {
       try {
-        const response = await Axios.put('/users', data)
+        const response = await axios.put('/users', data)
         console.log(response.data)
       } catch (error) {
         console.log(error)
@@ -51,7 +50,7 @@ export default {
 
     async updateAccount (data) {
       try {
-        const response = await Axios.put('/account', data)
+        const response = await axios.put('/account', data)
         console.log(response.data)
       } catch (error) {
         console.log(error)

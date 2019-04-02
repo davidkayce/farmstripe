@@ -20,7 +20,7 @@
           </section>
         </article>
         <figure>
-          <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/farmstripe.png" alt="Farmstripe logo">
         </figure>
       </section>
 
@@ -44,12 +44,12 @@
 
             <h4><strong>THE BEST RETURNS FOR YOU</strong></h4>
             <p>
-              Our Subscribers get exciting returns. Our farmers make *2 what their average yield would have been and the Nation has more food.
+              Our Subscribers get exciting returns. Our farmers maximize their yield and the nation has more food.
             </p>
           </section>
         </article>
         <figure>
-          <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/investment-girl.png" alt="Farmstripe logo">
         </figure>
       </section>
 
@@ -64,7 +64,7 @@
         </article>
 
         <figure>
-          <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/money-guy.png" alt="Farmstripe logo">
         </figure>
       </section>
     </div>

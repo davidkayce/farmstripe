@@ -4,7 +4,7 @@
     <div class="content">
       <div class="contact__detail">
         <div class="contact__address">
-          <h3>Farmstripe Agrotechnologies Limited</h3>
+          <h3>Farmstripe Agrobusiness Limited</h3>
           <p>1B Adedeji Adekola Street,<br>Off Freedom Way, Lekki Phase 1.<br> Lagos, Nigeria.</p>
         </div>
         <div class="contact__connect">
@@ -14,7 +14,7 @@
           </p>
           <p>
             <span>or send us an email to</span>
-            <a href="mailto:hello@farmstripe.com">hello@farmstripe.com</a>
+            <a href="mailto:info@farmstripe.com">info@farmstripe.com</a>
           </p>
         </div>
       </div>
