@@ -6,14 +6,13 @@ import store from './store'
 import axios from 'axios'
 
 Vue.config.productionTip = false
-const accessToken = localStorage.getItem('access_token')
 
+// Setting API URL and header based on environment for http requests
+axios.defaults.baseURL = process.env.API_ENDPOINT
+const accessToken = localStorage.getItem('access_token')
 if (accessToken) {
   axios.defaults.headers.common['Authorization'] = accessToken
 }
-
-// Setting API URL based on environment for http requests
-axios.defaults.baseURL = process.env.API_ENDPOINT
 
 // Global directives
 Vue.directive('currency', {
