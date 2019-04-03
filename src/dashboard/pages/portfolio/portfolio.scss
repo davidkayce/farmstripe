@@ -29,10 +29,10 @@ main {
   
   .sidebar {  
     @media (min-width: $breakpoint-tablet) {
-      width: 50%;
+      width: 45%;
     }
 
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: 1200px) {
       width: 30%;
     }
   }
@@ -49,6 +49,12 @@ main {
   box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.3);
 
   @media (min-width: $breakpoint-desktop) {
+    width: 80%;
+    margin-top: 3rem;
+  }
+  
+  @media (min-width: 1200px) {
+    width: 100%;
     flex-direction: row;
     margin-top: 3rem;
   }
@@ -56,10 +62,10 @@ main {
   hr {
     width: 100%;
     margin: 1.5rem 0;
-    opacity: 0.6;
+    opacity: 0.4;
     border: 1px solid $white;
 
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: 1200px) {
       margin: 0;
       width: 0;
     }
@@ -67,19 +73,20 @@ main {
   }
 
   .portfolio__blocks {
-
     p {
       display: flex;
       color: white;
     }
   
     .portfolio__options {
+      text-align: center;
       font-size: 1.2rem;
       font-weight: 100;
       margin-bottom: 1rem;
     }
   
     .portfolio__value {
+      text-align: center;
       font-weight: 600;
       font-size: 3rem;
     }
@@ -90,13 +97,16 @@ main {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #F7F7FF;
+  background-color: #fcfcfc;
   padding: 3rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
+  border-top: 7px solid orange;
   box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
 
   @media (min-width: $breakpoint-desktop) {
+    border-top: none;
+    border-right: 7px solid orange;
     flex-direction: row;
     margin-top: 3rem;
   }

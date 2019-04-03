@@ -18,7 +18,6 @@
 
             </section>
         
-            <h3>How much would you like to withdraw?</h3>
             <span>You can make a minimum payment of <strong>&#8358;100</strong></span> 
           </section>
 
@@ -32,7 +31,7 @@
 
 <script>
   export default {
-    name: 'payout-modal',
+    name: 'investment-modal',
     data () {
       return {
       }

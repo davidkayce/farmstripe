@@ -1,4 +1,3 @@
-// The Vue build version to load with the `import` command
 import Vue from 'vue'
 import App from './App'
 import router from './router'

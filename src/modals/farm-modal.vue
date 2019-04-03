@@ -55,7 +55,7 @@
   import paystack from 'vue-paystack'
 
   export default {
-    name: 'modal',
+    name: 'farm-modal',
     props: ['farm'],
     components: {
       paystack
