@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export default {
   state: {
-    status: '',
     signedIn: false,
     accessToken: localStorage.getItem('access_token') || '',
     userData: {}
