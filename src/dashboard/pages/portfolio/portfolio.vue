@@ -2,6 +2,7 @@
   <main>
     <div class="main__section">
       <h1>Welcome back Oluchi</h1>
+      <info-modal v-if="infoModalVisible" @close="close"></info-modal>
       
       <div> 
         <div class="portfolio__info">
@@ -44,8 +45,6 @@
         </div>
       </div>
     </div>
-
-    <info-modal v-if="infoModalVisible" @close="close"></info-modal>
 
     <div class="sidebar">
       <div class="mobile">

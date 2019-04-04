@@ -22,7 +22,7 @@
               <h3><strong>Investment Calculator</strong></h3>
               <label for="units">How many units do you want to buy</label>
               <input type="number" name="units" v-model="investUnits">
-              <span>You pay <span class="investment">&#8358;{{farm.cost * investUnits}}</span>and get <span class="investment">&#8358;{{(farm.cost * investUnits) * (1 + (farm.rate /100))}}</span> in {{farm.time}} </span>
+              <span>You pay <span class="investment">&#8358;{{farm.cost * investUnits}}</span>and get <span class="investment">&#8358;{{((farm.cost * investUnits) * (1 + (farm.rate /100))).toFixed(2)}}</span> in {{farm.time}} </span>
             </div>
           </section>
           <section class="footer">

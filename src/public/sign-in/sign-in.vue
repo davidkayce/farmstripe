@@ -96,10 +96,14 @@
         this.signIn = !this.signIn
       },
       signUp () {
-        this.$store.dispatch('signUp', this.signUpData).then(() => this.$router.push('/dashboard'))
+        this.$store.dispatch('signUp', this.signUpData)
+          .then(() => this.$router.push('/sign-in'))
+          .catch(err => console.log(err))
       },
       logIn () {
-        this.$store.dispatch('signIn', this.signInData).then(() => this.$router.push('/dashboard'))
+        this.$store.dispatch('signIn', this.signInData)
+          .then(() => this.$router.push('/dashboard'))
+          .catch(err => console.log(err))
       }
     }
   }

@@ -73,7 +73,7 @@ export default new Router({
       name: 'signIn',
       component: SignInPage,
       beforeEnter: (to, from, next) => {
-        if (store.getters.userState === true) {
+        if (store.getters.userState) {
           next('/dashboard')
         } else { next() }
       }
@@ -93,7 +93,7 @@ export default new Router({
       name: 'dashboard',
       component: Dashboard,
       beforeEnter: (to, from, next) => {
-        if (store.getters.userState === true) {
+        if (store.getters.userState) {
           next()
         } else { next('/sign-in') }
       },
