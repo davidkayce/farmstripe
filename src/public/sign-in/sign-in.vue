@@ -97,7 +97,7 @@
       },
       signUp () {
         this.$store.dispatch('signUp', this.signUpData)
-          .then(() => this.$router.push('/sign-in'))
+          .then(() => this.$router.push('/sign-in'), this.signIn = true)
           .catch(err => console.log(err))
       },
       logIn () {

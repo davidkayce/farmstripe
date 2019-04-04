@@ -3,7 +3,7 @@ import axios from 'axios'
 export default {
   state: {
     status: '',
-    signedIn: true,
+    signedIn: false,
     accessToken: localStorage.getItem('access_token') || '',
     userData: {}
   },
@@ -17,11 +17,9 @@ export default {
   actions: {
 
     async signUp ({ commit }, data) {
-      console.log('Reached the sign up api')
       commit('auth_request')
       try {
         const response = await axios.post('/register', data)
-        console.log(response.data)
         const user = response.data.user
         commit('auth_success', user)
       } catch (error) {
@@ -31,7 +29,7 @@ export default {
     },
 
     async signIn ({ commit }, data) {
-      console.log('Reached the sign in api')
+      console.log('Reached the login api')
       commit('auth_request')
       try {
         const response = await axios.post('/login', data)
