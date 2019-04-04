@@ -17,20 +17,17 @@ export default {
   actions: {
 
     async signUp ({ commit }, data) {
-      commit('auth_request')
       try {
         const response = await axios.post('/register', data)
         const user = response.data.user
         commit('auth_success', user)
       } catch (error) {
         console.log(error)
-        commit('auth_error', error)
       }
     },
 
     async signIn ({ commit }, data) {
       console.log('Reached the login api')
-      commit('auth_request')
       try {
         const response = await axios.post('/login', data)
         console.log(response.data)
@@ -40,7 +37,6 @@ export default {
         commit('login', token)
       } catch (error) {
         console.log(error)
-        commit('auth_error', error)
         localStorage.removeItem('access_token')
       }
     },
@@ -54,27 +50,16 @@ export default {
   },
 
   mutations: {
-    auth_request (state) {
-      state.status = 'loading'
-    },
-
     auth_success (state, user) {
       state.userData = user
-      state.status = 'success'
-    },
-
-    auth_error (state) {
-      state.status = 'error'
     },
 
     login (state, token) {
-      state.status = 'success'
       state.accessToken = token
       state.signedIn = true
     },
 
     logout (state) {
-      state.status = ''
       state.token = ''
       state.signedIn = false
     }
