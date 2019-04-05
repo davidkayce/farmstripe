@@ -5,15 +5,16 @@ export default {
   },
 
   getters: {
-    wallet: state => state.wallet
+    getWallet: state => state.wallet
   },
 
   actions: {
-    async getWallet ({ commit }) {
+    async getWalletInfo ({ commit }) {
       try {
         const response = await axios.get('/wallet')
-        console.log(response.data)
-        commit('setWallet', response.data)
+        const wallet = response.data
+        console.log(wallet)
+        commit('setWallet', wallet)
       } catch (error) {
         console.log(error)
       }

@@ -94,6 +94,7 @@
     },
     data: function () {
       return {
+        wallets: this.$store.getters.getWallet,
         fundModalVisible: false,
         payoutModalVisible: false
       }
@@ -111,6 +112,9 @@
       closeFundModal () {
         this.fundModalVisible = false
       }
+    },
+    created () {
+      this.$store.dispatch('getWalletInfo')
     }
   }
 </script>

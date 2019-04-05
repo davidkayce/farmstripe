@@ -15,33 +15,28 @@ main {
     flex-direction: column;
 
     @media (min-width: $breakpoint-tablet) {
-      margin-right: 5rem;
+      width: 60%;
+      margin-right: 2rem;
     }
-
-    @media (min-width: $breakpoint-desktop) {
+  
+    @media (min-width: 1320px) {
       flex-direction: row;
-    }
-
-    h1 {
-      margin-top: 2rem;
-
-      @media (min-width: $breakpoint-tablet) {
-        margin-top: 0;
-      }
-
-      @media (min-width: $breakpoint-desktop) {
-        margin-bottom: 3rem;
-      }
+      width: 75%;
+      margin-right: 5rem;
     }
   }
   
   .sidebar {
     @media (min-width: $breakpoint-tablet) {
-      width: 50%;
+      width: 32rem;
     }
 
     @media (min-width: $breakpoint-desktop) {
-      width: 35%;
+      width: 35rem;
+    }
+
+    @media (min-width: 1320px) {
+      width: 42rem;
     }
   }
 }
@@ -113,80 +108,12 @@ main {
     display: block
   }
 
-  h3 {
+  h4 {
     margin: 1rem 2rem 2rem 0;
+    color: $grey-medium;
 
     @media (min-width: $breakpoint-desktop) {
       margin-top: 2rem
-    }
-  }
-
-  .card__container {
-    overflow: auto;
-    height: 100vh;
-
-    @media (min-width: $breakpoint-desktop) {
-      height: 55rem;
-    }
-
-    header {
-      padding: 2rem;
-    }
-
-    .farm__card {
-      border-radius: 0.5rem;
-      box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.1);
-      background-color: #fff;
-      margin: 2rem auto;
-
-
-      .overlay {
-        background-color: rgba(52, 89, 72, 0.65);
-        height: 100%;
-        padding: 2rem;
-      }
-
-      .farm__details {
-        background-image: url('~@/assets/images/maize-field.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 20rem;
-        color: $white;
-    
-        p {
-          color: white;
-        }
-
-        .farm__rate {
-          font-weight: 600;
-          font-size: 2.5rem;
-          margin-right: 1rem;
-        }
-
-        .returns {
-          margin-top: 5rem;
-          font-size: 1.3rem;
-          font-weight: 100;
-          color: $fstrgreen
-        }
-
-      }
-
-      .farm__title {
-        color: $dgreen;
-        font-size: 1.5rem;
-        font-weight: 600;
-      }
-    
-      .farm__cta {
-        display: flex;
-        padding: 2rem;
-        justify-content: space-between;
-
-        button {
-          padding: 2rem 4rem;
-        }
-      }
     }
   }
 }

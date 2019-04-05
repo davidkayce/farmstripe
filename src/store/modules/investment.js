@@ -12,10 +12,12 @@ export default {
 
   actions: {
     async getInvestments ({ commit }) {
+      console.log('You have reached the get all investments api')
       try {
         const response = await axios.get('/investments')
-        console.log(response.data)
-        commit('setInvestments', response.data)
+        const investments = response.data
+        console.log(investments)
+        commit('setInvestments', investments)
       } catch (error) {
         console.log(error)
       }
@@ -24,8 +26,9 @@ export default {
     async getSingleInvestment ({ commit }, id) {
       try {
         const response = await axios.get(`/investments/${id}`)
-        console.log(response.data)
-        commit('setSingleInvestment', response.data)
+        const singleInvestment = response.data
+        console.log(singleInvestment)
+        commit('setSingleInvestment', singleInvestment)
       } catch (error) {
         console.log(error)
       }
@@ -35,7 +38,7 @@ export default {
       try {
         const response = await axios.post(`/investments/${id}`, units)
         console.log(response.data)
-        commit('setInvestments', response.data)
+        commit('updateInvestments', response.data)
       } catch (error) {
         console.log(error)
       }
@@ -45,5 +48,6 @@ export default {
   mutations: {
     setInvestments: (state, investments) => (state.investments = investments),
     setSingleInvestment: (state, singleInvestment) => (state.singleInvestment = singleInvestment)
+    // updateInvestments: (state, investments) => (state.investments = investments),
   }
 }

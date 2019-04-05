@@ -93,10 +93,7 @@ main {
   }
 }
 
-.investment__info{
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+.investment__card {
   background-color: #fcfcfc;
   padding: 3rem;
   margin-top: 2rem;
@@ -106,22 +103,19 @@ main {
 
   @media (min-width: $breakpoint-desktop) {
     border-top: none;
+    padding: 2rem;
     border-right: 7px solid orange;
-    flex-direction: row;
     margin-top: 3rem;
   }
+}
 
-  hr {
-    width: 100%;
-    margin: 1.5rem 0;
-    opacity: 0.6;
-    border: 1px solid $white;
-
-    @media (min-width: $breakpoint-desktop) {
-      margin: 0;
-      width: 0;
-    }
-
+.investment__info{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
   }
 
   .investment__blocks {
@@ -135,6 +129,14 @@ main {
       font-weight: 600;
       color: $dgreen;
       font-size: 2rem;
+
+      .farm__id {
+        color: $grey-medium;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        margin-left: 2rem;
+      }
     }
 
     .investment__units {
@@ -203,12 +205,100 @@ main {
       margin-top: 2rem
     }
   }
+}
 
-  .card__container {
-    overflow: auto;
-    height: 75rem;
+.progress_bar {
+  display: inline-block;
+  width: 100%;
+  margin: 1rem 0;
+
+  ul {
+    counter-reset: step;
+  }
+
+  li {
+    float: left;
+    width: 25%;
+    position: relative;
+    color: $grey-light;
+    font-size: 1.2rem;
+    text-align: center;
+
+    &:before {
+      content: counter(step);
+      counter-increment: step;
+      position: relative;
+      background: $white;
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      text-align: center;
+      font-size: 1.1rem; 
+      border: 1px solid $grey-light;
+      margin: 1.2rem auto;
+      border-radius: 100%;
+      color: $grey-light;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1.5px;
+      background-color: $grey-light;
+      top: 2.2rem;
+      left: -45%;
+      z-index: 1;
+      // z-index: -1; // there is an issue here
+    }
+
+    &:first-child:after {
+      content: none;
+    }
+  }
+
+  .active_first {
+    color: orange;
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+
+    &:before {
+      color: orange;
+      border: 2px solid orange;
+      font-weight: 600;
+    }
+
+    &:after{
+      background-color: orange;
+      height: 2.2px;
+    }
+  }
+
+  .passed {
+    color: $grey;
+
+    &:before {
+      color: $grey;
+      border: 2px solid $grey;
+      font-weight: 600;
+    }
+
+    &:after{
+      background-color: $grey;
+    }
   }
 }
 
+.btn--link {
+  margin-top: 1rem;
+  font-weight: 600;
 
-
+  &:focus {
+    outline: none
+  }
+}

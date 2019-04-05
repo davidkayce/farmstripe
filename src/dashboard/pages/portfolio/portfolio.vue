@@ -1,9 +1,7 @@
 <template>
   <main>
     <div class="main__section">
-      <h1>Welcome back Oluchi</h1>
-      <info-modal v-if="infoModalVisible" @close="close"></info-modal>
-      
+      <h1>Welcome back Oluchi</h1>      
       <div> 
         <div class="portfolio__info">
           <div class="portfolio__blocks">
@@ -25,10 +23,10 @@
 
       <h3>Your investments</h3>
 
-      <div> 
-        <div class="investment__info" @click="infoModal">
+      <div class="investment__card"> 
+        <div class="investment__info">
           <div class="investment__blocks">
-            <p class="investment__title">Maize Farm </p>
+            <p class="investment__title">Maize Farm <span class="farm__id">FSH-456</span></p>
             <p class="investment__units">&#8358; 100,000.00 &bull; 2 units </p>
             <p><span class="rate">30%</span> <span class="returns"> Returns</span> </p>
           </div>
@@ -43,6 +41,17 @@
             <p class="tenure__value">15 September 2019</p>
           </div>
         </div>
+        <div>
+          <button class="btn btn--link" @click="progress"> See Investment Progress </button>
+        </div>
+        <section class="progress_bar" v-if="showProgress">
+          <ul>
+            <li class="passed">Setting up</li>
+            <li class="active_first">Planting</li>
+            <li>Harvest</li>
+            <li>Returns</li>
+          </ul>
+        </section>
       </div>
     </div>
 
@@ -60,26 +69,26 @@
 </template>
 
 <script>
-  import InfoModal from '../../../modals/investment-info-modal'
   import DashboardFarms from '../../dashboard-farms'
   export default {
     name: 'portfolio',
     components: {
-      'info-modal': InfoModal,
       'dash-farms': DashboardFarms
     },
     data: function () {
       return {
-        infoModalVisible: false
+        showProgress: false,
+        infoModalVisible: false,
+        investments: this.$store.getters.allInvestments
       }
     },
     methods: {
-      close () {
-        this.infoModalVisible = false
-      },
-      infoModal () {
-        this.infoModalVisible = true
+      progress () {
+        this.showProgress = !this.showProgress
       }
+    },
+    created () {
+      this.$store.dispatch('getInvestments')
     }
   }
 </script>
