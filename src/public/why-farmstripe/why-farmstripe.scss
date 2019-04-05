@@ -1,11 +1,14 @@
 main{
   padding: 8rem 2rem 0;
   display: flex;
-  background-color: transparent;
   flex-direction: column;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 12rem 2rem 0;
+    padding: 30rem 2rem 0;
+    background: url('~@/assets/images/background-leaf.jpg');
+    background-position: -5rem -5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .section__header {

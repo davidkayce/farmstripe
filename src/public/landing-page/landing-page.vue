@@ -16,6 +16,12 @@
       </div>
     </header>
 
+    <!-- <div class="images">
+      <img src="~@/assets/images/green-bush.png" alt="">
+      <img src="~@/assets/images/potatoes.png" alt="">
+      <img src="~@/assets/images/green-beans.png" alt="">
+    </div> -->
+
     <why-farmstripe></why-farmstripe>
     <available-farms></available-farms>
     <how-it-works></how-it-works>

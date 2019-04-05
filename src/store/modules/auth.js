@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default {
   state: {
-    signedIn: true,
+    signedIn: false,
     accessToken: localStorage.getItem('access_token') || '',
     userData: {}
   },
@@ -30,7 +30,7 @@ export default {
       try {
         const response = await axios.post('/login', data)
         console.log(response.data)
-        const token = response.data.token
+        const token = response.data.access_token
         localStorage.setItem('access_token', token)
         axios.defaults.headers.common['Authorization'] = token
         commit('login', token)
