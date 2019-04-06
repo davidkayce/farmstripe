@@ -14,7 +14,7 @@
         <label for="name">Email</label>
         <input type="text" name="email">
 
-        <button class="btn-dark">Update profile</button>
+        <button class="btn-dark" @click="updateProfile">Update profile</button>
       </div>
 
       <div class="profile__info">
@@ -62,7 +62,9 @@
     },
     data: function () {
       return {
-        title: 'profile'
+        name: '',
+        phone: '',
+        email: ''
       }
     }
   }

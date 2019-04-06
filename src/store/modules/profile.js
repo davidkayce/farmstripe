@@ -1,24 +1,10 @@
 import axios from 'axios'
 export default {
-  state: {
-    userInfo: {}
-  },
+  state: {},
 
-  getters: {
-    getUserInfo: state => state.userInfo
-  },
+  getters: {},
 
   actions: {
-    async getProfile ({ commit }) {
-      try {
-        const response = await axios.get('/profile')
-        console.log(response.data)
-        commit('setUserInfo', response.data)
-      } catch (error) {
-        console.log(error)
-      }
-    },
-
     async updateProfile (data) {
       try {
         const response = await axios.put('/users', data)

@@ -73,6 +73,7 @@ export default new Router({
       name: 'signIn',
       component: SignInPage,
       beforeEnter: (to, from, next) => {
+        console.log(store.getters.userState)
         if (store.getters.userState) {
           next('/dashboard')
         } else { next() }

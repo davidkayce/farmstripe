@@ -9,15 +9,14 @@ export default {
 
   getters: {
     userState: state => state.signedIn,
-    getUser: state => state.userData,
-    getLoginStatus: state => state.status
+    getUser: state => state.userData
   },
 
   actions: {
-
-    async signUp ({ commit }, data) {
+    async getProfile ({ commit }) {
       try {
-        const response = await axios.post('/register', data)
+        const response = await axios.get('/profile.json')
+        console.log(response.data)
         const user = response.data.user
         commit('auth_success', user)
       } catch (error) {
@@ -25,11 +24,18 @@ export default {
       }
     },
 
+    async signUp (data) {
+      try {
+        const response = await axios.post('/register', data)
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    },
+
     async signIn ({ commit }, data) {
-      console.log('Reached the login api')
       try {
         const response = await axios.post('/login', data)
-        console.log(response.data)
         const token = response.data.access_token
         localStorage.setItem('access_token', token)
         axios.defaults.headers.common['Authorization'] = token
@@ -40,7 +46,7 @@ export default {
       }
     },
 
-    async logOut ({ commit }, data) {
+    async logOut ({ commit }) {
       console.log('Logging you out')
       commit('logout')
       localStorage.removeItem('access_token')

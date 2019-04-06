@@ -8,6 +8,7 @@ Vue.config.productionTip = false
 
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 const accessToken = localStorage.getItem('access_token')
 if (accessToken) {
   axios.defaults.headers.common['Authorization'] = accessToken

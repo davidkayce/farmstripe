@@ -88,6 +88,7 @@
       }
     },
     created () {
+      this.$store.dispatch('getWalletInfo')
       this.$store.dispatch('getInvestments')
     }
   }

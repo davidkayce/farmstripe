@@ -102,7 +102,10 @@
       },
       logIn () {
         this.$store.dispatch('signIn', this.signInData)
-          .then(() => this.$router.push('/dashboard'))
+          .then(() => {
+            this.$store.dispatch('getProfile')
+            this.$router.push('/dashboard/')
+          })
           .catch(err => console.log(err))
       }
     }

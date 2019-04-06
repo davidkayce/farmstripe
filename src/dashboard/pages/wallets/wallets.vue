@@ -114,7 +114,6 @@
       }
     },
     created () {
-      this.$store.dispatch('getWalletInfo')
     }
   }
 </script>
