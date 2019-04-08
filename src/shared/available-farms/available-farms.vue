@@ -40,8 +40,12 @@
     data () {
       return {
         isModalVisible: false,
-        currentFarm: {},
-        farms: this.$store.getters.allFarms
+        currentFarm: {}
+      }
+    },
+    computed: {
+      farms () {
+        return this.$store.getters.allFarms
       }
     },
     methods: {

@@ -36,8 +36,11 @@ export default {
     async signIn ({ commit }, data) {
       try {
         const response = await axios.post('/login', data)
+        console.log(response)
         const token = response.data.access_token
+        const expiryDate = response.data.exp
         localStorage.setItem('access_token', token)
+        localStorage.setItem('expiry_date', expiryDate)
         axios.defaults.headers.common['Authorization'] = token
         commit('login', token)
       } catch (error) {

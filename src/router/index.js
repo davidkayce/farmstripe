@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from '../store'
 import LandingPage from '../public/landing-page/landing-page'
 import Dashboard from '../dashboard/dashboard'
 
@@ -73,10 +72,19 @@ export default new Router({
       name: 'signIn',
       component: SignInPage,
       beforeEnter: (to, from, next) => {
-        console.log(store.getters.userState)
-        if (store.getters.userState) {
-          next('/dashboard')
-        } else { next() }
+        let token = localStorage.getItem('access_token') || null
+        let exp = localStorage.getItem('expiry_date')
+        console.log(token, exp)
+        if (token === null) {
+          next()
+        } else {
+          if (Date.now() > exp) {
+            localStorage.removeItem('access_token')
+            next()
+          } else {
+            next('/dashboard')
+          }
+        }
       }
     },
     {
@@ -94,9 +102,18 @@ export default new Router({
       name: 'dashboard',
       component: Dashboard,
       beforeEnter: (to, from, next) => {
-        if (store.getters.userState) {
-          next()
-        } else { next('/sign-in') }
+        let token = localStorage.getItem('access_token') || null
+        let exp = localStorage.getItem('expiry_date')
+        if (token === null) {
+          next(false)
+        } else {
+          if (Date.now() > exp) {
+            localStorage.removeItem('access_token')
+            next(false)
+          } else {
+            next()
+          }
+        }
       },
       children: [
         {

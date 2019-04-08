@@ -8,7 +8,6 @@ Vue.config.productionTip = false
 
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT
-axios.defaults.headers.post['Content-Type'] = 'application/json'
 const accessToken = localStorage.getItem('access_token')
 if (accessToken) {
   axios.defaults.headers.common['Authorization'] = accessToken
@@ -26,17 +25,17 @@ Vue.directive('currency', {
 })
 
 // Global filters
-Vue.filter('numeric', {
-  if (value) {
-    return (value || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-  }
-})
+// Vue.filter('numeric', {
+//   if (value) {
+//     return (value || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+//   }
+// })
 
-Vue.filter('date', {
-  if (value) {
-    return (String(value)).format('MM/DD/YYYY')
-  }
-})
+// Vue.filter('date', {
+//   if (value) {
+//     return (String(value)).format('MM/DD/YYYY')
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({

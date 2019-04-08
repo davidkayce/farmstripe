@@ -2,6 +2,8 @@
   <main>
     <div class="main__section">
       <h1>Transaction history</h1>
+      <payout-modal v-if="payoutModalVisible" @close="closePayoutModal"></payout-modal>
+      <fund-modal v-if="fundModalVisible" @close="closeFundModal"></fund-modal>
       <div> 
         <div class="transaction__info">
           <div class="transaction__left">
@@ -76,9 +78,6 @@
         </div>
       </div>
     </div>
-
-    <payout-modal v-if="payoutModalVisible" @close="closePayoutModal"></payout-modal>
-    <fund-modal v-if="fundModalVisible" @close="closeFundModal"></fund-modal>
   </main>
   
 </template>

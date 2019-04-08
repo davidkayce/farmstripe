@@ -32,7 +32,7 @@
             :disabled="!farm.available">
               <paystack
                 v-if="signedIn && farm.available"
-                :amount="amount"
+                :amount="investAmount"
                 :email="email"
                 :paystackkey="paystackkey"
                 :reference="reference"
@@ -64,9 +64,8 @@
       return {
         investUnits: 1,
         signedIn: this.$store.getters.userState,
-        paystackkey: 'pk_live_49d15ed209788db731d3170d87a47102a0330848',
+        paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
         email: 'david@farmstripe.com',
-        amount: this.investAmount,
         reference: 'hjkfbhgjnbgskngl'
       }
     },

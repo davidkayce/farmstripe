@@ -105,7 +105,8 @@ main {
   display: none;
 
   @media (min-width: $breakpoint-tablet) {
-    display: block
+    display: flex;
+    flex-direction: column;
   }
 
   h4 {
