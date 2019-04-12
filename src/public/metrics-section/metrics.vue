@@ -9,18 +9,18 @@
 
       <div class="section__content">
         <article>
-          <img src="~@/assets/icons/icon-farmland.png" alt="500 acres">
-          <h3>Over 5000 Acres Farmed</h3>
+          <img src="~@/assets/icons/icon-farming.png" alt="500 acres">
+          <h3>Over 2000 Acres Farmed</h3>
         </article>
 
         <article>
-          <img src="~@/assets/icons/icon-funding.png" alt=" 9000 sponsorships">
-          <h3>9000 farm sponsorships</h3>
+          <img src="~@/assets/icons/icon-food.png" alt=" 9000 sponsorships">
+          <h3>1000 farm sponsorships</h3>
         </article>
 
         <article>
-          <img src="~@/assets/icons/icon-farmer.png" alt="4000 farmers">
-          <h3>4000+ farmers empowered</h3>
+          <img src="~@/assets/icons/icon-communities.png" alt="4000 farmers">
+          <h3>2000+ farmers empowered</h3>
         </article>
       </div>
     </section>

@@ -20,7 +20,7 @@
           </section>
         </article>
         <figure>
-          <img src="~@/assets/images/farmstripe.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/farmstripe.png" alt="Our Vision">
         </figure>
       </section>
 
@@ -49,7 +49,7 @@
           </section>
         </article>
         <figure>
-          <img src="~@/assets/images/our-focus.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/our-focus.png" alt="Our focus">
         </figure>
       </section>
 
@@ -58,15 +58,23 @@
           <section class="article_header">
             <h2>We are Safe and Insured</h2>
             <p>
-              With Farmstripe your investment is in safe hands. Our platform was built with the security of your investment as priority and thats is why our farms are comprehensively insured by Leadway Assurance. 
+              With Farmstripe your investment is in safe hands. Our platform was built with the security of your investment as priority and thats is why our farms are comprehensively insured by Leadway Assurance to mitigate against crop loss from flood, fire, windstorm ,aircraft , disease and outbreak of pests. 
+            </p>
+            <h4><strong>TRACK YOUR SPONSORSHIP</strong></h4>
+            <p>
+              The option of tracking the progress of the farm is available on the dashboard to enable the sponsor know at what stage the farm is operating.
             </p>
           </section>
         </article>
 
         <figure>
-          <img src="~@/assets/images/money-secured.png" alt="Farmstripe logo">
+          <img src="~@/assets/images/money-secured.png" alt="Your money is secured">
         </figure>
       </section>
+    </div>
+
+    <div class="images">
+      <img src="~@/assets/images/cocoa.jpg" alt="">
     </div>
   </main>
 </template>

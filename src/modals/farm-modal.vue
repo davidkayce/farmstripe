@@ -63,7 +63,6 @@
     data () {
       return {
         investUnits: 1,
-        signedIn: this.$store.getters.userState,
         paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
         email: 'david@farmstripe.com',
         reference: 'hjkfbhgjnbgskngl'
@@ -73,6 +72,20 @@
       investAmount () {
         console.log(this.investUnits)
         return this.investUnits * this.farm.cost * 100
+      },
+      signedIn () {
+        let token = localStorage.getItem('access_token') || null
+        let exp = localStorage.getItem('expiry_date')
+        if (token === null) {
+          return false
+        } else {
+          if (Date.now() > exp) {
+            localStorage.removeItem('access_token')
+            return false
+          } else {
+            return true
+          }
+        }
       }
     },
     methods: {

@@ -1,6 +1,10 @@
 <template>
   <main>
     <app-nav></app-nav>
+    <div class="images">
+      <img src="~@/assets/images/green-bush.png" alt="500 acres">
+    </div>
+
     <div class="content">
       <div class="contact__detail">
         <div class="contact__address">

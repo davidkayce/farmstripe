@@ -56,7 +56,7 @@ export default new Router({
       return savedPosition
     }
     if (to.hash) {
-      return {selector: to.hash}
+      return { selector: to.hash }
     }
     return { x: 0, y: 0 }
   },
@@ -74,7 +74,6 @@ export default new Router({
       beforeEnter: (to, from, next) => {
         let token = localStorage.getItem('access_token') || null
         let exp = localStorage.getItem('expiry_date')
-        console.log(token, exp)
         if (token === null) {
           next()
         } else {

@@ -2,11 +2,12 @@ main{
   padding: 8rem 2rem 0;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 
   @media (min-width: $breakpoint-tablet) {
-    padding: 30rem 2rem 0;
+    padding: 20rem 2rem 0;
     background: url('~@/assets/images/background-leaf.jpg');
-    background-position: -5rem -5rem;
+    background-position: 0 -13rem;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -52,19 +53,20 @@ main{
     }
   }
 
-  .content{
+  .content {
     width: 95%;
-    margin: 2rem auto;
+    margin: 3rem auto;
+    z-index: 1;
 
     @media (min-width: $breakpoint-tablet) {
-      max-height: 650px;
+      max-height: 550px;
       overflow-y: auto;
       overflow: -moz-scrollbars-none;
       overflow-style: marquee,panner;
       -ms-overflow-style: none;
       width: 100%;
       margin: 0;
-      padding: 2rem 8%;
+      padding: 3rem 8%;
 
       &::-webkit-scrollbar { 
         width: 0 !important 
@@ -125,6 +127,36 @@ main{
           font-weight: 100;
           margin: 1rem 0 2rem;
         }
+      }
+    }
+  }
+
+  .images {
+    display: none;
+
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+      position: absolute;
+      top: 220%;
+      left: -8%;
+      img {
+        width: 40rem;
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      top: 180%;
+      left: -4%;
+      img {
+        width: 50rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      top: 200%;
+      img {
+        width: 65rem;
+        z-index: -5;
       }
     }
   }

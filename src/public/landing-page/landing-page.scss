@@ -89,23 +89,3 @@ header {
     }
   }
 }
-
-
-  
-img {
-  &:first-of-type {
-    top: 100rem;
-  }
-
-  &:nth-of-type(2) {
-    top: 90%;
-    width: 50rem
-  }
-
-  &:nth-of-type(3) {
-    top: 500rem;
-    width: 60rem;
-  }
-}
-
-
