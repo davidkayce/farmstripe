@@ -33,41 +33,13 @@
     },
     data () {
       return {
-        index: 0,
         isModalVisible: false,
-        currentFarm: {},
-        farms: [
-          {
-            name: 'Maize',
-            id: 'FSH-567',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: true,
-            rate: 30,
-            time: '6 months',
-            cost: 50000,
-            units: 8
-          },
-          {
-            name: 'Maize',
-            id: 'FHY-890',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: false,
-            rate: 20,
-            time: '6 months',
-            cost: 50000,
-            units: 25
-          },
-          {
-            name: 'Maize',
-            id: 'SDT-678',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi dicta praesentium sint beatae officiis sed laborum fugiat, ex ipsum.',
-            available: false,
-            rate: 35,
-            time: '4 months',
-            cost: 48000,
-            units: 28
-          }
-        ]
+        currentFarm: {}
+      }
+    },
+    computed: {
+      farms () {
+        return this.$store.getters.allFarms
       }
     },
     methods: {
