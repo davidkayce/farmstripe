@@ -42,6 +42,7 @@
     <div class="large_menu" v-if="largeNav">
       <p @click="logOut"> Sign Out </p>
     </div>
+    <announcement></announcement>
 
     <div class="content">
       <router-view></router-view>
@@ -50,9 +51,13 @@
 </template>
 
 <script>
+  import Announcement from '../shared/components/announcement'
   export default {
     name: 'dashboard',
-    data: function () {
+    components: {
+      'announcement': Announcement
+    },
+    data () {
       return {
         smallNav: false,
         largeNav: false

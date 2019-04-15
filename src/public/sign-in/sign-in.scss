@@ -12,9 +12,21 @@ main {
     width: 12rem;
     margin: 3rem;
 
+    &:first-of-type {
+      display: none;
+    }
+
     @media (min-width: $breakpoint-tablet) {
       width: 15rem;
       margin: 3rem 5rem;
+
+      &:first-of-type {
+        display: block;
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+      }
     }
   }
 
@@ -45,7 +57,7 @@ main {
 .sign-in_container {
   padding: 2rem;
   width: 85%;
-  margin: 5rem auto 2rem;
+  margin: 1rem auto 2rem;
   background-color: white;
   border: 1px solid $fstrgreen;
   border-radius: 1rem;

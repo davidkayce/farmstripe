@@ -5,7 +5,7 @@ export default {
       {
         name: 'Maize',
         id: 'MZ01-KDN',
-        description: 'This is a wonderful maize farm located in the city of Kaduna in Nortehrn Nigeria. Maize has proven to be a major cash crop in Nigeria and occupies a major position among the food consumed in the country',
+        description: 'This is a wonderful maize farm located in the city of Kaduna in Northern Nigeria. Maize has proven to be a major cash crop in Nigeria and occupies a major position among the food consumed in the country',
         units: 0,
         time: '6months',
         cost: 50000,
@@ -15,7 +15,7 @@ export default {
       {
         name: 'Maize',
         id: 'MZ02-KDN',
-        description: 'This is a wonderful maize farm located in the city of Kaduna in Nortehrn Nigeria. Maize has proven to be a major cash crop in Nigeria and occupies a major position among the food consumed in the country',
+        description: 'This is a wonderful maize farm located in the city of Kaduna in Northern Nigeria. Maize has proven to be a major cash crop in Nigeria and occupies a major position among the food consumed in the country',
         units: 0,
         time: '6months',
         cost: 50000,

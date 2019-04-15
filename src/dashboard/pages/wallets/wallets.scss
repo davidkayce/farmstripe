@@ -18,6 +18,7 @@ main {
 
     h1 {
       margin-top: 2rem;
+      color: $grey-medium;
 
       @media (min-width: $breakpoint-tablet) {
         margin-top: 0;

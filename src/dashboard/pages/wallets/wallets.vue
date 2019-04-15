@@ -60,7 +60,7 @@
         <div class="payment__info">
           <div class="payment__blocks">
             <p class="payment__options">WALLET BALANCE</p>
-            <p class="payment__value">&#8358; 0.00</p>
+            <p class="payment__value">&#8358; {{wallet.balance.toFixed(2)}}</p>
           </div>
           <hr>
           <p class="payment__cta" @click="fundModal()">Fund Wallet</p>
@@ -93,9 +93,13 @@
     },
     data: function () {
       return {
-        wallets: this.$store.getters.getWallet,
         fundModalVisible: false,
         payoutModalVisible: false
+      }
+    },
+    computed: {
+      wallet () {
+        return this.$store.getters.getWallet
       }
     },
     methods: {
@@ -113,6 +117,7 @@
       }
     },
     created () {
+      this.$store.dispatch('getWalletInfo')
     }
   }
 </script>

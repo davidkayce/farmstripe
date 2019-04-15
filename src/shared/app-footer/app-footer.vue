@@ -19,7 +19,8 @@
 
       <ul>
         <li><p class="c__list_header color--fff">Company</p></li>
-        <router-link to="/about-us"><li>About</li></router-link>
+        <router-link to="{path: '/' hash: '#how'}"><li>Available Farms</li></router-link>
+        <router-link to="{path: '/' hash: '#how'}"><li>How it works</li></router-link>
         <router-link to="/contact-us"><li>Contact</li></router-link>
       </ul>
 

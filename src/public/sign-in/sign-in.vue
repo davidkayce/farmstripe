@@ -3,6 +3,7 @@
     <div class="logo">
       <router-link to="/">
         <img src="~@/assets/icons/icon-logo-all-white.png" alt="Farmstripe logo" style="opacity: 0.8">
+        <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo" style="opacity: 0.8">
       </router-link>
 
       <p class="options" v-if="!signIn">
@@ -17,7 +18,7 @@
     <div class="background">
       <div class="overlay"></div>
     </div>
-
+    
     <div class="sign-in_container">
         <div class="icon">
           <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">

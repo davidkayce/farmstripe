@@ -1,22 +1,22 @@
 <template>
   <main>
     <div class="main__section">
-      <h1>Welcome back Oluchi</h1>      
+      <h1>Hello Oluchi !</h1>      
       <div> 
         <div class="portfolio__info">
           <div class="portfolio__blocks">
             <p class="portfolio__options">RETURNS ON INVESTMENTS </p>
-            <p class="portfolio__value">&#8358; 00.00</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_expected_returns.toFixed(2)}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options">INVESTMENT</p>
-            <p class="portfolio__value">&#8358; 00.00</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_investment.toFixed(2)}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options"> WALLET BALANCE </p>
-            <p class="portfolio__value">&#8358; 00.00</p>
+            <p class="portfolio__value">&#8358; {{wallet.balance.toFixed(2)}}</p>
           </div>
         </div>
       </div>
@@ -77,9 +77,12 @@
     },
     data: function () {
       return {
-        showProgress: false,
-        infoModalVisible: false,
-        investments: this.$store.getters.allInvestments
+        showProgress: false
+      }
+    },
+    computed: {
+      wallet () {
+        return this.$store.getters.getWallet
       }
     },
     methods: {
@@ -89,7 +92,6 @@
     },
     created () {
       this.$store.dispatch('getWalletInfo')
-      this.$store.dispatch('getInvestments')
     }
   }
 </script>

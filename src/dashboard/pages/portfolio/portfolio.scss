@@ -16,6 +16,10 @@ main {
   }
 
   .main__section {
+    h1 {
+      color: $grey-medium;
+    }
+
     @media (min-width: $breakpoint-tablet) {
       width: 50%;
       margin-right: 7rem;

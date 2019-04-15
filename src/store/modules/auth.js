@@ -33,7 +33,6 @@ export default {
     async signIn ({ commit }, data) {
       try {
         const response = await axios.post('/login', data)
-        console.log(response)
         const token = response.data.access_token
         const expiryDate = response.data.exp
         localStorage.setItem('access_token', token)
@@ -47,7 +46,6 @@ export default {
     },
 
     async logOut ({ commit }) {
-      console.log('Logging you out')
       commit('logout')
       localStorage.removeItem('access_token')
       delete axios.defaults.headers.common['Authorization']
@@ -61,12 +59,11 @@ export default {
 
     login (state, token) {
       state.accessToken = token
-      state.signedIn = true
     },
 
     logout (state) {
       state.token = ''
-      state.signedIn = false
+      state.userData = {}
     }
   }
 }
