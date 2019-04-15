@@ -63,6 +63,9 @@
         largeNav: false
       }
     },
+    computed: {
+
+    },
     methods: {
       switchSmallNav () {
         this.smallNav = !this.smallNav
@@ -73,6 +76,9 @@
       logOut () {
         this.$store.dispatch('logOut').then(() => this.$router.push('/'))
       }
+    },
+    created () {
+      this.$store.dispatch('getProfile')
     }
   }
 </script>

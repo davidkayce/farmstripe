@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1>Coming Soon!</h1>
-    <p>From the next farming round, all users will have be able to get a percentage of the interest on their investments paid to them each month of the farming period. No more waiting to get your returns!</p>
+    <h3><strong> Coming Soon! </strong></h3>
+    <p>From the next farming round, all users will have be able to get a percentage of the interest on their investments paid to them each month of the farming period.</p>
   </div>
 </template>
 
@@ -15,19 +15,23 @@ export default {
 @import '~styles';
 .container {
   position: relative;
-  padding: 2.5rem 3rem;
-  width: 85%;
+  padding: 2rem;
+  width: 89%;
   margin: 1.5rem auto;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   color: $white;
   z-index: -999;
   background-image: linear-gradient(98deg, $dgreen, $green-dash, $fstrgreen)
 }
 
+h3 {
+  display: inline;
+}
+
 p {
+  display: inline;
   color: $white;
-  opacity: 0.8;
-  margin-top: 1.5rem;
+  font-size: 1.3rem;
 }
 
 img {
