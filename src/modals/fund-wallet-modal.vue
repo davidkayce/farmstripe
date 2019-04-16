@@ -14,15 +14,15 @@
           </header>
 
           <section class="modal-content --small">
-            <span>You can make a minimum payment of <strong>&#8358;100</strong> and a maximum payment of <strong>&#8358;500,000</strong> to fund your wallet.</span>
+            <span>You can make a minimum payment of <strong>&#8358;1000</strong> and a maximum payment of <strong>&#8358;800,000</strong> to fund your wallet.</span>
             <input type="number" v-model="fundAmount"> 
           </section>
           <section class="footer">
             <button 
             class="btn-modal" 
-            :disabled="withdrawalAmount < 100 && withdrawalAmount > 500000">
+            :disabled="fundAmount < 1000 || fundAmount > 800000">
               <paystack
-                v-if="signedIn && farm.available"
+                v-if="fundAmount > 1000 || fundAmount < 800000"
                 :amount="amount"
                 :email="email"
                 :paystackkey="paystackkey"
@@ -32,7 +32,7 @@
                 :embed="false"
                 class="paystack"
               >Fund this wallet</paystack>
-              k.jl
+              <span v-if=" fundAmount < 1000 || fundAmount > 800000 " >You cannot fund this wallet</span> 
             </button>
           </section>
         </div>
@@ -50,11 +50,15 @@
     },
     data () {
       return {
-        fundAmount: 100,
-        paystackkey: 'pk_live_49d15ed209788db731d3170d87a47102a0330848',
+        fundAmount: 1000,
+        paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
         email: 'david@farmstripe.com',
-        amount: 70000,
         reference: 'hjkfbhgjsnvmjkkngl'
+      }
+    },
+    computed: {
+      amount () {
+        return this.fundAmount * 100
       }
     },
     methods: {
@@ -92,5 +96,18 @@
   span {
     color: $grey-medium;
     font-size: 1.3rem;
+  }
+
+  .paystack {
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none
+    }
   }
 </style>

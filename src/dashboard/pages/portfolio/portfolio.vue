@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="main__section">
-      <h1>Hello Oluchi !</h1>      
+      <h1>Hello {{user[0]}} !</h1>      
       <div> 
         <div class="portfolio__info">
           <div class="portfolio__blocks">
@@ -83,6 +83,9 @@
     computed: {
       wallet () {
         return this.$store.getters.getWallet
+      },
+      user () {
+        return this.$store.getters.getUser.name.split(' ')
       }
     },
     methods: {

@@ -17,11 +17,11 @@
           <li><router-link to="/dashboard" active-class="active" exact class="large_devices"> Portfolio </router-link></li>
           <li><router-link to="/dashboard/wallets" active-class="active" class="large_devices"> Wallet </router-link></li>
           <li><router-link to="/dashboard/profile" active-class="active" class="large_devices"> Profile </router-link></li>
-          <li class="large_devices" @click="switchLargeNav" >Oluchi Hassan</li>
+          <li class="large_devices" @click="switchLargeNav">{{fullName}}</li>
           <li 
           class="small_devices" 
           @click="switchSmallNav" 
-          :class="smallNav? 'nav_on':''">O.H</li>
+          :class="smallNav? 'nav_on':''">{{fullName | initials}}</li>
         </ul>
       </div>
     </nav>
@@ -31,7 +31,7 @@
     v-if="smallNav"
     :style="smallNav? { boxShadow: '5px 5px 5px rgba(52, 89, 72, 0.3)' } : { boxShadow: '3px 3px 15px 0 rgba(52, 89, 72, 0.3)'}">
       <ul>
-        <li>Oluchi Hassan</li>
+        <li>{{fullName}}</li>
         <li><router-link to="/dashboard" active-class="small_active" exact>Portfolio </router-link></li>
         <li><router-link to="/dashboard/wallets" active-class="small_active"> Wallet </router-link></li>
         <li><router-link to="/dashboard/profile" active-class="small_active">Profile </router-link></li>
@@ -64,7 +64,19 @@
       }
     },
     computed: {
-
+      fullName () {
+        return this.$store.getters.getUser.name
+      }
+    },
+    filters: {
+      initials (fullName) {
+        let n = fullName.split(' ')
+        let t = ''
+        let r = 0
+        for (r in n) t += n[r][0] + '. '
+        r++
+        return t.toUpperCase()
+      }
     },
     methods: {
       switchSmallNav () {

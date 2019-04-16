@@ -24,19 +24,6 @@ Vue.directive('currency', {
   }
 })
 
-// Global filters
-// Vue.filter('numeric', {
-//   if (value) {
-//     return (value || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-//   }
-// })
-
-// Vue.filter('date', {
-//   if (value) {
-//     return (String(value)).format('MM/DD/YYYY')
-//   }
-// })
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

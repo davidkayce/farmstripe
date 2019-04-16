@@ -16,15 +16,15 @@
           <section class="modal-content --small">
             <h3>How much would you like to withdraw?</h3>
             <p>
-              Please note that withdrawals from your account would require a fee of 2% of the transaction amount. Thank you for investing with farmstripe
+              Please note that you can make a minimum withdrawal of <strong>&#8358;1000</strong>. Withdrawals from your account would require a fee of 2% of the transaction amount.
             </p>
-            <input type="number" v-model="withdrawalAmount" placeholder="Amount to withdraw">
-            <span>You can make a minimum payment of <strong>&#8358;100</strong></span> 
+            <p>Thank you for investing with farmstripe.</p>
+            <input type="number" v-model="withdrawalAmount" placeholder="Amount to withdraw"> 
           </section>
           <section class="footer">
             <button 
             class="btn-modal" 
-            :disabled="withdrawalAmount < 100">
+            :disabled="withdrawalAmount < 1000">
               Request Payout
             </button>
           </section>
@@ -38,7 +38,7 @@
     name: 'payout-modal',
     data () {
       return {
-        withdrawalAmount: 100
+        withdrawalAmount: 1000
       }
     },
     methods: {

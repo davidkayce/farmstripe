@@ -1,8 +1,6 @@
 <template>
   <main>
-   <div id="wrap">
-    <input type="checkbox">
-  
+   <div id="wrap">  
     <div class="frame">
       <input checked="checked" id="rad1" name="rad" type="radio">
       <input id="rad2" name="rad" type="radio">
@@ -14,13 +12,15 @@
 
       <div class="inner">
         <div class="content">
-          <h1 data-splitting="chars"></h1>
-          <p>Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Integer tincidunt. Praesent turpis. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit.</p>
-        </div>
+          <div class="form">
+            <p>Modify your personal details below</p>
 
-        <div class="content">
-          <h1 data-splitting="chars"></h1>
-          <p>Morbi ac felis. Sed aliquam ultrices mauris. Quisque id odio. Cras sagittis. Fusce vulputate eleifend sapien.</p>
+            <input type="text" name="name" placeholder="Your name">
+            <input type="text" name="name" placeholder="Email">
+            <input type="text" name="name" placeholder="Phone">
+            <button class="btn"> Update details</button>
+            <button class="btn btn--link"> Change Password</button>
+          </div>
         </div>
       </div>
     </div>

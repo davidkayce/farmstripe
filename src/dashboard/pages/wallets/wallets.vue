@@ -7,7 +7,7 @@
       <div> 
         <div class="transaction__info">
           <div class="transaction__left">
-            <img src="~@/assets/icons/icon-logo.png" alt="transaction type">
+            <img src="~@/assets/icons/icon-transfers.png" alt="transaction type">
           </div>
           
           <div class="transaction__right">
@@ -32,7 +32,7 @@
       <div> 
         <div class="transaction__info">
           <div class="transaction__left">
-            <img src="~@/assets/icons/icon-logo.png" alt="transaction type">
+            <img src="~@/assets/icons/icon-transfers.png" alt="transaction type">
           </div>
           
           <div class="transaction__right">

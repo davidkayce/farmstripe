@@ -5,6 +5,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: -5;
 
   @media (min-width: $breakpoint-tablet) {
     width: 90%;
@@ -16,9 +17,14 @@ main {
     top: 0;
     border-radius: 1rem;
     width: 99%;
-    height: 51rem;
+    height: 45rem;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 85%;
+      height: 51rem;
+    }
 
     .frame {
       position: absolute;
@@ -27,12 +33,11 @@ main {
       top: 0;
       left: 0;
       transition: transform 400ms cubic-bezier(1, 0.385, 0.42, 1);
-      background: $white;
     }
 
-    input {
+    input[type='radio']{
       opacity: 0;
-      z-index: 999;
+      z-index: 2;
 
       &:hover {
         cursor: pointer;
@@ -64,29 +69,6 @@ main {
             & ~ .indicator {
               transform: translateY(#{($i - 1) * 100%});
             }
-
-            & ~ .inner {
-              .content {
-                &:nth-of-type(#{$i}) {
-                  p {
-                    transition: transform 500ms cubic-bezier(1, 0.885, 0.72, 1);
-                    transition-delay: 1.5s;
-                    transform: rotate(0deg) translateY(0);
-                  }
-                  h1 {
-                    opacity: 1;
-                    &:after,
-                    &:before {
-                      transition-delay: 0.8s;
-                      transform: scaleX(1);
-                    }
-                    &:before {
-                      transition-delay: 1.1s;
-                    }
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -108,7 +90,7 @@ main {
     }
 
     .nav {
-      z-index: 2;
+      z-index: 1;
 
       &:nth-of-type(2) {
         &:before {
@@ -128,9 +110,8 @@ main {
     }
 
     .indicator {
-      background: $green-dash;
+      background: $dgreen;
       transition: all 200ms cubic-bezier(1, 0.885, 0.32, 1);
-      z-index: 0;
       box-shadow: none;
     }
 
@@ -149,52 +130,49 @@ main {
         left: 0;
         top: 0;
         overflow: hidden;
-        z-index: 2;
+        background-color: #F7F7FF;
       }
 
       h1 {
         position: relative;
         color: #fff;
-        z-index: 1;
         width: 100%;
         padding: 2.5rem;
         font-weight: 600;
-
-        &:after {
-          content: '';
-          position: absolute;
-          box-shadow: inset 0 -2px $green-dash, inset 0 2px $green-dash;
-          width: 140%;
-          height: 100%;
-          left: -20%;
-          top: 0%;
-          z-index: -1;
-          transition: all 500ms cubic-bezier(1, 0.885, 0.32, 1);
-          transform: scaleX(0);
-          transform-origin: right;
-        }
-
-        &:before {
-          content: '';
-          position: absolute;
-          width: 140%;
-          height: 100%;
-          left: -20%;
-          top: 0%;
-          background: $green-dash;
-          z-index: -1;
-          transition: all 300ms cubic-bezier(1, 0.885, 0.32, 1);
-          transform: scaleX(0);
-          transform-origin: left;
-        }
       }
-      .content p {
-        transform: rotate(20deg) translateY(300px);
-        transition: transform 200ms cubic-bezier(1, 0.885, 0.72, 1);
-        transform-origin: left;
-        max-width: 90%;
-        margin: 5%;
-        line-height: 1.5;
+
+      .content {
+        .form {
+          max-width: 90%;
+          margin: 5%;
+          line-height: 1.5;
+          padding: 2rem;
+           
+          p {
+            margin-bottom: 2rem;
+          }
+
+          input {
+            opacity: 1;
+            margin-bottom: 2rem;
+            z-index: 5;
+
+            @media (min-width: $breakpoint-tablet) {
+              max-width: 100%;
+
+              &:nth-of-type(2),
+              &:nth-of-type(3) {
+                width: 49.6%;
+              }
+            }
+          }
+
+          button {
+            width: 100%;
+            margin: 2rem 0;
+            font-weight: 600;
+          }
+        }
       }
     }
   }

@@ -42,7 +42,7 @@ header {
     }
 
     @media (min-width: $breakpoint-desktop) {
-      padding: 10.5rem 2.5rem;
+      padding: 14rem 2.5rem;
     }
   }
 
@@ -54,17 +54,9 @@ header {
 
       p {
         color: $white;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
       }
 
-      input {
-        display: block;
-        margin-bottom: 2rem;
-
-        @media (min-width: $breakpoint-desktop) {
-          width: 40%;
-        }
-      }
 
       button {
         width: 100%;

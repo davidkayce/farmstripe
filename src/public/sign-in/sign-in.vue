@@ -35,7 +35,7 @@
               <input type="password" name="password" id="password" v-model="signInData.password">
               <label for="password">Password</label>
             </div>
-            <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn">Sign In </button></router-link>
+            <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
           </form>
         </div>
 
@@ -64,7 +64,7 @@
             <p>
               By creating an account, you are agreeing to Farmstripe's <router-link to="/privacy-policy"> terms and conditions</router-link> regarding use of this service. 
             </p>
-            <router-link to="/dashboard"><button type="submit" class="btn" @click="signUp"> Sign Up for Priority Access</button></router-link>
+            <router-link to="/dashboard"><button type="submit" class="btn" @click="signUp" :disabled="isDisabled"> Sign Up for Priority Access</button></router-link>
           </form>
         </div>
     </div>
@@ -77,12 +77,12 @@
     data: function () {
       return {
         signIn: false,
-        disabled: true,
         confirmPassword: '',
         signUpData: {
           name: '',
           email: '',
-          password: ''
+          password: '',
+          password_digest: ''
         },
         signInData: {
           email: '',
@@ -90,7 +90,18 @@
         }
       }
     },
-    watch: {
+    computed: {
+      isDisabled () {
+        if (this.signUpData.password !== this.confirmPassword) {
+          return true
+        } else if (!this.signUpData.password || !this.confirmPassword) {
+          return true
+        } else if (!this.signUpData.name || !this.signUpData.email) {
+          return true
+        } else {
+          return false
+        }
+      }
     },
     methods: {
       switchSign () {

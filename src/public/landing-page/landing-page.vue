@@ -9,7 +9,6 @@
           <h4>We keep the food chain going by empowering farmers</h4>
           <div class="mailing-list"> 
             <p>Join over <strong>500</strong> partners already signed up for early access to the next round</p>
-            <input type="text" class="transparent" placeholder="Contact email address">
             <router-link to="/sign-in"><button class="btn">Empower a farmer now</button></router-link>
           </div>
         </div>

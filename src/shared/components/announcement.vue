@@ -26,6 +26,7 @@ export default {
 
 h3 {
   display: inline;
+  margin-right: 1.5rem;
 }
 
 p {
