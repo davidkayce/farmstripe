@@ -44,14 +44,16 @@
         <div>
           <button class="btn btn--link" @click="progress"> See Investment Progress </button>
         </div>
-        <section class="progress_bar" v-if="showProgress">
-          <ul>
-            <li class="passed">Setting up</li>
-            <li class="active_first">Planting</li>
-            <li>Harvest</li>
-            <li>Returns</li>
-          </ul>
-        </section>
+        <transition name="fade">
+          <section class="progress_bar" v-if="showProgress">
+            <ul>
+              <li class="passed">Setting up</li>
+              <li class="active_first">Planting</li>
+              <li>Harvest</li>
+              <li>Returns</li>
+            </ul>
+          </section>
+        </transition>
       </div>
     </div>
 
@@ -102,4 +104,17 @@
 <style lang="scss" scoped>
   @import '~styles';
   @import 'portfolio.scss';
+
+  .fade-enter {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  .fade-enter-active {
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .fade-leave-active {
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
 </style>

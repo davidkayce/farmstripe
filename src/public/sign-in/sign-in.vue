@@ -23,6 +23,7 @@
         <div class="icon">
           <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
         </div>
+        <Feedback>{{feedbackMessage}}</Feedback>
 
         <div class="input__field" v-if="signIn">
           <form>
@@ -72,12 +73,17 @@
 </template>
 
 <script>
+  import Feedback from '../../shared/components/feedback'
   export default {
     name: 'signIn',
+    components: {
+      Feedback
+    },
     data: function () {
       return {
         signIn: false,
         confirmPassword: '',
+        feedbackMessage: 'Hey there!',
         signUpData: {
           name: '',
           email: '',
@@ -119,6 +125,9 @@
           })
           .catch(err => console.log(err))
       }
+    },
+    created () {
+      console.log('Reached sign-in page')
     }
   }
 </script>

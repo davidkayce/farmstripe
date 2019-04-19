@@ -1,18 +1,18 @@
 <template>
   <main :class="type" v-if="visible">
-    
+    <slot></slot>
   </main>
 </template>
 
 <script>
   export default {
-  data () {
-    return {
-      type: '',
-      visible: false
+    data () {
+      return {
+        type: '',
+        visible: false
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>

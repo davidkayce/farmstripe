@@ -15,12 +15,12 @@
       </div>
     </header>
     <why-farmstripe></why-farmstripe>
-    <available-farms></available-farms>
-
+    <div id="farms">
+      <available-farms></available-farms>
+    </div>
     <div id="how">
       <how-it-works></how-it-works>
     </div>
-    
     <metrics></metrics>
     <mailing-list></mailing-list>
     <app-footer></app-footer>

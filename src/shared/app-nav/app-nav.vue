@@ -8,7 +8,8 @@
       </div>
 
       <ul>
-        <li><router-link to="{ name: 'home', hash: '#how' }">How it works</router-link></li>
+        <li><router-link :to="farmLink"> Available Farms </router-link></li>
+        <li><router-link :to="howLink">How it works</router-link></li>
         <li><router-link to="/contact-us">Contact us</router-link></li>
         <li><router-link to="/sign-in"><button class="btn">Get Started</button></router-link></li>
       </ul>
@@ -19,7 +20,19 @@
 
 <script>
   export default {
-    name: 'appNav'
+    name: 'appNav',
+    data () {
+      return {
+        howLink: {
+          name: 'home',
+          hash: '#how'
+        },
+        farmLink: {
+          name: 'home',
+          hash: '#farms'
+        }
+      }
+    }
   }
 </script>
 
