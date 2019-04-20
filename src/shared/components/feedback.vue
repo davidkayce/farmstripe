@@ -1,5 +1,5 @@
 <template>
-  <main :class="type" v-if="visible">
+  <main :class="{'danger': type === 'danger', 'success': type === 'success'}" v-if="visible">
     <slot></slot>
   </main>
 </template>
@@ -8,7 +8,7 @@
   export default {
     data () {
       return {
-        type: '',
+        type: 'success',
         visible: false
       }
     }
@@ -18,20 +18,29 @@
 <style lang="scss" scoped>
   @import '~styles';
   main {
-    padding: 2rem;
+    padding: 1.5rem;
     margin: 2rem 0;
+    font-size: 1.3rem;
+    height: fit-content;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 90%;
+      margin: 2rem auto;
+    }
   }
 
-  danger {
+  .danger {
     border: 1px solid $danger;
     border-radius: 0.5rem;
-    background-color: rgba(255, 86, 97, 0.5)
+    background-color: rgba(255, 86, 97, 0.15);
+    color: $danger;
   }
 
-  success {
-    border: 1px solid $success;
+  .success {
+    border: 1px solid $fstrgreen;
     border-radius: 0.5rem;
-    background-color: rgba(28, 206, 116, 0.5)
+    background-color: rgba(157, 203, 59, 0.15);
+    color: $fstrgreen
   }
 </style>
 

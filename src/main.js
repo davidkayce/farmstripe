@@ -27,17 +27,6 @@ axios.interceptors.response.use(function (response) {
   }
 })
 
-// Global directives
-// Vue.directive('currency', {
-//   bind (el, binding) {
-//     if (binding.value === 'naira') {
-//       el.innerHTML = '&#8358;'
-//     } else if (binding.value === 'dollars') {
-//       el.innerHTML = '&#36;'
-//     }
-//   }
-// })
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

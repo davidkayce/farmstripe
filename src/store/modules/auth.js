@@ -15,7 +15,6 @@ export default {
       try {
         const response = await axios.get('/profile.json')
         const user = response.data.user
-        console.log(user)
         commit('auth_success', user)
       } catch (error) {
         console.log(error)

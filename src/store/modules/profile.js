@@ -1,8 +1,12 @@
 import axios from 'axios'
 export default {
-  state: {},
+  state: {
+    mailingEmail: ''
+  },
 
-  getters: {},
+  getters: {
+    getMailingEmail: state => state.mailingEmail
+  },
 
   actions: {
     async updateProfile (data) {
@@ -25,6 +29,7 @@ export default {
   },
 
   mutations: {
-    setUserInfo: (state, userInfo) => (state.userInfo = userInfo)
+    setUserInfo: (state, userInfo) => (state.userInfo = userInfo),
+    updateEmail: (state, email) => (state.mailingEmail = email)
   }
 }

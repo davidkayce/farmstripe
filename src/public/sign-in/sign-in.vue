@@ -48,7 +48,7 @@
             </div>
               
             <div class="input__option">
-              <input type="email" name="email" id="email" v-model="signUpData.email">
+              <input type="email" name="email" id="email" v-model="signUpEmail">
               <label for="email">E-mail address</label>
             </div>
 
@@ -86,7 +86,6 @@
         feedbackMessage: 'Hey there!',
         signUpData: {
           name: '',
-          email: '',
           password: '',
           password_digest: ''
         },
@@ -107,6 +106,14 @@
         } else {
           return false
         }
+      },
+      signUpEmail: {
+        get () {
+          return this.$store.getters.getMailingEmail
+        },
+        set (value) {
+          this.$store.commit('updateEmail', value)
+        }
       }
     },
     methods: {
@@ -117,6 +124,7 @@
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => this.$router.push('/sign-in'), this.signIn = true)
           .catch(err => console.log(err))
+        this.$store.commit('updateEmail', '')
       },
       logIn () {
         this.$store.dispatch('signIn', this.signInData)
@@ -125,9 +133,6 @@
           })
           .catch(err => console.log(err))
       }
-    },
-    created () {
-      console.log('Reached sign-in page')
     }
   }
 </script>

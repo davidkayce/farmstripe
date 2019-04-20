@@ -8,7 +8,7 @@
         </div>
 
         <div class="get__email">
-          <input type="text" class="transparent" placeholder="Contact email address" v-model="email">
+          <input type="text" class="transparent" placeholder="Contact email address" v-model="setEmail">
           <router-link to="/sign-in"><button class="btn" @click="sendEmail">Get Started</button></router-link>
         </div>
       </div>
@@ -21,12 +21,21 @@
     name: 'mailing-list',
     data () {
       return {
-        email: ''
+        initialValue: ''
+      }
+    },
+    computed: {
+      setEmail: {
+        get () {
+          return this.$store.getters.getMailingEmail
+        },
+        set (value) {
+          this.$store.commit('updateEmail', value)
+        }
       }
     },
     methods: {
       sendEmail () {
-        console.log('email sent')
       }
     }
   }

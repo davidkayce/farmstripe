@@ -94,6 +94,7 @@
       },
       goSign () {
         this.$router.push('/sign-in')
+        console.log('Got here')
       },
       callback (response) {
         console.log(response)

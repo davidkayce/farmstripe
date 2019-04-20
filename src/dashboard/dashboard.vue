@@ -70,12 +70,14 @@
     },
     filters: {
       initials (fullName) {
-        let n = fullName.split(' ')
-        let t = ''
-        let r = 0
-        for (r in n) t += n[r][0] + '. '
-        r++
-        return t.toUpperCase()
+        if (fullName) {
+          let n = fullName.split(' ')
+          let t = ''
+          let r = 0
+          for (r in n) t += n[r][0] + '. '
+          r++
+          return t.toUpperCase()
+        }
       }
     },
     methods: {

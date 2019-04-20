@@ -12,7 +12,6 @@ export default {
     async createInvestment ({ commit }, id, units) {
       try {
         const response = await axios.post(`/investments/${id}`, units)
-        console.log(response.data)
         commit('updateInvestments', response.data)
       } catch (error) {
         console.log(error)
@@ -23,7 +22,6 @@ export default {
       try {
         const response = await axios.get('/wallet.json')
         const wallet = response.data
-        console.log(wallet)
         commit('setWallet', wallet)
       } catch (error) {
         console.log(error)
