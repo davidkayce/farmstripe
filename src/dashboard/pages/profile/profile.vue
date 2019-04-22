@@ -94,13 +94,8 @@
 </template>
 
 <script>
-  import DashboardFarms from '../../dashboard-farms'
-
   export default {
     name: 'profile',
-    components: {
-      'dash-farms': DashboardFarms
-    },
     data: function () {
       return {
         password: false,

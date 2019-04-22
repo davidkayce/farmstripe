@@ -148,7 +148,7 @@ main {
             input {
               margin-bottom: 2rem;
 
-              @media (min-width: $breakpoint-tablet) {
+              @media (min-width: $breakpoint-desktop) {
                 &:nth-of-type(2),
                 &:nth-of-type(3) {
                   width: 49.6%;

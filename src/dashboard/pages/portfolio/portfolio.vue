@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="main__section">
-      <h1>Hello {{user[0]}} !</h1>      
+      <h1>Hello {{user? user[0]: ''}} !</h1>      
       <div> 
         <div class="portfolio__info">
           <div class="portfolio__blocks">
@@ -87,7 +87,10 @@
         return this.$store.getters.getWallet
       },
       user () {
-        return this.$store.getters.getUser.name.split(' ')
+        let name = this.$store.getters.getUser.name
+        if (name) {
+          return name.split(' ')
+        }
       }
     },
     methods: {

@@ -1,31 +1,26 @@
 <template>
-  <main :class="{'danger': type === 'danger', 'success': type === 'success'}" v-if="visible">
-    <slot></slot>
+  <main :class="feedback.type">
+    {{feedback.message}}
   </main>
 </template>
 
 <script>
   export default {
-    data () {
-      return {
-        type: 'success',
-        visible: false
-      }
-    }
+    props: ['feedback']
   }
 </script>
 
 <style lang="scss" scoped>
   @import '~styles';
   main {
-    padding: 1.5rem;
+    padding: 1.2rem;
     margin: 2rem 0;
     font-size: 1.3rem;
     height: fit-content;
 
     @media (min-width: $breakpoint-tablet) {
       width: 90%;
-      margin: 2rem auto;
+      margin: -1rem auto 1.5rem;
     }
   }
 

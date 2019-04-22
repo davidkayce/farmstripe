@@ -26,18 +26,20 @@
       </div>
     </nav>
 
-    <div 
-    class="small_menu" 
-    v-if="smallNav"
-    :style="smallNav? { boxShadow: '5px 5px 5px rgba(52, 89, 72, 0.3)' } : { boxShadow: '3px 3px 15px 0 rgba(52, 89, 72, 0.3)'}">
-      <ul>
-        <li>{{fullName}}</li>
-        <li><router-link to="/dashboard" active-class="small_active" exact>Portfolio </router-link></li>
-        <li><router-link to="/dashboard/wallets" active-class="small_active"> Wallet </router-link></li>
-        <li><router-link to="/dashboard/profile" active-class="small_active">Profile </router-link></li>
-        <li @click="logOut">Sign Out</li>
-      </ul>
-    </div>
+    <transition name="dash">
+      <div 
+      class="small_menu" 
+      v-if="smallNav"
+      :style="smallNav? { boxShadow: '5px 5px 5px rgba(52, 89, 72, 0.3)' } : { boxShadow: '3px 3px 15px 0 rgba(52, 89, 72, 0.3)'}">
+        <ul>
+          <li>{{fullName}}</li>
+          <li><router-link to="/dashboard" active-class="small_active" exact>Portfolio </router-link></li>
+          <li><router-link to="/dashboard/wallets" active-class="small_active"> Wallet </router-link></li>
+          <li><router-link to="/dashboard/profile" active-class="small_active">Profile </router-link></li>
+          <li @click="logOut">Sign Out</li>
+        </ul>
+      </div>
+    </transition>
 
     <div class="large_menu" v-if="largeNav">
       <p @click="logOut"> Sign Out </p>
@@ -100,4 +102,17 @@
 <style lang="scss" scoped>
   @import '~styles';
   @import './dashboard.scss';
+
+  .dash-enter {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  .dash-enter-active {
+    transition: opacity 0.4s, transform 0.2s;
+  }
+  .dash-leave-active {
+    transition: opacity 0.1s, transform 0.2s;
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
 </style>

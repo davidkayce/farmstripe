@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LandingPage from '../public/landing-page/landing-page'
 import Dashboard from '../dashboard/dashboard'
+import Random from '../public/why-farmstripe/random'
 
 // Lazy loading
 const SignInPage = resolve => {
@@ -93,6 +94,11 @@ export default new Router({
       path: '/contact-us',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/random',
+      name: 'random',
+      component: Random
     },
     {
       path: '/dashboard',

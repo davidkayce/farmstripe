@@ -107,3 +107,8 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import 'random.scss'
+</style>
+

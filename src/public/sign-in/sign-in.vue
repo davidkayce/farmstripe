@@ -20,13 +20,13 @@
     </div>
     
     <div class="sign-in_container">
-        <div class="icon">
-          <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
-        </div>
-        <Feedback>{{feedbackMessage}}</Feedback>
+      <div class="icon">
+        <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
+      </div>
+      <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
 
-        <div class="input__field" v-if="signIn">
-          <form>
+      <div class="input__field" v-if="signIn">
+        <form>
             <div class="input__option">
               <input type="email" name="email" id="email" v-model="signInData.email">
               <label for="email">E-mail address</label>
@@ -37,8 +37,8 @@
               <label for="password">Password</label>
             </div>
             <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
-          </form>
-        </div>
+        </form>
+      </div>
 
         <div class="input__field" v-else>
           <form action="" autocomplete="random-text">
@@ -83,7 +83,6 @@
       return {
         signIn: false,
         confirmPassword: '',
-        feedbackMessage: 'Hey there!',
         signUpData: {
           name: '',
           password: '',
@@ -92,6 +91,11 @@
         signInData: {
           email: '',
           password: ''
+        },
+        feedback: {
+          visible: false,
+          type: 'danger',
+          message: 'Bad guy'
         }
       }
     },
@@ -112,7 +116,7 @@
           return this.$store.getters.getMailingEmail
         },
         set (value) {
-          this.$store.commit('updateEmail', value)
+          this.signUpData.email = value
         }
       }
     },
@@ -121,6 +125,7 @@
         this.signIn = !this.signIn
       },
       signUp () {
+        this.signUpData.password_digest = this.confirmPassword
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => this.$router.push('/sign-in'), this.signIn = true)
           .catch(err => console.log(err))
@@ -132,6 +137,20 @@
             this.$router.push('/dashboard/')
           })
           .catch(err => console.log(err))
+      }
+    },
+    watch: {
+      confirmPassword () {
+        console.log(this.signUpData)
+        if (this.signUpData.password !== this.confirmPassword) {
+          this.feedback.visible = true
+          this.feedback.type = 'danger'
+          this.feedback.message = 'Please ensure both password fields are the same'
+        } else if (!this.confirmPassword && !this.signUpData.password) {
+          this.feedback.visible = false
+        } else {
+          this.feedback.visible = false
+        }
       }
     }
   }
