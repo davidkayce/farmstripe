@@ -32,7 +32,9 @@ axios.interceptors.response.use(function (response) {
 /* eslint-disable no-new */
 new Vue({
   created () {
-    AOS.init()
+    AOS.init({
+      offset: 200
+    })
   },
   el: '#app',
   router,

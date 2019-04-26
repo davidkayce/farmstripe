@@ -7,8 +7,7 @@ main{
   @media (min-width: $breakpoint-tablet) {
     padding: 20rem 2rem 0;
     background: url('~@/assets/images/background-leaf.jpg');
-    background-position: 0 -13rem;
-    background-size: cover;
+    background-position: 0 -10rem;
     background-repeat: no-repeat;
   }
 
@@ -58,24 +57,13 @@ main{
     margin: 3rem auto;
     z-index: 1;
 
-    // @media (min-width: $breakpoint-tablet) {
-    //   max-height: 550px;
-    //   overflow-y: auto;
-    //   overflow: -moz-scrollbars-none;
-    //   overflow-style: marquee,panner;
-    //   -ms-overflow-style: none;
-    //   width: 100%;
-    //   margin: 0;
-    //   padding: 3rem 8%;
-
-    //   &::-webkit-scrollbar { 
-    //     width: 0 !important 
-    //   }
-    // }
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0 6rem;
+    }
     
-    // @media (min-width: $breakpoint-desktop) {
-    //   padding: 2rem 12%;
-    // }
+    @media (min-width: $breakpoint-desktop) {
+      padding: 0 10rem;
+    }
 
     section {
       display: flex;
@@ -88,24 +76,29 @@ main{
       @media (min-width: $breakpoint-tablet) {
         flex-direction: row;
         justify-content: space-between;
+        text-align: right;
+
+        &:nth-of-type(2) {
+          flex-direction: row-reverse;
+          text-align: left
+        }
 
         &:not(last-of-type) {
-          margin-bottom: 12rem;
+          margin-bottom: 6rem;
         }
       }
 
       figure {
         @media (min-width: $breakpoint-tablet) {
-          width: 60%;
+          width: 30%;
         }
 
         img{
-          width: 20rem;
-          margin-left: 15%;
+          width: 35rem;
+          margin-left: -3rem;
           
           @media (min-width: $breakpoint-tablet) {
             margin-left: 3rem;
-            width: 100%;
           }
         }
       }
@@ -113,8 +106,11 @@ main{
       article {
 
         @media (min-width: $breakpoint-tablet) {
-          margin-top: 3rem;
-          width: 40%;
+          background: linear-gradient(to left, $white 50%, $fstrgreen-light 200%);
+          padding: 4rem;
+          border-radius: .5rem;
+          border: 1px solid $fstrgreen;
+          width: 70%;
         }
 
         section {

@@ -1,10 +1,13 @@
 <template>
   <main>
-    <section class="metrics__component">
+    <section 
+    class="metrics__component" 
+    data-aos="fade-down" 
+    data-aos-delay="150">
       <div class="section__header">
         <h1>Metrics</h1>
         <div class="line"></div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae dolores quasi natus voluptates nesciunt ad sed corporis mollitia aliquid</p>
+        <p>We are proud to have accomplished the following milestones with the help of our private sponsors and we look forward to breaking more grounds when we launch openly</p>
       </div>
 
       <div class="section__content">

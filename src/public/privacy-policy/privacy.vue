@@ -219,7 +219,7 @@
         If you have any questions about these Terms &amp; Conditions, please contact us at: <a href="mailto:info@farmstripe.com">info@farmstripe.com</a> or 1B, Adedeji Adekola Street, Off Freedom Way, Lekki Phase 1, Lagos, Nigeria.
       </p>
       <p>&nbsp;</p>
-      <p><strong>This document was last updated on March 18, 2019</strong></p>                             
+      <p><strong>This document was last updated on April 20, 2019</strong></p>                             
     </div>
     <app-footer></app-footer>
   </main>

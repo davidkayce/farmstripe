@@ -5,7 +5,14 @@
     <p class="title__info">Select a farm you would like to sponsor from the available farms and the number of units you want, then proceed to pay the sponsorship fee on our secure platform, payment will be reflected in your account immediately.</p>
     <div class="card__container">
       <!-- note that the slice below is to determine how many elements we are showing  -->
-      <div class="farm__card" v-for="farm in farms.slice(0, 6)" @click="showModal(farm)" :key="farm.id">  
+      <div 
+      class="farm__card" 
+      v-for="farm in farms.slice(0, 6)" 
+      @click="showModal(farm)" 
+      :key="farm.id" 
+      data-aos="slide-left" 
+      data-aos-delay="100" 
+      data-aos-mirror="false">  
         <div class="farm__details">
           <div class="overlay">
             <div class="farm__title">

@@ -23,7 +23,6 @@
       </section>
 
       <section data-aos="fade-left">
-        <figure><img src="~@/assets/images/our-focus.png" alt="Our focus"></figure>
         <article>
           <section class="article_header">
             <h2>Our Focus</h2>
@@ -47,6 +46,7 @@
             </p>
           </section>
         </article>
+        <figure><img src="~@/assets/images/our-focus.png" alt="Our focus"></figure>
       </section>
 
       <section data-aos="fade-right">

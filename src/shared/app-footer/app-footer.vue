@@ -7,7 +7,7 @@
             <p>1B, Adedeji Adekola Street,<br> Off Freedom Way, Lekki Phase 1,<br> Lagos, Nigeria.</p>
         </div>
         <div class="contact__details _lg">
-            <p>Insured by Leadway Assurance Company Ltd.</p>
+          <p>Insured by Leadway Assurance Company Ltd.</p>
         </div>
       </div>
 
@@ -26,8 +26,8 @@
 
       <ul>
         <li><p class="c__list_header color--fff">Follow</p></li>
-        <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://twitter.com/FarmStripe" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a href="https://www.instagram.com/farmstripe/" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </div>
     </div>

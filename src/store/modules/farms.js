@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   state: {
     farms: [
@@ -41,19 +41,19 @@ export default {
   },
 
   actions: {
-    async getAllFarms ({ commit }) {
-      try {
-        const response = await axios.get('/farms.json')
-        const allFarms = response.data.farms
-        console.log(allFarms)
-        // commit('setFarms', allFarms)
-      } catch (error) {
-        console.log(error)
-      }
-    }
+    // async getAllFarms ({ commit }) {
+    //   try {
+    //     const response = await axios.get('/farms.json')
+    //     const allFarms = response.data.farms
+    //     console.log(allFarms)
+    //     // commit('setFarms', allFarms)
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // }
   },
 
   mutations: {
-    setFarms: (state, allFarms) => (state.farms = allFarms)
+    // setFarms: (state, allFarms) => (state.farms = allFarms)
   }
 }
