@@ -6,7 +6,7 @@
     </div>
 
     <div class="content">
-      <section>
+      <section data-aos="fade-right">
         <article>
           <section class="article_header">
             <h2>We believe food production is essential for sustainable development</h2>
@@ -19,12 +19,11 @@
             </p>
           </section>
         </article>
-        <figure>
-          <img src="~@/assets/images/farmstripe.png" alt="Our Vision">
-        </figure>
+        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision"></figure>
       </section>
 
-      <section>
+      <section data-aos="fade-left">
+        <figure><img src="~@/assets/images/our-focus.png" alt="Our focus"></figure>
         <article>
           <section class="article_header">
             <h2>Our Focus</h2>
@@ -48,12 +47,9 @@
             </p>
           </section>
         </article>
-        <figure>
-          <img src="~@/assets/images/our-focus.png" alt="Our focus">
-        </figure>
       </section>
 
-      <section>
+      <section data-aos="fade-right">
         <article>
           <section class="article_header">
             <h2>We are Safe and Insured</h2>
@@ -66,10 +62,7 @@
             </p>
           </section>
         </article>
-
-        <figure>
-          <img src="~@/assets/images/money-secured.png" alt="Your money is secured">
-        </figure>
+        <figure><img src="~@/assets/images/money-secured.png" alt="Your money is secured"></figure>
       </section>
     </div>
 

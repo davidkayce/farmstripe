@@ -28,20 +28,9 @@
           <section class="footer">
             <button 
             class="btn-modal" 
-            @click=" signedIn? '' : goSign()"
+            @click=" signedIn? invest() : goSign()"
             :disabled="!farm.available">
-              <paystack
-                v-if="signedIn && farm.available"
-                :amount="investAmount"
-                :email="email"
-                :paystackkey="paystackkey"
-                :reference="reference"
-                :callback="callback"
-                :close="close"
-                :embed="false"
-                class="paystack"
-              >Invest in this farm</paystack>
-              {{signedIn? (farm.available? '' : 'There is no available unit to invest') : 'Sign In to Invest'}}
+              {{signedIn? (farm.available? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
             </button>
           </section>
         </div>
@@ -62,17 +51,10 @@
     },
     data () {
       return {
-        investUnits: 1,
-        paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
-        email: 'david@farmstripe.com',
-        reference: 'hjkfbhgjnbgskngl'
+        investUnits: 1
       }
     },
     computed: {
-      investAmount () {
-        console.log(this.investUnits)
-        return this.investUnits * this.farm.cost * 100
-      },
       signedIn () {
         let token = localStorage.getItem('access_token') || null
         let exp = localStorage.getItem('expiry_date')
@@ -95,6 +77,9 @@
       goSign () {
         this.$router.push('/sign-in')
         console.log('Got here')
+      },
+      invest () {
+        console.log('Now you should go ahead and invest')
       },
       callback (response) {
         console.log(response)

@@ -14,7 +14,8 @@
           </header>
 
           <section class="modal-content --small">
-            <span>You can make a minimum payment of <strong>&#8358;1000</strong> and a maximum payment of <strong>&#8358;800,000</strong> to fund your wallet.</span>
+            <p>You can make a minimum payment of <strong>&#8358;1000</strong> and a maximum payment of <strong>&#8358;800,000</strong> to fund your wallet.</p>
+            <p>Thank you for investing with farmstripe </p>
             <input type="number" v-model="fundAmount"> 
           </section>
           <section class="footer">
@@ -22,7 +23,7 @@
             class="btn-modal" 
             :disabled="fundAmount < 1000 || fundAmount > 800000">
               <paystack
-                v-if="fundAmount > 1000 || fundAmount < 800000"
+                v-if="!(fundAmount < 1000 || fundAmount > 800000)"
                 :amount="amount"
                 :email="email"
                 :paystackkey="paystackkey"
@@ -32,7 +33,7 @@
                 :embed="false"
                 class="paystack"
               >Fund this wallet</paystack>
-              <span v-if=" fundAmount < 1000 || fundAmount > 800000 " >You cannot fund this wallet</span> 
+              {{(fundAmount < 1000 || fundAmount > 800000)? 'You cannot fund your wallet' : ''}}
             </button>
           </section>
         </div>
@@ -52,13 +53,15 @@
       return {
         fundAmount: 1000,
         paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
-        email: 'david@farmstripe.com',
-        reference: 'hjkfbhgjsnvmjkkngl'
+        reference: 'hjkfbhjevhoejdvboehd'
       }
     },
     computed: {
       amount () {
         return this.fundAmount * 100
+      },
+      email () {
+        return this.$store.getters.getUser.email
       }
     },
     methods: {

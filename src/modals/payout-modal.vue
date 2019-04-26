@@ -15,9 +15,7 @@
 
           <section class="modal-content --small">
             <h3>How much would you like to withdraw?</h3>
-            <p>
-              Please note that you can make a minimum withdrawal of <strong>&#8358;1000</strong>. Withdrawals from your account would require a fee of 2% of the transaction amount.
-            </p>
+            <p>Please note that you can make a minimum withdrawal of <strong>&#8358;1000</strong>. Withdrawals from your account would require a fee of 2% of the transaction amount.</p>
             <p>Thank you for investing with farmstripe.</p>
             <input type="number" v-model="withdrawalAmount" placeholder="Amount to withdraw"> 
           </section>

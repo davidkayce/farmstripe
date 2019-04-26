@@ -3,6 +3,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 Vue.config.productionTip = false
 
@@ -29,6 +31,9 @@ axios.interceptors.response.use(function (response) {
 
 /* eslint-disable no-new */
 new Vue({
+  created () {
+    AOS.init()
+  },
   el: '#app',
   router,
   store,

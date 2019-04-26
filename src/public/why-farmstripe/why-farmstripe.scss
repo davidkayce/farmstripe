@@ -58,24 +58,24 @@ main{
     margin: 3rem auto;
     z-index: 1;
 
-    @media (min-width: $breakpoint-tablet) {
-      max-height: 550px;
-      overflow-y: auto;
-      overflow: -moz-scrollbars-none;
-      overflow-style: marquee,panner;
-      -ms-overflow-style: none;
-      width: 100%;
-      margin: 0;
-      padding: 3rem 8%;
+    // @media (min-width: $breakpoint-tablet) {
+    //   max-height: 550px;
+    //   overflow-y: auto;
+    //   overflow: -moz-scrollbars-none;
+    //   overflow-style: marquee,panner;
+    //   -ms-overflow-style: none;
+    //   width: 100%;
+    //   margin: 0;
+    //   padding: 3rem 8%;
 
-      &::-webkit-scrollbar { 
-        width: 0 !important 
-      }
-    }
+    //   &::-webkit-scrollbar { 
+    //     width: 0 !important 
+    //   }
+    // }
     
-    @media (min-width: $breakpoint-desktop) {
-      padding: 2rem 12%;
-    }
+    // @media (min-width: $breakpoint-desktop) {
+    //   padding: 2rem 12%;
+    // }
 
     section {
       display: flex;
