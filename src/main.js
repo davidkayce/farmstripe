@@ -33,7 +33,7 @@ axios.interceptors.response.use(function (response) {
 new Vue({
   created () {
     AOS.init({
-      offset: 200
+      duration: 900
     })
   },
   el: '#app',

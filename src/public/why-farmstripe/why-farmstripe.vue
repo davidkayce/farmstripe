@@ -5,7 +5,7 @@
       <div class="line"></div>
     </div>
 
-    <div class="content">
+    <div class="content" data-aos="fade-up">
       <section data-aos="fade-right">
         <article>
           <section class="article_header">
@@ -67,19 +67,14 @@
     </div>
 
     <div class="images">
-      <img src="~@/assets/images/cocoa.jpg" alt="">
+      <img 
+      src="~@/assets/images/cocoa.jpg" alt="" >
     </div>
   </main>
 </template>
 
-<script>
-  export default {
-
-  }
-</script>
-
 <style lang="scss" scoped>
   @import '~styles';
-  @import 'why-farmstripe.scss'
+  @import 'why-farmstripe.scss';
 </style>
 

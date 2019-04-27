@@ -1,3 +1,4 @@
+
 // import axios from 'axios'
 export default {
   state: {
@@ -32,28 +33,21 @@ export default {
         available: false,
         rate: 30
       }
-    ]
+    ],
+    backers: 201
   },
 
   getters: {
     allFarms: state => state.farms,
-    singleFarm: state => state.singleFarm
+    allBackers: state => state.backers
   },
-
   actions: {
-    // async getAllFarms ({ commit }) {
-    //   try {
-    //     const response = await axios.get('/farms.json')
-    //     const allFarms = response.data.farms
-    //     console.log(allFarms)
-    //     // commit('setFarms', allFarms)
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-    // }
+    changeBackers (commit) {
+      console.log('reached here!')
+      this.commit('changeBackers')
+    }
   },
-
   mutations: {
-    // setFarms: (state, allFarms) => (state.farms = allFarms)
+    changeBackers: (state) => (state.backers = state.backers + 1)
   }
 }
