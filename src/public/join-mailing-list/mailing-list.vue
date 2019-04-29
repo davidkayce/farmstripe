@@ -3,13 +3,13 @@
     <div class="c__overlay">
       <div class="c__content">
         <div class="join__investors">
-          <h2>Join over <strong>500</strong> partners for priority access to the next farming cycle</h2>
-          <h4>Pilot for the first 1000 partners and farms launches in May, 2019.</h4>
+          <h2>Join over <strong>{{backers}}</strong> partners for priority access to the next farming cycle</h2>
         </div>
 
         <div class="get__email">
-          <input type="text" class="transparent" placeholder="Contact email address" v-model="setEmail">
-          <router-link to="/sign-in"><button class="btn" @click="sendEmail">Get Started</button></router-link>
+          <input type="email" class="transparent" placeholder="Contact email address" v-if="!processing" v-model="email">
+          <button class="btn" @click="sendEmail" v-if="!done">{{processing? 'Please wait ...':'Join for priority access'}}</button>
+          <div class="btn success" v-if="done"> Your submission has been received </div>
         </div>
       </div>
     </div>
@@ -21,21 +21,31 @@
     name: 'mailing-list',
     data () {
       return {
-        initialValue: ''
+        email: '',
+        processing: false,
+        done: false
       }
     },
     computed: {
-      setEmail: {
-        get () {
-          return this.$store.getters.getMailingEmail
-        },
-        set (value) {
-          this.$store.commit('updateEmail', value)
-        }
+      backers () {
+        return this.$store.getters.allBackers
       }
     },
     methods: {
       sendEmail () {
+        this.processing = true
+        setTimeout(this.getDone, 1500)
+        setTimeout(this.reset, 3000)
+      },
+      getDone () {
+        this.$store.dispatch('changeBackers')
+        this.done = true
+      },
+      reset () {
+        this.email = ''
+        this.processing = false
+        this.done = false
+        this.$router.push('/sign-in')
       }
     }
   }
@@ -43,5 +53,5 @@
 
 <style lang="scss" scoped>
   @import '~styles';
-  @import "./mailing-list.scss"
+  @import "./mailing-list.scss";
 </style>

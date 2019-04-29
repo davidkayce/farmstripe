@@ -23,17 +23,6 @@
     }
   }
 
-  h4 {
-    color: $white;
-    margin-top: 2rem;
-    font-size: 1.4rem;
-
-    @media (min-width: $breakpoint-desktop) {
-      width: 90%;
-      font-size: 1.8rem;
-    }
-  }
-
   .c__overlay {
     background: rgba(52, 89, 72, 0.85);
     padding: 2rem;
@@ -79,4 +68,9 @@
       }
     }
   }
+}
+
+.success {
+  padding: 2.5rem;
+  text-align: center;
 }

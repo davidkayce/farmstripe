@@ -106,19 +106,6 @@
     transition: opacity 0.5s ease
   }
 
-  .paystack {
-    color: $white;
-    font-size: 1.5rem;
-    font-weight: 600;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-
-    &:focus {
-      outline: none
-    }
-  }
-
   .calculator {
     padding: 2.5rem;
     border-radius: 0.5rem;

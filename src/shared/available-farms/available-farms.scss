@@ -61,6 +61,14 @@ h1 {
     margin: 2rem auto;
   }
 
+  @media (min-width: 1600px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    max-width: 108rem;
+    margin: 2rem auto;
+  }
+
   .farm__card {
     width: 80%;
     border-radius: 0.5rem;
@@ -174,4 +182,3 @@ h1 {
     }
   }
 }
-

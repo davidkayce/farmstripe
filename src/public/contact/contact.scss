@@ -86,7 +86,7 @@
   }
 
   @media (min-width: $breakpoint-desktop) {
-    width: 45%;
+    width: 40%;
   }
 
   .header {
@@ -128,10 +128,18 @@
 
 .images {
   position: absolute;
-  right: -3%;
+  right: 0rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    right: -6rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    right:  2rem;
+  }
 
   img {
     width: 60rem;
-    z-index: 1
+    z-index: 1;
   }
 }

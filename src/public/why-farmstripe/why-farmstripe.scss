@@ -7,9 +7,12 @@ main{
   @media (min-width: $breakpoint-tablet) {
     padding: 20rem 2rem 0;
     background: url('~@/assets/images/background-leaf.jpg');
-    background-position: 0 -13rem;
-    background-size: cover;
+    background-position: 4rem -5rem;
     background-repeat: no-repeat;
+
+    @media (min-width: $breakpoint-desktop) {
+      background-position: 14rem -9rem;
+    }
   }
 
   .section__header {
@@ -58,24 +61,17 @@ main{
     margin: 3rem auto;
     z-index: 1;
 
-    // @media (min-width: $breakpoint-tablet) {
-    //   max-height: 550px;
-    //   overflow-y: auto;
-    //   overflow: -moz-scrollbars-none;
-    //   overflow-style: marquee,panner;
-    //   -ms-overflow-style: none;
-    //   width: 100%;
-    //   margin: 0;
-    //   padding: 3rem 8%;
-
-    //   &::-webkit-scrollbar { 
-    //     width: 0 !important 
-    //   }
-    // }
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0 4rem;
+      max-height: 60rem;
+      width: 100%;
+      overflow-X: hidden;
+      overflow-Y: auto;
+    }
     
-    // @media (min-width: $breakpoint-desktop) {
-    //   padding: 2rem 12%;
-    // }
+    @media (min-width: $breakpoint-desktop) {
+      padding: 0 15rem;
+    }
 
     section {
       display: flex;
@@ -100,12 +96,16 @@ main{
         }
 
         img{
-          width: 20rem;
-          margin-left: 15%;
+          width: 35rem;
+          margin-left: -3rem;
           
           @media (min-width: $breakpoint-tablet) {
-            margin-left: 3rem;
-            width: 100%;
+            margin: 0 -10rem 0 0;
+            width: 45rem;
+          }
+
+          @media (min-width: 1200px) {
+            width: 70rem;
           }
         }
       }
@@ -113,7 +113,6 @@ main{
       article {
 
         @media (min-width: $breakpoint-tablet) {
-          margin-top: 3rem;
           width: 40%;
         }
 
@@ -137,25 +136,24 @@ main{
     @media (min-width: $breakpoint-tablet) {
       display: block;
       position: absolute;
-      top: 220%;
-      left: -8%;
+      top: 160rem;
+      left: -8rem;
       img {
-        width: 40rem;
+        width: 45rem;
       }
     }
 
     @media (min-width: $breakpoint-desktop) {
-      top: 180%;
-      left: -4%;
+      top: 175rem;
+      left: -4rem;
       img {
-        width: 50rem;
+        width: 55rem;
       }
     }
 
     @media (min-width: 1200px) {
-      top: 200%;
       img {
-        width: 65rem;
+        width: 57rem;
         z-index: -5;
       }
     }
