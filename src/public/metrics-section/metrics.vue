@@ -7,7 +7,7 @@
       <div class="section__header">
         <h1>Metrics</h1>
         <div class="line"></div>
-        <p>We are proud to have accomplished the following milestones with the help of our private sponsors and we look forward to breaking more grounds when we launch openly</p>
+        <p>We are proud to have accomplished the following milestones with the help of our sponsors</p>
       </div>
 
       <div class="section__content">

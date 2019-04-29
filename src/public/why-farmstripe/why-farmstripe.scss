@@ -7,8 +7,13 @@ main{
   @media (min-width: $breakpoint-tablet) {
     padding: 20rem 2rem 0;
     background: url('~@/assets/images/background-leaf.jpg');
-    background-position: 14rem -9rem;
+    background-position: 4rem -5rem;
+    // width: 40%;
     background-repeat: no-repeat;
+
+    @media (min-width: $breakpoint-desktop) {
+      background-position: 14rem -9rem;
+    }
   }
 
   .section__header {
@@ -132,7 +137,7 @@ main{
     @media (min-width: $breakpoint-tablet) {
       display: block;
       position: absolute;
-      top: 150rem;
+      top: 160rem;
       left: -8rem;
       img {
         width: 45rem;

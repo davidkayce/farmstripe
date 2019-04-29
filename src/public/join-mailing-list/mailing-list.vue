@@ -4,7 +4,6 @@
       <div class="c__content">
         <div class="join__investors">
           <h2>Join over <strong>{{backers}}</strong> partners for priority access to the next farming cycle</h2>
-          <h4>Pilot for the first 300 partners and farms launches in May, 2019.</h4>
         </div>
 
         <div class="get__email">

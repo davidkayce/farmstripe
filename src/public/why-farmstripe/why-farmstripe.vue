@@ -6,7 +6,7 @@
     </div>
 
     <div class="content" data-aos="fade-up">
-      <section data-aos="fade-right">
+      <section>
         <article>
           <section class="article_header">
             <h2>We believe food production is essential for sustainable development</h2>
@@ -19,10 +19,10 @@
             </p>
           </section>
         </article>
-        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision"></figure>
+        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision" data-aos="fade-up"></figure>
       </section>
 
-      <section data-aos="fade-left">
+      <section>
         <article>
           <section class="article_header">
             <h2>Our Focus</h2>
@@ -49,7 +49,7 @@
         <figure><img src="~@/assets/images/our-focus.png" alt="Our focus"></figure>
       </section>
 
-      <section data-aos="fade-right">
+      <section>
         <article>
           <section class="article_header">
             <h2>We are Safe and Insured</h2>

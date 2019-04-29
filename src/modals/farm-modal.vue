@@ -30,7 +30,7 @@
             class="btn-modal" 
             @click=" signedIn? invest() : goSign()"
             :disabled="!farm.available">
-              {{signedIn? (farm.available? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
+              {{signedIn? (farm.available? 'Invest in this Farm' : 'There is no available unit to invest') : 'This farm will be available soon'}}
             </button>
           </section>
         </div>

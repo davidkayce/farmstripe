@@ -8,7 +8,7 @@
           <h2>Empowering farmers, one community at a time</h2>
           <h4>We keep the food chain going by empowering farmers</h4>
           <div class="mailing-list"> 
-            <p>Join over <strong>{{backers}}</strong> partners already signed up for early access to the next round</p>
+            <p>Join over <strong>{{backers}}</strong> partners already signed up for early access to the next farming cycle</p>
             <input type="email" class="transparent" placeholder="Contact email address" v-if="!done" v-model="email">
             <button class="btn" @click="sendEmail" v-if="!done">{{processing? 'Please wait ...':'Empower a Farmer now'}}</button>
             <div class="btn success" v-if="done"> Your submission has been received </div>
