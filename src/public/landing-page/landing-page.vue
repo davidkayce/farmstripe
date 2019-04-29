@@ -16,14 +16,17 @@
         </div>
       </div>
     </header>
-    <why-farmstripe></why-farmstripe>
-    <div id="farms">
-      <available-farms></available-farms>
+
+    <div class="content">
+      <why-farmstripe></why-farmstripe>
+      <div id="farms">
+        <available-farms></available-farms>
+      </div>
+      <div id="how">
+        <how-it-works></how-it-works>
+      </div>
+      <metrics></metrics>
     </div>
-    <div id="how">
-      <how-it-works></how-it-works>
-    </div>
-    <metrics></metrics>
     <mailing-list></mailing-list>
     <app-footer></app-footer>
   </main>
