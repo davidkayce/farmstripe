@@ -21,9 +21,9 @@ export default {
       }
     },
 
-    async signUp (data) {
+    async signUp ({ commit }, signUpData) {
       try {
-        const response = await axios.post('/register', data)
+        const response = await axios.post('/register', signUpData)
         console.log(response)
       } catch (error) {
         console.log(error)

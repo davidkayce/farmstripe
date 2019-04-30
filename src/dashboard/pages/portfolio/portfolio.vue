@@ -6,54 +6,60 @@
         <div class="portfolio__info">
           <div class="portfolio__blocks">
             <p class="portfolio__options">RETURNS ON INVESTMENTS </p>
-            <p class="portfolio__value">&#8358; {{wallet.total_expected_returns.toFixed(2)}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_expected_returns ? wallet.total_expected_returns.toFixed(2) : '0.00'}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options">INVESTMENT</p>
-            <p class="portfolio__value">&#8358; {{wallet.total_investment.toFixed(2)}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_investment ? wallet.total_investment.toFixed(2) : '0.00'}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options"> WALLET BALANCE </p>
-            <p class="portfolio__value">&#8358; {{wallet.balance.toFixed(2)}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.balance? wallet.balance.toFixed(2) : '0.00'}}</p>
           </div>
         </div>
       </div>
 
       <h3>Your investments</h3>
 
-      <div class="investment__card"> 
-        <div class="investment__info">
-          <div class="investment__blocks">
-            <p class="investment__title">Maize Farm <span class="farm__id">FSH-456</span></p>
-            <p class="investment__units">&#8358; 100,000.00 &bull; 2 units </p>
-            <p><span class="rate">30%</span> <span class="returns"> Returns</span> </p>
-          </div>
+      <div  v-if="!wallet.investments">
+        <p> You do not have any investments. Please click on any of the available farms to create an investment</p>
+      </div>
 
-          <div class="investment__blocks">
-            <p class="investment__tenure"><em>Start Date</em></p>
-            <p class="tenure__value">15 April 2019</p>
-          </div>
+      <div v-if="wallet.investments">
+        <div class="investment__card" v-for="investment in wallet.investments" :key="investment.id"> 
+          <div class="investment__info">
+            <div class="investment__blocks">
+              <p class="investment__title">{{investment.farm.name}} farm <span class="farm__id">{{ investment.farm.id.toUpperCase()}}</span></p>
+              <p class="investment__units">&#8358; {{investment.total}} &bull; {{investment.units}} units </p>
+              <p><span class="rate">{{investment.farm.returns}}%</span> <span class="returns"> Returns</span> </p>
+            </div>
 
-          <div class="investment__blocks">
-            <p class="investment__tenure"><em>Yield Date</em></p>
-            <p class="tenure__value">15 September 2019</p>
+            <div class="investment__blocks">
+              <p class="investment__tenure"><em>Start Date</em></p>
+              <p class="tenure__value">{{investment.created_at | moment("MMMM Do YYYY")}}</p>
+            </div>
+
+            <div class="investment__blocks">
+              <p class="investment__tenure"><em>Yield Date</em></p>
+              <p class="tenure__value">{{investment.created_at | moment("add", investment.farm.yield_duration+" months","MMMM Do YYYY")}}</p>
+            </div>
           </div>
+          <div>
+            <button class="btn btn--link" @click="progress"> See Investment Progress </button>
+          </div>
+          <transition name="fade">
+            <section class="progress_bar" v-if="showProgress">
+              <ul>
+                <li class="passed">Setting up</li>
+                <li class="active_first">Planting</li>
+                <li>Harvest</li>
+                <li>Returns</li>
+              </ul>
+            </section>
+          </transition>
         </div>
-        <div>
-          <button class="btn btn--link" @click="progress"> See Investment Progress </button>
-        </div>
-        <transition name="fade">
-          <section class="progress_bar" v-if="showProgress">
-            <ul>
-              <li class="passed">Setting up</li>
-              <li class="active_first">Planting</li>
-              <li>Harvest</li>
-              <li>Returns</li>
-            </ul>
-          </section>
-        </transition>
       </div>
     </div>
 

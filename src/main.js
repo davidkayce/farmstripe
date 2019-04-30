@@ -7,6 +7,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 Vue.config.productionTip = false
+Vue.use(require('vue-moment'))
 
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT
@@ -21,7 +22,7 @@ axios.interceptors.response.use(function (response) {
   return response
 }, function (error) {
   if (error.response.status === 401) {
-    alert('Your session has expired, redirecting you to the login page')
+    // alert('Your session has expired, redirecting you to the login page')
     store.dispatch('logOut')
     router.push('/sign-in')
   } else {

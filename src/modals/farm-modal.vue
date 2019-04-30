@@ -76,10 +76,13 @@
       },
       goSign () {
         this.$router.push('/sign-in')
-        console.log('Got here')
       },
       invest () {
-        console.log('Now you should go ahead and invest')
+        const data = {
+          farm_id: this.farm.id,
+          units: this.investUnits
+        }
+        this.$store.dispatch('createInvestment', data)
       },
       callback (response) {
         console.log(response)

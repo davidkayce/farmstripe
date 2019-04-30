@@ -74,6 +74,7 @@
     @media (min-width: $breakpoint-tablet) {
       width: 100%;
       margin: 2rem 0;
+      max-width: 33.7rem;
     }
 
     .overlay {

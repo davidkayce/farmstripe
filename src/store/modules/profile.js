@@ -1,13 +1,5 @@
 import axios from 'axios'
 export default {
-  state: {
-    mailingEmail: ''
-  },
-
-  getters: {
-    getMailingEmail: state => state.mailingEmail
-  },
-
   actions: {
     async updateProfile (data) {
       try {
@@ -26,10 +18,5 @@ export default {
         console.log(error)
       }
     }
-  },
-
-  mutations: {
-    setUserInfo: (state, userInfo) => (state.userInfo = userInfo),
-    updateEmail: (state, email) => (state.mailingEmail = email)
   }
 }

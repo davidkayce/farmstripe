@@ -48,7 +48,7 @@
             </div>
               
             <div class="input__option">
-              <input type="email" name="email" id="email" v-model="signUpEmail">
+              <input type="email" name="email" id="email" v-model="signUpData.email">
               <label for="email">E-mail address</label>
             </div>
 
@@ -85,8 +85,8 @@
         confirmPassword: '',
         signUpData: {
           name: '',
-          password: '',
-          password_digest: ''
+          email: '',
+          password: ''
         },
         signInData: {
           email: '',
@@ -110,14 +110,6 @@
         } else {
           return false
         }
-      },
-      signUpEmail: {
-        get () {
-          return this.$store.getters.getMailingEmail
-        },
-        set (value) {
-          this.signUpData.email = value
-        }
       }
     },
     methods: {
@@ -125,11 +117,10 @@
         this.signIn = !this.signIn
       },
       signUp () {
-        this.signUpData.password_digest = this.confirmPassword
+        console.log(this.signUpData)
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => this.$router.push('/sign-in'), this.signIn = true)
           .catch(err => console.log(err))
-        this.$store.commit('updateEmail', '')
       },
       logIn () {
         this.$store.dispatch('signIn', this.signInData)
@@ -141,7 +132,6 @@
     },
     watch: {
       confirmPassword () {
-        console.log(this.signUpData)
         if (this.signUpData.password !== this.confirmPassword) {
           this.feedback.visible = true
           this.feedback.type = 'danger'
