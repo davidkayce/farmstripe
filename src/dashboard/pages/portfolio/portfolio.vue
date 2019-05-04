@@ -10,7 +10,7 @@
           </div>
           <hr>
           <div class="portfolio__blocks">
-            <p class="portfolio__options">INVESTMENT</p>
+            <p class="portfolio__options">INVESTMENTS</p>
             <p class="portfolio__value">&#8358; {{wallet.total_investment ? wallet.total_investment.toFixed(2) : '0.00'}}</p>
           </div>
           <hr>
@@ -23,16 +23,16 @@
 
       <h3>Your investments</h3>
 
-      <div  v-if="!wallet.investments">
-        <p> You do not have any investments. Please click on any of the available farms to create an investment</p>
+      <div  v-if="wallet.investments.length === 0">
+        <p> <em>You do not have any investments. Please click on any of the available farms to create an investment</em></p>
       </div>
 
-      <div v-if="wallet.investments">
+      <div v-if="!wallet.investments.length === 0">
         <div class="investment__card" v-for="investment in wallet.investments" :key="investment.id"> 
           <div class="investment__info">
             <div class="investment__blocks">
               <p class="investment__title">{{investment.farm.name}} farm <span class="farm__id">{{ investment.farm.id.toUpperCase()}}</span></p>
-              <p class="investment__units">&#8358; {{investment.total}} &bull; {{investment.units}} units </p>
+              <p class="investment__units">&#8358; {{investment.total.toLocaleString()}} &bull; {{investment.units}} units </p>
               <p><span class="rate">{{investment.farm.returns}}%</span> <span class="returns"> Returns</span> </p>
             </div>
 

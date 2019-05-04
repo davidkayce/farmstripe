@@ -16,7 +16,12 @@
     </div>
 
     <div class="background">
-      <div class="overlay"></div>
+      <div class="overlay">
+        <div class="quote">
+          “ Agriculture is our wisest pursuit, because it will in the end contribute most to real wealth, good morals, and happiness. ”
+          <br><br><span class="small__quote">— Thomas Jefferson.</span>
+        </div>
+      </div>
     </div>
     
     <div class="sign-in_container">
@@ -120,14 +125,23 @@
         console.log(this.signUpData)
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => this.$router.push('/sign-in'), this.signIn = true)
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log(err.error.message)
+          })
       },
       logIn () {
         this.$store.dispatch('signIn', this.signInData)
           .then(() => {
             this.$router.push('/dashboard/')
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log(err.error.message)
+            if (err.error.message === '') {
+              this.feedback.visible = true
+              this.feedback.type = 'danger'
+              this.feedback.message = 'Invalid credentials, please try agaim'
+            }
+          })
       }
     },
     watch: {

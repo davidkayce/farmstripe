@@ -19,7 +19,7 @@ export default {
         console.log(response.data)
         this.getWalletInfo()
       } catch (error) {
-        console.log(error)
+        console.log(error.error.message)
       }
     },
 
@@ -28,17 +28,16 @@ export default {
         const response = await axios.post(`/deposits`, amount)
         console.log(response.data)
       } catch (error) {
-        console.log(error)
+        console.log(error.error.message)
       }
     },
 
     async createPayout ({ commit }, amount) {
       try {
-        const response = await axios.post(`/deposits`, amount)
-        const wallet = response.data
-        commit('setWallet', wallet)
+        const response = await axios.post(`/withdraws`, amount)
+        console.log(response.data)
       } catch (error) {
-        console.log(error)
+        console.log(error.error.message)
       }
     },
 
@@ -49,18 +48,17 @@ export default {
         console.log(wallet)
         commit('setWallet', wallet)
       } catch (error) {
-        console.log(error)
+        console.log(error.error.message)
       }
     },
 
     async getTransactions ({ commit }) {
       try {
         const response = await axios.get('/transactions.json')
-        console.log(response.data)
         const transactions = response.data
         commit('setTransactions', transactions)
       } catch (error) {
-        console.log(error)
+        console.log(error.error.message)
       }
     }
   },
@@ -68,6 +66,5 @@ export default {
   mutations: {
     setWallet: (state, wallet) => (state.wallet = wallet),
     setTransactions: (state, transactions) => (state.transactions = transactions)
-    // updateInvestments: (state, investments) => (state.investments = investments),
   }
 }

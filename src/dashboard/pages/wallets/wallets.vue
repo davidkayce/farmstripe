@@ -5,7 +5,7 @@
       <payout-modal v-if="payoutModalVisible" @close="closePayoutModal"></payout-modal>
       <fund-modal v-if="fundModalVisible" @close="closeFundModal"></fund-modal>
 
-      <div v-if="transactions.length === 0">
+      <div v-if="transactions.length === 0" style="margin-top: 2rem">
         You have not made any transactions yet, please fund your wallet to begin investing in our available farms
       </div>
       
@@ -13,7 +13,10 @@
         <div v-for="transaction in transactions"  :key="transaction.id"> 
           <div class="transaction__info">
             <div class="transaction__left">
-              <img src="~@/assets/icons/icon-transfers.png" alt="transaction type">
+              <img 
+              src="~@/assets/icons/icon-transfers.png" 
+              alt="transaction type"
+              :style="{transform : transaction.type === 'Deposit' ? 'rotate(180deg)' : '' }">
             </div>
             
             <div class="transaction__right">
@@ -29,7 +32,7 @@
 
               <div class="transaction__blocks">
                 <p class="transaction__options"><em>Amount</em></p>
-                <p class="value">&#8358; {{transaction.amount.toFixed(2)}}</p>
+                <p class="value">&#8358; {{transaction.amount.toLocaleString()}}</p>
               </div>
             </div>
           </div>

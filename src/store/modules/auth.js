@@ -40,7 +40,7 @@ export default {
         axios.defaults.headers.common['Authorization'] = token
         commit('login', token)
       } catch (error) {
-        console.log(error.message)
+        console.log(error)
         localStorage.removeItem('access_token')
       }
     },

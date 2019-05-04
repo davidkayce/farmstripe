@@ -22,15 +22,15 @@
               <h3><strong>Investment Calculator</strong></h3>
               <label for="units">How many units do you want to buy</label>
               <input type="number" name="units" v-model="investUnits">
-              <span>You pay <span class="investment">&#8358;{{farm.cost * investUnits}}</span>and get <span class="investment">&#8358;{{((farm.cost * investUnits) * (1 + (farm.rate /100))).toFixed(2)}}</span> in {{farm.time}} </span>
+              <span>You pay <span class="investment">&#8358;{{(farm.cost_per_unit * investUnits).toLocaleString()}}</span>and get <span class="investment">&#8358;{{ ((farm.cost_per_unit * investUnits) * (1 + (farm.returns /100))).toLocaleString() }}</span> in {{farm.yield_duration}} months </span>
             </div>
           </section>
           <section class="footer">
             <button 
             class="btn-modal" 
             @click=" signedIn? invest() : goSign()"
-            :disabled="!farm.available">
-              {{signedIn? (farm.available? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
+            :disabled="!farm.available_units">
+              {{signedIn? (farm.available_units ? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
             </button>
           </section>
         </div>
@@ -82,6 +82,7 @@
           farm_id: this.farm.id,
           units: this.investUnits
         }
+        console.log(data)
         this.$store.dispatch('createInvestment', data)
       },
       callback (response) {

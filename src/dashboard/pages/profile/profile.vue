@@ -13,13 +13,19 @@
       <div class="inner">
         <div class="content">
           <div class="form">
+            <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
             <div v-if="x === 'one'">
               <p>Modify your personal details below</p>
               <div v-if="!password" class="first_option">
                 <input type="text" name="name" placeholder="Your name" v-model="savedName">
                 <input type="text" name="email" placeholder="Email" v-model="savedEmail">
                 <input type="text" name="phone" placeholder="Phone" v-model="savedPhone">
-                <button class="btn" @click="updateUser"> Update details</button>
+                
+                <button 
+                class="btn" 
+                @click="updateUser" 
+                :disabled="!this.user.name || !this.user.email || !this.user.phone"> Update details</button>
+
                 <button class="btn btn--link" @click="password = true"> Change Password </button>
               </div>
 
@@ -94,12 +100,17 @@
 </template>
 
 <script>
+  import Feedback from '../../../shared/components/feedback'
   export default {
     name: 'profile',
+    components: {
+      Feedback
+    },
     data: function () {
       return {
         password: false,
         x: 'one',
+        phone: '',
         user: {
           name: '',
           email: '',
@@ -114,19 +125,35 @@
     },
     computed: {
       savedName: {
-        get () { return this.$store.getters.getUser.name },
+        get () {
+          const name = this.$store.getters.getUser.name
+          this.user.name = name
+          return name
+        },
         set (value) { this.user.name = value }
       },
       savedEmail: {
-        get () { return this.$store.getters.getUser.email },
+        get () {
+          const email = this.$store.getters.getUser.email
+          this.user.email = email
+          return email
+        },
         set (value) { this.user.email = value }
       },
       savedPhone: {
-        get () { return this.$store.getters.getUser.phone },
+        get () {
+          const phone = this.$store.getters.getUser.phone
+          this.user.phone = phone
+          return phone
+        },
         set (value) { this.user.phone = value }
       },
       receipient: {
-        get () { return this.$store.getters.getUser.account.name },
+        get () {
+          const receipient = this.$store.getters.getUser.account.name
+          this.account.name = receipient
+          return receipient
+        },
         set (value) { this.account.name = value }
       },
       bank: {
@@ -141,6 +168,11 @@
     methods: {
       updateUser () {
         this.$store.dispatch('updateProfile', this.user)
+          .then(() => {
+            this.user.name = this.savedName
+            this.user.email = this.savedEmail
+            this.user.phone = this.savedPhone
+          })
       }
     }
   }

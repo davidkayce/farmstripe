@@ -1,24 +1,29 @@
 <template>
   <main>
-    <div class="farm__card" v-for="farm in farms.slice(0, 15)" @click="showModal(farm)" :key="farm.id">  
-      <div class="farm__details">
-        <div class="overlay">
-        <div class="farm__title">
-          <p>{{farm.name}}</p>
-          <p><strong>{{farm.available? 'AVAILABLE':'SOLD OUT'}}</strong></p>
+    <div 
+      class="farm__card" 
+      data-aos="fade-up"
+      v-for="farm in farms.slice(0, 6)" 
+      @click="showModal(farm)" 
+      :key="farm.id">  
+        <div class="farm__details" :style="{ background: 'url(' + farm.image_url + ')' }">
+          <div class="overlay">
+            <div class="farm__title">
+              <p>{{farm.name}}</p>
+              <p><strong>{{ Date.now() <= farm.investment_deadline ? (farm.available_units >= 1 ? 'AVAILABLE':'SOLD OUT') : 'UNAVAILABLE'}}</strong></p>
+            </div>
+            <p class="rate">
+              <span class="farm__rate">{{farm.returns}}%</span> returns
+            </p>
+            <p>{{farm.available_units + ' units'}} available</p>
+          </div>
         </div>
-        <p class="rate">
-          <span class="farm__rate">{{farm.rate}}%</span> returns
-        </p>
-        <p>{{farm.available? farm.units + ' units' : 'No units'}} available</p>
+        <footer>
+          <p>{{farm.id.toUpperCase()}}</p>
+          <p><span><strong>&#8358; {{farm.cost_per_unit.toLocaleString()}}</strong></span> per unit </p>
+          <p>{{farm.returns}}% returns in {{farm.yield_duration}} months</p>
+        </footer>
       </div>
-    </div>
-    <footer>
-      <p>{{farm.id}}</p>
-      <p><span><strong>&#8358; {{farm.cost}}</strong></span> per unit </p>
-      <p>{{farm.rate}}% returns in {{farm.time}}</p>
-    </footer>
-    </div>
     <farm-modal v-if="isModalVisible" @close="closeModal" :farm="currentFarm"></farm-modal>
   </main>
 </template>
@@ -50,6 +55,9 @@
       closeModal () {
         this.isModalVisible = false
       }
+    },
+    created () {
+      this.$store.dispatch('getAllFarms')
     }
   }
 </script>
@@ -86,7 +94,6 @@
     }
 
     .farm__details {
-      background-image: url('~@/assets/images/maize-field.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       height: 20rem;
