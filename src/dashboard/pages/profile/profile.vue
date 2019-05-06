@@ -13,18 +13,17 @@
       <div class="inner">
         <div class="content">
           <div class="form">
-            <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
+            <!-- <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback> -->
             <div v-if="x === 'one'">
               <p>Modify your personal details below</p>
               <div v-if="!password" class="first_option">
-                <input type="text" name="name" placeholder="Your name" v-model="savedName">
-                <input type="text" name="email" placeholder="Email" v-model="savedEmail">
-                <input type="text" name="phone" placeholder="Phone" v-model="savedPhone">
+                <input type="text" name="name" placeholder="Your name" v-model="this.user.name">
+                <input type="text" name="email" placeholder="Email" v-model="this.user.email">
+                <input type="text" name="phone" placeholder="Phone" v-model="this.user.phone">
                 
                 <button 
                 class="btn" 
-                @click="updateUser" 
-                :disabled="!this.user.name || !this.user.email || !this.user.phone"> Update details</button>
+                @click="updateUser"> Update details</button>
 
                 <button class="btn btn--link" @click="password = true"> Change Password </button>
               </div>
@@ -42,7 +41,7 @@
             <div v-if="x === 'two'" class="account">
               <p>Insert account details for withdrawals and payouts</p>
               <label for="receipientName">Receipients Name</label>
-              <input type="text" name="receipientName" v-model="receipient">
+              <input type="text" name="receipientName" v-model="this.account.name">
               <label for="bank">Select Bank</label>
               <select name="bank" v-model="bank">
                 <optgroup>
@@ -88,7 +87,7 @@
                 </optgroup>
               </select>
               <label for="bankName">Receipients Account Number</label>
-              <input type="text" name="accountNumber" v-model="accountNumber">
+              <input type="text" name="accountNumber" v-model="this.account.number">
               <button class="btn"> Update Account </button>
             </div>
           </div>
@@ -118,60 +117,22 @@
         },
         account: {
           name: '',
-          bank_name: '',
+          bank: '',
           number: ''
         }
-      }
-    },
-    computed: {
-      savedName: {
-        get () {
-          const name = this.$store.getters.getUser.name
-          this.user.name = name
-          return name
-        },
-        set (value) { this.user.name = value }
-      },
-      savedEmail: {
-        get () {
-          const email = this.$store.getters.getUser.email
-          this.user.email = email
-          return email
-        },
-        set (value) { this.user.email = value }
-      },
-      savedPhone: {
-        get () {
-          const phone = this.$store.getters.getUser.phone
-          this.user.phone = phone
-          return phone
-        },
-        set (value) { this.user.phone = value }
-      },
-      receipient: {
-        get () {
-          const receipient = this.$store.getters.getUser.account.name
-          this.account.name = receipient
-          return receipient
-        },
-        set (value) { this.account.name = value }
-      },
-      bank: {
-        get () { return this.$store.getters.getUser.account.bank_name },
-        set (value) { this.account.bank_name = value }
-      },
-      accountNumber: {
-        get () { return this.$store.getters.getUser.account.number },
-        set (value) { this.account.number = value }
       }
     },
     methods: {
       updateUser () {
         this.$store.dispatch('updateProfile', this.user)
-          .then(() => {
-            this.user.name = this.savedName
-            this.user.email = this.savedEmail
-            this.user.phone = this.savedPhone
+          .then(() => {})
+          .catch(error => {
+            console.log(error.error.message)
+            console.log('Heebiejeebies')
+            this.$Noty({
+              text: 'Some notification text',
+              type: 'error'
+            }).show()
           })
       }
     }

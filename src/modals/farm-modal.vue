@@ -84,10 +84,6 @@
         }
         console.log(data)
         this.$store.dispatch('createInvestment', data)
-      },
-      callback (response) {
-        console.log(response)
-        this.$router.push('/dashboard')
       }
     }
   }

@@ -1,17 +1,13 @@
 import axios from 'axios'
-import Noty from 'noty'
+// import Noty from 'noty'
 
 export default {
   actions: {
     async updateProfile ({ commit }, data) {
       try {
-        const response = await axios.post('/users', data)
+        const response = await axios.put('/users', data)
         console.log(response.data)
       } catch (error) {
-        console.log(error)
-        new Noty({
-          text: 'Some notification text'
-        }).show()
       }
     },
 

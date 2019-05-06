@@ -23,6 +23,7 @@
           @click="switchSmallNav" 
           :class="smallNav? 'nav_on':''">{{fullName | initials}}</li>
         </ul>
+        <div class="large_menu" v-if="largeNav"><p @click="logOut"> Sign Out </p></div>
       </div>
     </nav>
 
@@ -41,9 +42,6 @@
       </div>
     </transition>
 
-    <div class="large_menu" v-if="largeNav">
-      <p @click="logOut"> Sign Out </p>
-    </div>
     <announcement></announcement>
 
     <div class="content">

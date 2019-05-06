@@ -23,8 +23,8 @@
 
       <ul>
         <li><p class="c__list_header color--fff">Follow</p></li>
-        <li><a href="#" target="_blank" rel="noopener">Twitter</a></li>
-        <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://twitter.com/FarmStripe" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a href="https://www.instagram.com/farmstripe/" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </div>
     </div>

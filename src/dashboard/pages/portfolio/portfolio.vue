@@ -6,17 +6,17 @@
         <div class="portfolio__info">
           <div class="portfolio__blocks">
             <p class="portfolio__options">RETURNS ON INVESTMENTS </p>
-            <p class="portfolio__value">&#8358; {{wallet.total_expected_returns ? wallet.total_expected_returns.toFixed(2) : '0.00'}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_expected_returns ? wallet.total_expected_returns.toLocaleString() : '0.00'}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options">INVESTMENTS</p>
-            <p class="portfolio__value">&#8358; {{wallet.total_investment ? wallet.total_investment.toFixed(2) : '0.00'}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.total_investment ? wallet.total_investment.toLocaleString() : '0.00'}}</p>
           </div>
           <hr>
           <div class="portfolio__blocks">
             <p class="portfolio__options"> WALLET BALANCE </p>
-            <p class="portfolio__value">&#8358; {{wallet.balance? wallet.balance.toFixed(2) : '0.00'}}</p>
+            <p class="portfolio__value">&#8358; {{wallet.balance? wallet.balance.toLocaleString() : '0.00'}}</p>
           </div>
         </div>
       </div>
@@ -27,8 +27,10 @@
         <p> <em>You do not have any investments. Please click on any of the available farms to create an investment</em></p>
       </div>
 
-      <div v-if="!wallet.investments.length === 0">
-        <div class="investment__card" v-for="investment in wallet.investments" :key="investment.id"> 
+      <div v-else>
+        <div 
+        class="investment__card" 
+        v-for="investment in wallet.investments" :key="investment.id"> 
           <div class="investment__info">
             <div class="investment__blocks">
               <p class="investment__title">{{investment.farm.name}} farm <span class="farm__id">{{ investment.farm.id.toUpperCase()}}</span></p>
