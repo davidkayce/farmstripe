@@ -79,4 +79,3 @@
   @import '~styles';
   @import 'how-it-works.scss';
 </style>
-

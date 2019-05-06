@@ -77,4 +77,3 @@
   @import '~styles';
   @import 'why-farmstripe.scss';
 </style>
-

@@ -53,5 +53,5 @@
 
 <style lang="scss" scoped>
   @import '~styles';
-  @import "./mailing-list.scss"
+  @import "./mailing-list.scss";
 </style>

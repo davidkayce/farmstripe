@@ -11,6 +11,9 @@
 @import '../components/forms';
 @import '../components/modals';
 
+//Import external
+@import '~vuejs-noty/dist/vuejs-noty.css';
+
 
 html {
   font-size: 62.5%;

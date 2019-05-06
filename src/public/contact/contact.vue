@@ -80,4 +80,3 @@
   @import '~styles';
   @import 'contact.scss';
 </style>
-

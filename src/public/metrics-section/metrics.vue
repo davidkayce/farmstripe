@@ -40,4 +40,3 @@ export default {
   @import '~styles';
   @import "./metrics.scss"
 </style>
-
