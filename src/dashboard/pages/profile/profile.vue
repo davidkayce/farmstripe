@@ -87,7 +87,7 @@
                 </optgroup>
               </select>
               <label for="bankName">Receipients Account Number</label>
-              <input type="text" name="accountNumber" v-model="this.account.number">
+              <input type="number" name="accountNumber" v-model="this.account.number">
               <button class="btn"> Update Account </button>
             </div>
           </div>
@@ -125,7 +125,9 @@
     methods: {
       updateUser () {
         this.$store.dispatch('updateProfile', this.user)
-          .then(() => {})
+          .then(() => {
+            console.log('Heebiejeebies')
+          })
           .catch(error => {
             console.log(error.error.message)
             console.log('Heebiejeebies')

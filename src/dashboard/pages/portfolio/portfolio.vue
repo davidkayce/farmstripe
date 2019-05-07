@@ -49,10 +49,10 @@
             </div>
           </div>
           <div>
-            <button class="btn btn--link" @click="progress"> See Investment Progress </button>
+            <button class="btn btn--link" @click="progress(investment.id)"> See Investment Progress </button>
           </div>
           <transition name="fade">
-            <section class="progress_bar" v-if="showProgress">
+            <section class="progress_bar" v-if="investment.id === progressId & showProgress">
               <ul>
                 <li class="passed">Setting up</li>
                 <li class="active_first">Planting</li>
@@ -87,7 +87,8 @@
     },
     data: function () {
       return {
-        showProgress: false
+        showProgress: false,
+        progressId: 0
       }
     },
     computed: {
@@ -102,7 +103,8 @@
       }
     },
     methods: {
-      progress () {
+      progress (investmentId) {
+        this.progressId = investmentId
         this.showProgress = !this.showProgress
       }
     },

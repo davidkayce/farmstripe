@@ -6,18 +6,15 @@ export default {
     async updateProfile ({ commit }, data) {
       try {
         const response = await axios.put('/users', data)
-        console.log(response.data)
-      } catch (error) {
-      }
+        console.log(response)
+      } catch (error) {}
     },
 
     async updateAccount ({ commit }, data) {
       try {
-        const response = await axios.post('/account', data)
-        console.log(response.data)
-      } catch (error) {
-        console.log(error.error.message)
-      }
+        const response = await axios.put('/account', data)
+        console.log(response)
+      } catch (error) {}
     }
   }
 }

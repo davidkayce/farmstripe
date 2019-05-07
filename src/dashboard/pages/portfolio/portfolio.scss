@@ -102,13 +102,13 @@ main {
   padding: 3rem;
   margin-top: 2rem;
   border-radius: 0.5rem;
-  border-top: 7px solid orange;
+  border-top: 5px;
   box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
 
   @media (min-width: $breakpoint-desktop) {
     border-top: none;
     padding: 2rem;
-    border-right: 7px solid orange;
+    border-right: 5px;
     margin-top: 3rem;
   }
 }
