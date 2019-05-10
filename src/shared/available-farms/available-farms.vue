@@ -36,12 +36,10 @@
 </template>
 
 <script>
-  import FarmModal from '../../modals/farm-modal'
-
   export default {
     name: 'availableFarms',
     components: {
-      'farm-modal': FarmModal
+      'farm-modal': () => import('../../modals/farm-modal')
     },
     data () {
       return {

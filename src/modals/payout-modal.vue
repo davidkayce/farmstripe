@@ -10,6 +10,7 @@
               class="close-icon"
               src="~@/assets/icons/icon-close.png"
               @click="close"
+              loading="lazy"
             />
           </header>
 

@@ -226,14 +226,11 @@
 </template>
 
 <script>
-  import AppNav from '../../shared/app-nav/app-nav'
-  import AppFooter from '../../shared/app-footer/app-footer'
-
   export default {
     name: 'privacy',
     components: {
-      'app-nav': AppNav,
-      'app-footer': AppFooter
+      'app-nav': () => import('../../shared/app-nav/app-nav'),
+      'app-footer': () => import('../../shared/app-footer/app-footer')
     }
   }
 </script>

@@ -3,7 +3,7 @@
     <div class="c__overlay">
       <div class="c__content">
         <div class="join__investors">
-          <h2>Join over <strong>{{backers}}</strong> partners for priority access to the next farming cycle</h2>
+          <h2>Join our partners for priority access to the next farming cycle</h2>
         </div>
 
         <div class="get__email">
@@ -24,11 +24,6 @@
         email: '',
         processing: false,
         done: false
-      }
-    },
-    computed: {
-      backers () {
-        return this.$store.getters.allBackers
       }
     },
     methods: {

@@ -3,7 +3,7 @@
     <div class="nav-content">
       <div class="logo">
         <router-link to="/">
-          <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo">
+          <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo" loading="lazy">
         </router-link>
       </div>
 

@@ -12,17 +12,17 @@
 
       <div class="section__content">
         <article>
-          <img src="~@/assets/icons/icon-farming.png" alt="500 acres">
+          <img src="~@/assets/icons/icon-farming.png" alt="500 acres" loading="lazy">
           <h3>Over 2000 Acres Farmed</h3>
         </article>
 
         <article>
-          <img src="~@/assets/icons/icon-food.png" alt=" 9000 sponsorships">
+          <img src="~@/assets/icons/icon-food.png" alt=" 9000 sponsorships" loading="lazy">
           <h3>1000 farm sponsorships</h3>
         </article>
 
         <article>
-          <img src="~@/assets/icons/icon-communities.png" alt="4000 farmers">
+          <img src="~@/assets/icons/icon-communities.png" alt="4000 farmers" loading="lazy">
           <h3>2000+ farmers empowered</h3>
         </article>
       </div>

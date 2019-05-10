@@ -19,7 +19,7 @@
             </p>
           </section>
         </article>
-        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision" data-aos="fade-up"></figure>
+        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision" data-aos="fade-up" loading="lazy"></figure>
       </section>
 
       <section>
@@ -46,7 +46,7 @@
             </p>
           </section>
         </article>
-        <figure><img src="~@/assets/images/our-focus.png" alt="Our focus"></figure>
+        <figure><img src="~@/assets/images/our-focus.png" alt="Our focus" loading="lazy"></figure>
       </section>
 
       <section>
@@ -62,13 +62,13 @@
             </p>
           </section>
         </article>
-        <figure><img src="~@/assets/images/money-secured.png" alt="Your money is secured"></figure>
+        <figure><img src="~@/assets/images/money-secured.png" alt="Your money is secured" loading="lazy"></figure>
       </section>
     </div>
 
     <div class="images">
       <img 
-      src="~@/assets/images/cocoa.jpg" alt="" >
+      src="~@/assets/images/cocoa.jpg" alt="" loading="lazy">
     </div>
   </main>
 </template>

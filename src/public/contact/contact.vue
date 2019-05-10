@@ -2,7 +2,7 @@
   <main>
     <app-nav></app-nav>
     <div class="images">
-      <img src="~@/assets/images/green-bush.png" alt="500 acres">
+      <img src="~@/assets/images/green-bush.png" alt="500 acres" loading="lazy">
     </div>
 
     <div class="content">
@@ -50,9 +50,6 @@
 </template>
 
 <script>
-  import AppNav from '../../shared/app-nav/app-nav'
-  import AppFooter from '../../shared/app-footer/app-footer'
-
   export default {
     name: 'contact',
     data () {
@@ -65,8 +62,8 @@
       }
     },
     components: {
-      'app-nav': AppNav,
-      'app-footer': AppFooter
+      'app-nav': () => import('../../shared/app-nav/app-nav'),
+      'app-footer': () => import('../../shared/app-footer/app-footer')
     },
     methods: {
       sendMessage () {

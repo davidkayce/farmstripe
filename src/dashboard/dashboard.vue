@@ -9,7 +9,7 @@
       </label>
 
       <div class="logo">
-        <router-link to="/"><img src="~@/assets/icons/icon-logo-white-text.png" alt="farmstripe logo"></router-link>
+        <router-link to="/"><img src="~@/assets/icons/icon-logo-white-text.png" alt="farmstripe logo" loading="lazy"></router-link>
       </div>
 
       <div class="nav-wrapper">
@@ -51,11 +51,10 @@
 </template>
 
 <script>
-  import Announcement from '../shared/components/announcement'
   export default {
     name: 'dashboard',
     components: {
-      'announcement': Announcement
+      'announcement': () => import('../shared/components/announcement')
     },
     data () {
       return {

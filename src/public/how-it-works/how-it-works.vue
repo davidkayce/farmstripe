@@ -3,13 +3,15 @@
     <div class="about__component" >
       <div class="images">
         <img 
-        src="~@/assets/images/green-beans.png" alt="" 
+        src="~@/assets/images/green-beans.png" alt="green-beans"
+        loading="lazy" 
         data-aos="slide-right" 
         data-aos-delay="100" 
         data-aos-mirror="true">
 
         <img 
-        src="~@/assets/images/corn.png" alt="" 
+        src="~@/assets/images/corn.png" alt="corn"
+        loading="lazy" 
         data-aos="slide-left" 
         data-aos-delay="100" 
         data-aos-mirror="true">
@@ -26,7 +28,7 @@
         class="item fstr__card" 
         data-aos="fade-up" 
         data-aos-delay="50">
-          <img src="~@/assets/icons/icon-account.png" alt="">
+          <img src="~@/assets/icons/icon-account.png" alt="create-account" loading="lazy">
           <h3>Create an account</h3>
           <p>Create an account in less than a minute</p>
         </div>
@@ -35,7 +37,7 @@
         class="item fstr__card" 
         data-aos="fade-up" 
         data-aos-delay="100">
-          <img src="~@/assets/icons/icon-sponsor.png" alt="">
+          <img src="~@/assets/icons/icon-sponsor.png" alt="sponsor-farm" loading="lazy">
           <h3>Sponsor a Farm</h3>
           <p>Pick from the variety of farms available to you to make your investment</p>
         </div>
@@ -44,7 +46,7 @@
         class="item fstr__card" 
         data-aos="fade-up" 
         data-aos-delay="150">
-          <img src="~@/assets/icons/icon-track.png" alt="">
+          <img src="~@/assets/icons/icon-track.png" alt="track-investment" loading="lazy">
           <h3>Track your investment</h3>
           <p>Track the process of your investment on your dashboard</p>
         </div>
@@ -53,7 +55,7 @@
         class="item fstr__card" 
         data-aos="fade-up" 
         data-aos-delay="200">
-          <img src="~@/assets/icons/icon-returns.png" alt="">
+          <img src="~@/assets/icons/icon-returns.png" alt="returns" loading="lazy">
           <h3>Get great returns</h3>
           <p>Get your returns at the time when due, no hassles</p>
         </div>
@@ -63,15 +65,8 @@
 </template>
 
 <script>
-  import AppNav from '../../shared/app-nav/app-nav'
-  import AppFooter from '../../shared/app-footer/app-footer'
-
   export default {
-    name: 'how-it-works',
-    components: {
-      'app-nav': AppNav,
-      'app-footer': AppFooter
-    }
+    name: 'how-it-works'
   }
 </script>
 

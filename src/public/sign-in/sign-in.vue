@@ -2,8 +2,8 @@
   <main>
     <div class="logo">
       <router-link to="/">
-        <img src="~@/assets/icons/icon-logo-all-white.png" alt="Farmstripe logo" style="opacity: 0.8">
-        <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo" style="opacity: 0.8">
+        <img src="~@/assets/icons/icon-logo-all-white.png" alt="Farmstripe logo" style="opacity: 0.8" loading="lazy">
+        <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo" style="opacity: 0.8" loading="lazy">
       </router-link>
 
       <p class="options" v-if="!signIn">
@@ -26,7 +26,7 @@
     
     <div class="sign-in_container">
       <div class="icon">
-        <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo">
+        <img src="~@/assets/icons/icon-logo.png" alt="Farmstripe logo" loading="lazy">
       </div>
       <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
 
@@ -78,11 +78,10 @@
 </template>
 
 <script>
-  import Feedback from '../../shared/components/feedback'
   export default {
     name: 'signIn',
     components: {
-      Feedback
+      Feedback: () => import('../../shared/components/feedback')
     },
     data: function () {
       return {
@@ -100,7 +99,7 @@
         feedback: {
           visible: false,
           type: 'danger',
-          message: 'Bad guy'
+          message: ''
         }
       }
     },

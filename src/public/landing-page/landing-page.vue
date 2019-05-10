@@ -33,24 +33,16 @@
 </template>
 
 <script>
-  import AppNav from '../../shared/app-nav/app-nav'
-  import AppFooter from '../../shared/app-footer/app-footer'
-  import AvailableFarms from '../../shared/available-farms/available-farms'
-  import Metrics from '../metrics-section/metrics'
-  import MailingList from '../join-mailing-list/mailing-list'
-  import WhyFarmstripe from '../why-farmstripe/why-farmstripe'
-  import HowItWorks from '../how-it-works/how-it-works'
-
   export default {
     name: 'home',
     components: {
-      'app-nav': AppNav,
-      'app-footer': AppFooter,
-      'available-farms': AvailableFarms,
-      'metrics': Metrics,
-      'mailing-list': MailingList,
-      'why-farmstripe': WhyFarmstripe,
-      'how-it-works': HowItWorks
+      'app-nav': () => import('../../shared/app-nav/app-nav'),
+      'app-footer': () => import('../../shared/app-footer/app-footer'),
+      'available-farms': () => import('../../shared/available-farms/available-farms'),
+      'metrics': () => import('../metrics-section/metrics'),
+      'mailing-list': () => import('../join-mailing-list/mailing-list'),
+      'why-farmstripe': () => import('../why-farmstripe/why-farmstripe'),
+      'how-it-works': () => import('../how-it-works/how-it-works')
     },
     data () {
       return {

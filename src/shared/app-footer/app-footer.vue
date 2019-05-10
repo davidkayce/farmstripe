@@ -2,10 +2,14 @@
   <main class="footer">
     <div class="c__container d--flex">
       <div class="c__logo">
-        <img src="~@/assets/icons/icon-logo-white-text.png" alt="Korapay Logo">
+        <img src="~@/assets/icons/icon-logo-white-text.png" alt="Korapay Logo" loading="lazy">
         <div class="contact__details _lg">
             <p>1B, Adedeji Adekola Street,<br> Off Freedom Way, Lekki Phase 1,<br> Lagos, Nigeria.</p>
         </div>
+      </div>
+      
+      <div class="contact__details _lg">
+        <p>In partnership with AFEX </p>
       </div>
 
       <div class="c__footer-lists d--flex">

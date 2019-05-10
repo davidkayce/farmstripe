@@ -16,6 +16,7 @@
               <img 
               src="~@/assets/icons/icon-transfers.png" 
               alt="transaction type"
+              loading="lazy"
               :style="{transform : transaction.type === 'Deposit' ? 'rotate(180deg)' : '' }">
             </div>
             
@@ -68,13 +69,11 @@
 </template>
 
 <script>
-  import PayoutModal from '../../../modals/payout-modal'
-  import FundModal from '../../../modals/fund-wallet-modal'
   export default {
     name: 'wallets',
     components: {
-      'payout-modal': PayoutModal,
-      'fund-modal': FundModal
+      'payout-modal': () => import('../../../modals/payout-modal'),
+      'fund-modal': () => import('../../../modals/fund-wallet-modal')
     },
     data: function () {
       return {

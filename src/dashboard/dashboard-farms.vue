@@ -29,12 +29,10 @@
 </template>
 
 <script>
-  import FarmModal from '../modals/farm-modal'
-
   export default {
     name: 'dashboardFarms',
     components: {
-      'farm-modal': FarmModal
+      'farm-modal': () => import('../modals/farm-modal')
     },
     data () {
       return {

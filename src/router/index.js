@@ -1,50 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LandingPage from '../public/landing-page/landing-page'
-import Dashboard from '../dashboard/dashboard'
-
-// Lazy loading
-const SignInPage = resolve => {
-  require.ensure(['../public/sign-in/sign-in'], () => {
-    resolve(require('../public/sign-in/sign-in'))
-  })
-}
-
-const PrivacyPolicy = resolve => {
-  require.ensure(['../public/privacy-policy/privacy'], () => {
-    resolve(require('../public/privacy-policy/privacy'))
-  })
-}
-
-const Contact = resolve => {
-  require.ensure(['../public/contact/contact'], () => {
-    resolve(require('../public/contact/contact'))
-  })
-}
-
-const AvailableFarms = resolve => {
-  require.ensure(['../shared/available-farms/available-farms'], () => {
-    resolve(require('../shared/available-farms/available-farms'))
-  })
-}
-
-const Portfolio = resolve => {
-  require.ensure(['../dashboard/pages/portfolio/portfolio'], () => {
-    resolve(require('../dashboard/pages/portfolio/portfolio'))
-  })
-}
-
-const Profile = resolve => {
-  require.ensure(['../dashboard/pages/profile/profile'], () => {
-    resolve(require('../dashboard/pages/profile/profile'))
-  })
-}
-
-const Wallets = resolve => {
-  require.ensure(['../dashboard/pages/wallets/wallets'], () => {
-    resolve(require('../dashboard/pages/wallets/wallets'))
-  })
-}
 
 Vue.use(Router)
 
@@ -64,12 +19,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: LandingPage
+      component: () => import('../public/landing-page/landing-page')
     },
     {
       path: '/sign-in',
       name: 'signIn',
-      component: SignInPage,
+      component: () => import('../public/sign-in/sign-in'),
       beforeEnter: (to, from, next) => {
         let token = localStorage.getItem('access_token') || null
         let exp = localStorage.getItem('expiry_date')
@@ -88,17 +43,17 @@ export default new Router({
     {
       path: '/privacy-policy',
       name: 'privacy',
-      component: PrivacyPolicy
+      component: () => import('../public/privacy-policy/privacy')
     },
     {
       path: '/contact-us',
       name: 'contact',
-      component: Contact
+      component: () => import('../public/contact/contact')
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard,
+      component: () => import('../dashboard/dashboard'),
       beforeEnter: (to, from, next) => {
         let token = localStorage.getItem('access_token') || null
         let exp = localStorage.getItem('expiry_date')
@@ -117,22 +72,22 @@ export default new Router({
         {
           path: '/',
           name: 'portfolio',
-          component: Portfolio
+          component: () => import('../dashboard/pages/portfolio/portfolio')
         },
         {
           path: 'profile',
           name: 'profile',
-          component: Profile
+          component: () => import('../dashboard/pages/profile/profile')
         },
         {
           path: 'wallets',
           name: 'wallets',
-          component: Wallets
+          component: () => import('../dashboard/pages/wallets/wallets')
         },
         {
           path: 'available-farms',
           name: 'available-farms',
-          component: AvailableFarms
+          component: () => import('../shared/available-farms/available-farms')
         },
         // This wildcard route takes care of any misspelling of routes or careless navigation
         {

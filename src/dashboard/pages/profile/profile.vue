@@ -99,11 +99,10 @@
 </template>
 
 <script>
-  import Feedback from '../../../shared/components/feedback'
   export default {
     name: 'profile',
     components: {
-      Feedback
+      Feedback: () => import('../../../shared/components/feedback')
     },
     data: function () {
       return {
