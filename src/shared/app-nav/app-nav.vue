@@ -8,10 +8,10 @@
       </div>
 
       <ul>
+        <li><a href="" target="_blank"> Blog </a></li>
         <li><router-link :to="farmLink"> Available Farms </router-link></li>
-        <li><router-link :to="howLink">How it works</router-link></li>
         <li><router-link to="/contact-us">Contact us</router-link></li>
-        <li><router-link to="/sign-in"><button class="btn">Get Started</button></router-link></li>
+        <li><router-link to=""><button class="btn">Get Started</button></router-link></li>
       </ul>
     </div>
 
