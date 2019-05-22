@@ -17,10 +17,9 @@
 }
 
 nav {
-  background-color: $dgreen;
+  background-color: $white;
   height: 5rem;
   width: 100vw;
-  box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.3);
   position: sticky;
 
   @media (min-width: $breakpoint-tablet) {
