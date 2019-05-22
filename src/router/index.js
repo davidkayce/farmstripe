@@ -16,15 +16,11 @@ export default new Router({
     return {x: 0, y: 0}
   },
   routes: [
+
     {
       path: '/',
-      name: 'home',
-      component: () => import('../public/landing-page/landing-page')
-    },
-    {
-      path: '/sign-in',
       name: 'signIn',
-      component: () => import('../public/sign-in/sign-in'),
+      component: () => import('../auth/sign-in/sign-in'),
       beforeEnter: (to, from, next) => {
         let token = localStorage.getItem('access_token') || null
         let exp = localStorage.getItem('expiry_date')
@@ -39,16 +35,6 @@ export default new Router({
           }
         }
       }
-    },
-    {
-      path: '/privacy-policy',
-      name: 'privacy',
-      component: () => import('../public/privacy-policy/privacy')
-    },
-    {
-      path: '/contact-us',
-      name: 'contact',
-      component: () => import('../public/contact/contact')
     },
     {
       path: '/dashboard',
@@ -89,7 +75,6 @@ export default new Router({
           name: 'available-farms',
           component: () => import('../shared/available-farms/available-farms')
         },
-        // This wildcard route takes care of any misspelling of routes or careless navigation
         {
           path: '*',
           redirect: '/dashboard'
