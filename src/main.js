@@ -3,9 +3,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import AOS from 'aos'
 import VueNoty from 'vuejs-noty'
-import 'aos/dist/aos.css'
 
 Vue.config.productionTip = false
 Vue.use(require('vue-moment'))
@@ -28,8 +26,7 @@ if (accessToken) {
 axios.interceptors.response.use(function (response) {
   return response
 }, function (error) {
-  if (error.response.status === 401) {
-    // alert('Your session has expired, redirecting you to the login page')
+  if (error.response.status === 401) { // Handling expired api tokens
     store.dispatch('logOut')
     router.push('/sign-in')
   } else {
@@ -39,9 +36,6 @@ axios.interceptors.response.use(function (response) {
 
 /* eslint-disable no-new */
 new Vue({
-  created () {
-    AOS.init()
-  },
   el: '#app',
   router,
   store,
