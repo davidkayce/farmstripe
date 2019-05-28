@@ -1,13 +1,6 @@
 <template>
   <main>
     <nav>
-      <input type="checkbox" id="nav" class="hidden">
-      <label for="nav" class="nav-btn">
-        <i></i>
-        <i></i>
-        <i></i>
-      </label>
-
       <div class="logo">
         <router-link to="/"><img src="~@/assets/icons/icon-logo-all-green.png" alt="farmstripe logo" loading="lazy"></router-link>
       </div>
@@ -51,10 +44,11 @@
 </template>
 
 <script>
+  import announcement from '../shared/components/announcement'
   export default {
     name: 'dashboard',
     components: {
-      'announcement': () => import('../shared/components/announcement')
+      'announcement': announcement
     },
     data () {
       return {

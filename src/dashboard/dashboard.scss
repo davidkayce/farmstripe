@@ -1,3 +1,7 @@
+main {
+  background-color: rgb(247, 252, 252);
+}
+
 .content {
   z-index: -1
 }
@@ -8,22 +12,24 @@
   margin-top: 1rem;
   
   img {
-    width: 10rem;
+    width: 13rem;
 
     @media (min-width: $breakpoint-tablet) {
-      width: 15rem;
+      width: 20rem;
     }
   }
 }
 
 nav {
-  background-color: $white;
   height: 5rem;
   width: 100vw;
+  padding: 2rem 0;
   position: sticky;
 
   @media (min-width: $breakpoint-tablet) {
     height: 7rem;
+    width: 92%;
+    padding: 4rem 8rem 5rem;
   }
 
   label {
@@ -54,7 +60,7 @@ nav {
 
       &:nth-child(4) {
         color: white;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: $dgreen;
         border-radius: 0.5rem;
         padding: 1rem 3rem;
         margin: -0.8rem 3rem 0 2rem;
@@ -72,10 +78,6 @@ nav {
         font-weight: 100;
         text-decoration: none;
         cursor: pointer;
-
-        @media (min-width: $breakpoint-tablet) {
-          color: $white;
-        }
       }
     }
   }
@@ -84,9 +86,9 @@ nav {
 .small_devices {
   display: inline-block;
   float: right;
-  color: white;
+  color: $dgreen;
   font-weight: 600;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: $dgreen-vlight;
   border-radius: .5rem;
   padding: .5rem 2rem;
   margin: -3.3rem 1.5rem;
@@ -116,6 +118,7 @@ nav {
   background: $white;
   position: absolute;
   width: 20rem;
+  top: 9%;
   right: 0%;
   text-align: right;
   padding: 4rem 2rem;
@@ -179,7 +182,7 @@ nav {
 }
 
 .nav_on {
-  padding: 1.2rem 2rem 3rem;
+  padding: 1.2rem 2rem 1.5rem;
   background: $white;
   color: $dgreen;
 }
