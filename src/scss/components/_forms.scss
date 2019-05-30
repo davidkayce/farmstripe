@@ -48,11 +48,6 @@ textarea {
   }
 }
 
-input.checkbox {
-  display: inline;
-  width: unset;
-  margin-right: 1rem;
-}
 
 input[type="password"] {
   font-size: 2.2rem;
@@ -74,15 +69,6 @@ input:disabled {
   color: $danger;
   padding-top: 1rem;
   font-weight: 400;
-}
-
-.field--reverse {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.checkbox__field {
-  display: flex;
 }
 
 select {
