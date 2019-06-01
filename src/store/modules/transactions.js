@@ -15,11 +15,10 @@ export default {
   actions: {
     async createInvestment ({ commit }, data) {
       try {
-        const response = await axios.post(`/investments`, data)
-        console.log(response.data)
+        await axios.post(`/investments`, data)
         this.getWalletInfo()
       } catch (error) {
-        console.log(error.error.message)
+        console.log(error)
       }
     },
 
@@ -29,16 +28,15 @@ export default {
         const response = await axios.post(`/deposits`, amount)
         console.log(response.data)
       } catch (error) {
-        console.log(error.error.message)
+        console.log(error)
       }
     },
 
     async createPayout ({ commit }, amount) {
       try {
-        const response = await axios.post(`/withdraws`, amount)
-        console.log(response.data)
+        await axios.post(`/withdraws`, amount)
       } catch (error) {
-        console.log(error.error.message)
+        console.log(error)
       }
     },
 
@@ -49,7 +47,7 @@ export default {
         console.log(wallet)
         commit('setWallet', wallet)
       } catch (error) {
-        console.log(error.error.message)
+        console.log(error)
       }
     },
 
@@ -59,7 +57,7 @@ export default {
         const transactions = response.data
         commit('setTransactions', transactions)
       } catch (error) {
-        console.log(error.error.message)
+        console.log(error)
       }
     }
   },

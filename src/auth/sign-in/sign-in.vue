@@ -121,19 +121,27 @@
         this.signIn = !this.signIn
       },
       signUp () {
-        console.log(this.signUpData)
+        this.$Progress.start()
         this.$store.dispatch('signUp', this.signUpData)
-          .then(() => this.$router.push('/sign-in'), this.signIn = true)
+          .then(() => {
+            this.$router.push('/sign-in')
+            this.signIn = true
+            this.$Progress.finish()
+          })
           .catch(err => {
+            this.$Progress.fail()
             console.log(err.error.message)
           })
       },
       logIn () {
+        this.$Progress.start()
         this.$store.dispatch('signIn', this.signInData)
           .then(() => {
             this.$router.push('/dashboard/')
+            this.$Progress.finish()
           })
           .catch(err => {
+            this.$Progress.fail()
             console.log(err.error.message)
             if (err.error.message === '') {
               this.feedback.visible = true

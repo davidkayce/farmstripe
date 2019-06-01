@@ -1,20 +1,21 @@
 import axios from 'axios'
-// import Noty from 'noty'
 
 export default {
   actions: {
     async updateProfile ({ commit }, data) {
       try {
-        const response = await axios.put('/users', data)
-        console.log(response)
-      } catch (error) {}
+        await axios.put('/users', data)
+      } catch (error) {
+        console.log(error)
+      }
     },
 
     async updateAccount ({ commit }, data) {
       try {
-        const response = await axios.put('/account', data)
-        console.log(response)
-      } catch (error) {}
+        await axios.put('/account', data)
+      } catch (error) {
+        console.log(error)
+      }
     }
   }
 }

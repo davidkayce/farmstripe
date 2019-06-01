@@ -23,8 +23,7 @@ export default {
 
     async signUp ({ commit }, signUpData) {
       try {
-        const response = await axios.post('/register', signUpData)
-        console.log(response)
+        await axios.post('/register', signUpData)
       } catch (error) {
         console.log(error)
       }
