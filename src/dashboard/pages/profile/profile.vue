@@ -123,10 +123,18 @@
         this.$store.dispatch('updateProfile', data)
           .then(() => {
             this.$Progress.finish()
+            this.$notify({
+              type: 'success',
+              text: 'Your personal details have been updated successfully'
+            })
           })
           .catch((err) => {
             this.$Progress.fail()
             console.log(err.error.message)
+            this.$notify({
+              type: 'error',
+              text: 'We are sorry, your personal details cannot be updated right now'
+            })
           })
       },
 
@@ -140,10 +148,18 @@
         this.$store.dispatch('updateAccount', data)
           .then(() => {
             this.$Progress.finish()
+            this.$notify({
+              type: 'success',
+              text: 'Your account details have been updated successfully'
+            })
           })
           .catch((err) => {
             this.$Progress.fail()
             console.log(err.error.message)
+            this.$notify({
+              type: 'error',
+              text: 'We are sorry, your account details cannot be updated right now'
+            })
           })
       }
     }

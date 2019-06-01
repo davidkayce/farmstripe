@@ -5,13 +5,22 @@ import store from './store'
 import axios from 'axios'
 
 import VueProgressBar from 'vue-progressbar'
+import Notifications from 'vue-notification'
 
 Vue.config.productionTip = false
 Vue.use(require('vue-moment'))
+
 Vue.use(VueProgressBar, {
   color: 'rgb(52, 89, 72)',
   failedColor: 'rgb(255, 86, 97)',
   height: '3px'
+})
+
+Vue.use(Notifications, {
+  position: 'top center',
+  width: '100%',
+  closeOnClick: true,
+  max: 3
 })
 
 // Setting API URL and header based on environment for http requests

@@ -53,8 +53,18 @@
         this.$store.dispatch('createPayout', data)
           .then(() => {
             this.$Progress.finish()
+            this.close()
+            this.$notify({
+              type: 'success',
+              text: 'Your request for payout has reached us and would be reflected in your accoutn shortly'
+            })
           }).catch(() => {
             this.$Progress.fail()
+            this.close()
+            this.$notify({
+              type: 'error',
+              text: 'We are sorry, there was a problem in processing your request for payout. Please check your wallet balance and try again'
+            })
           })
       }
     }

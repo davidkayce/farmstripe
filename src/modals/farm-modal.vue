@@ -84,8 +84,18 @@
         this.$store.dispatch('createInvestment', data)
           .then(() => {
             this.$Progress.finish()
+            this.close()
+            this.$notify({
+              type: 'success',
+              text: 'You have successfully created an investment with farmstripe.'
+            })
           }).catch(() => {
             this.$Progress.fail()
+            this.close()
+            this.$notify({
+              type: 'error',
+              text: 'There was a problem in creating your investment. Please check your balance or try again later.'
+            })
           })
       }
     }

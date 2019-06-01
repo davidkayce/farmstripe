@@ -4,6 +4,7 @@
       <router-view></router-view>
     </transition>
     <vue-progress-bar></vue-progress-bar>
+    <notifications />
   </main>
 </template>
 

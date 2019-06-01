@@ -78,13 +78,22 @@
         this.$store.dispatch('createDeposit', data)
           .then(() => {
             this.$Progress.finish()
+            this.close()
           }).catch(() => {
             this.$Progress.fail()
+            this.close()
+            this.$notify({
+              type: 'error',
+              text: 'We are sorry, there was a problem while making your deposit. Please try again later'
+            })
           })
       },
       callback () {
-        console.log('You have successfully made your payment')
         this.close()
+        this.$notify({
+          type: 'success',
+          text: 'You have succesfully made a deposit to your Farmstripe wallet'
+        })
       }
     }
   }
