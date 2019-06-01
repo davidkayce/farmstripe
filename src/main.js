@@ -14,7 +14,6 @@ Vue.use(VueProgressBar, {
   height: '2px'
 })
 
-
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT
 axios.defaults.timeout = 6000
