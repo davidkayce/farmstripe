@@ -36,7 +36,6 @@
     </transition>
 
     <announcement></announcement>
-
     <div class="content">
       <router-view></router-view>
     </div>
@@ -44,11 +43,10 @@
 </template>
 
 <script>
-  import announcement from '../shared/components/announcement'
   export default {
     name: 'dashboard',
     components: {
-      'announcement': announcement
+      'announcement': () => import('../shared/components/announcement')
     },
     data () {
       return {

@@ -16,11 +16,11 @@ export default {
 .container {
   position: relative;
   padding: 2rem;
-  width: 89%;
-  margin: 1.5rem auto;
+  width: 90%;
+  margin: 5rem auto 1.5rem;
   border-radius: 0.5rem;
+  z-index: 0;
   color: $white;
-  z-index: -999;
   background-image: linear-gradient(98deg, $dgreen, $green-dash, $fstrgreen)
 }
 
