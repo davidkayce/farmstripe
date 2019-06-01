@@ -15,7 +15,7 @@
 
   &:hover,
   &:focus {
-    box-shadow: 0 16px 39px -10px rgba(157, 203, 59, 0.3);
+    box-shadow: 0 16px 39px -10px $dgreen-vlight;
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     transition: all 0.2s ease-in-out;

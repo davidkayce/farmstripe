@@ -25,6 +25,7 @@ export default {
 
     async createDeposit ({ commit }, amount) {
       try {
+        console.log('reached deposit api')
         const response = await axios.post(`/deposits`, amount)
         console.log(response.data)
       } catch (error) {

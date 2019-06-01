@@ -3,16 +3,17 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import VueNoty from 'vuejs-noty'
+
+import VueProgressBar from 'vue-progressbar'
 
 Vue.config.productionTip = false
 Vue.use(require('vue-moment'))
-Vue.use(VueNoty, {
-  killer: true,
-  timeout: 3000,
-  progressBar: true,
-  layout: 'top'
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '2px'
 })
+
 
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT

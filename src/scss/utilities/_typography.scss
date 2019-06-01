@@ -21,18 +21,6 @@ h1 {
   }
 }
 
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
 strong {
   font-weight: 600;
 }
@@ -41,14 +29,4 @@ a {
   text-decoration: none;
   color: $fstrgreen;
   font-weight: 600;
-}
-
-.auth--header {
-  font-weight: 300;
-  color: $dgreen;
-}
-
-.dashboard--header {
-  font-weight: 400;
-  color: $grey;
 }

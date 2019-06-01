@@ -17,12 +17,13 @@
           <section class="modal-content --small">
             <p>You can make a minimum payment of <strong>&#8358;1000</strong> and a maximum payment of <strong>&#8358;800,000</strong> to fund your wallet.</p>
             <p>Thank you for investing with farmstripe </p>
-            <input type="number" v-model="fundAmount"> 
+            <input type="number" v-model="fundAmount" @change="makeDeposit()"> 
           </section>
           <section class="footer">
             <button 
             class="btn-modal" 
-            :disabled="fundAmount < 1000 || fundAmount > 800000">
+            :disabled="fundAmount < 1000 || fundAmount > 800000"
+            @click="makeDeposit()">
               <paystack
                 v-if="!(fundAmount < 1000 || fundAmount > 800000)"
                 :amount="amount"
@@ -54,7 +55,7 @@
       return {
         fundAmount: 1000,
         paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
-        reference: 'hjkfbhjevhoejdvboehd'
+        reference: ''
       }
     },
     computed: {
@@ -68,6 +69,16 @@
     methods: {
       close () {
         this.$emit('close')
+      },
+      makeDeposit () {
+        const data = {
+          amount: this.amount
+        }
+        this.$store.dispatch('createDeposit', data)
+      },
+      callback () {
+        console.log('You have successfully made your payment')
+        this.close()
       }
     }
   }
