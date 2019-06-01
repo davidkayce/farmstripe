@@ -28,7 +28,6 @@
       </div>
 
       <div v-else>
-        <transition-group name="slide-in" tag="div">
         <div 
         class="investment__card" 
         v-for="investment in wallet.investments" :key="investment.id"> 
@@ -63,7 +62,6 @@
             </section>
           </transition>
         </div>
-        </transition-group>
       </div>
     </div>
 

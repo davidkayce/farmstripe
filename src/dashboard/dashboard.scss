@@ -15,7 +15,7 @@ main {
     width: 13rem;
 
     @media (min-width: $breakpoint-tablet) {
-      width: 20rem;
+      width: 22rem;
     }
   }
 }
@@ -28,7 +28,7 @@ nav {
 
   @media (min-width: $breakpoint-tablet) {
     height: 7rem;
-    width: 92%;
+    width: 100%;
     padding: 4rem 8rem 5rem;
   }
 

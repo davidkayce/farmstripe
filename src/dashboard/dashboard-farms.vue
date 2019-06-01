@@ -67,7 +67,8 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    overflow: hidden
+    height: 80rem;
+    overflow: auto;
   }
 
   .farm__card {
