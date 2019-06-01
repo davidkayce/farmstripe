@@ -69,6 +69,7 @@
     methods: {
       close () {
         this.$emit('close')
+        this.$router.push('/dashboard/wallets')
       },
       makeDeposit () {
         const data = {
