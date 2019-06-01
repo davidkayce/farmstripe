@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: column;
     margin: 0;
-    height: 80rem;
+    height: 75rem;
     overflow: auto;
   }
 

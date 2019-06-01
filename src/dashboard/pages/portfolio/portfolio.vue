@@ -73,6 +73,7 @@
       <div class="large__screen">
         <h4>Available farms</h4>
         <dash-farms></dash-farms>
+        <router-link to="/dashboard/available-farms">See all farms </router-link>
       </div>
     </div>
   </main>

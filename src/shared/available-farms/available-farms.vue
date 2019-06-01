@@ -8,7 +8,7 @@
       <div 
       class="farm__card" 
       data-aos="fade-up"
-      v-for="farm in farms.slice(0, 6)" 
+      v-for="farm in farms.slice(0, 9)" 
       @click="showModal(farm)" 
       :key="farm.id">  
         <div class="farm__details" :style="{ background: 'url(' + farm.image_url + ')'}">

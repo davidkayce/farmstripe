@@ -11,6 +11,7 @@ main {
   }
 
   h3 {
+    font-size: 2rem;
     font-weight: 400;
     margin: 3rem 0;
   }
@@ -208,6 +209,10 @@ main {
     @media (min-width: $breakpoint-desktop) {
       margin-top: 2rem
     }
+  }
+
+  a {
+    margin: 3rem 35%;
   }
 }
 

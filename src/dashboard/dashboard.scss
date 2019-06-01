@@ -14,7 +14,11 @@ main {
   img {
     width: 13rem;
 
-    @media (min-width: $breakpoint-tablet) {
+    @media ($breakpoint-tablet) {
+      width: 15rem;
+    }
+
+    @media (min-width: 1200px) {
       width: 22rem;
     }
   }
@@ -28,7 +32,10 @@ nav {
 
   @media (min-width: $breakpoint-tablet) {
     height: 7rem;
-    width: 100%;
+    padding: 4rem 2rem 5rem;
+  }
+
+  @media (min-width: 1200px) {
     padding: 4rem 8rem 5rem;
   }
 
@@ -118,7 +125,8 @@ nav {
   background: $white;
   position: absolute;
   width: 20rem;
-  top: 9%;
+  top: 11%;
+  z-index: 999;
   right: 0%;
   text-align: right;
   padding: 4rem 2rem;
@@ -164,8 +172,9 @@ nav {
     background: $white;
     color: $grey-medium;
     position: absolute;
-    top: 7rem;
-    right: 2.9%;
+    z-index: 0;
+    top: 10rem;
+    right: 5.3%;
     width: 18rem;
     text-align: right;
     padding: 1.5rem 3rem;
@@ -178,6 +187,10 @@ nav {
       cursor: pointer;
       font-size: 1.3rem;
     }
+  }
+
+  @media (min-width: 1200px) {
+    right: 8%;
   }
 }
 
