@@ -44,7 +44,13 @@
     methods: {
       close () {
         this.$emit('close')
-        this.$router.push('/dashboard/wallets')
+        try {
+          this.$Progress.start()
+          this.$store.dispatch('getTransactions')
+          this.$Progress.finish()
+        } catch (error) {
+          this.$Progress.fail()
+        }
       },
       withdraw () {
         const data = {

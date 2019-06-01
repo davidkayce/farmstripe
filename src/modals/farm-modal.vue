@@ -85,6 +85,7 @@
           .then(() => {
             this.$Progress.finish()
             this.close()
+            this.$router.push('/dashboard/wallets')
             this.$notify({
               type: 'success',
               text: 'You have successfully created an investment with farmstripe.'
