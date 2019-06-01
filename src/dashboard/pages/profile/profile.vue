@@ -13,13 +13,12 @@
       <div class="inner">
         <div class="content">
           <div class="form">
-            <!-- <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback> -->
             <div v-if="x === 'one'">
               <p>Modify your personal details below</p>
               <div v-if="!password" class="first_option">
-                <input type="text" name="name" placeholder="Your name" v-model="this.user.name">
-                <input type="text" name="email" placeholder="Email" v-model="this.user.email">
-                <input type="text" name="phone" placeholder="Phone" v-model="this.user.phone">
+                <input type="text" name="name" placeholder="Your name" v-model="name">
+                <input type="text" name="email" placeholder="Email" v-model="email">
+                <input type="text" name="phone" placeholder="Phone" v-model="phone">
                 
                 <button 
                 class="btn" 
@@ -41,7 +40,7 @@
             <div v-if="x === 'two'" class="account">
               <p>Insert account details for withdrawals and payouts</p>
               <label for="receipientName">Receipients Name</label>
-              <input type="text" name="receipientName" v-model="this.account.name">
+              <input type="text" name="receipientName" v-model="receipient">
               <label for="bank">Select Bank</label>
               <select name="bank" v-model="bank">
                 <optgroup>
@@ -87,7 +86,7 @@
                 </optgroup>
               </select>
               <label for="bankName">Receipients Account Number</label>
-              <input type="number" name="accountNumber" v-model="this.account.number">
+              <input type="number" name="accountNumber" v-model="number">
               <button class="btn"> Update Account </button>
             </div>
           </div>
@@ -101,39 +100,50 @@
 <script>
   export default {
     name: 'profile',
-    components: {
-      Feedback: () => import('../../../shared/components/feedback')
-    },
     data: function () {
       return {
         password: false,
         x: 'one',
+        name: '',
+        email: '',
         phone: '',
-        user: {
-          name: '',
-          email: '',
-          phone: ''
-        },
-        account: {
-          name: '',
-          bank: '',
-          number: ''
-        }
+        receipient: '',
+        bank: '',
+        number: ''
       }
     },
     methods: {
       updateUser () {
-        this.$store.dispatch('updateProfile', this.user)
+        const data = {
+          name: this.name,
+          email: this.email,
+          phone: this.phone
+        }
+        this.$Progress.start()
+        this.$store.dispatch('updateProfile', data)
           .then(() => {
-            console.log('Heebiejeebies')
+            this.$Progress.finish()
           })
-          .catch(error => {
-            console.log(error.error.message)
-            console.log('Heebiejeebies')
-            this.$Noty({
-              text: 'Some notification text',
-              type: 'error'
-            }).show()
+          .catch((err) => {
+            this.$Progress.fail()
+            console.log(err.error.message)
+          })
+      },
+
+      updateAccount () {
+        const data = {
+          name: this.receipient,
+          bank: this.bank,
+          number: this.number
+        }
+        this.$Progress.start()
+        this.$store.dispatch('updateAccount', data)
+          .then(() => {
+            this.$Progress.finish()
+          })
+          .catch((err) => {
+            this.$Progress.fail()
+            console.log(err.error.message)
           })
       }
     }

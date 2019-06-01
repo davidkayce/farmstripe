@@ -111,7 +111,12 @@
       }
     },
     created () {
-      this.$store.dispatch('getWalletInfo')
+      this.$Progress.start()
+      this.$store.dispatch('getWalletInfo').then(() => {
+        this.$Progress.start()
+      }).catch(() => {
+        this.$Progress.fail()
+      })
     }
   }
 </script>

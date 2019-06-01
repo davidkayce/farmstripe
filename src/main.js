@@ -10,8 +10,8 @@ Vue.config.productionTip = false
 Vue.use(require('vue-moment'))
 Vue.use(VueProgressBar, {
   color: 'rgb(52, 89, 72)',
-  failedColor: 'red',
-  height: '2px'
+  failedColor: 'rgb(255, 86, 97)',
+  height: '3px'
 })
 
 // Setting API URL and header based on environment for http requests

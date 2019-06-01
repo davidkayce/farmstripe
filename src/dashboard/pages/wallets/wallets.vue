@@ -104,8 +104,14 @@
       }
     },
     created () {
-      this.$store.dispatch('getWalletInfo')
-      this.$store.dispatch('getTransactions')
+      try {
+        this.$Progress.start()
+        this.$store.dispatch('getWalletInfo')
+        this.$store.dispatch('getTransactions')
+        this.$Progress.finish()
+      } catch (error) {
+        this.$Progress.fail()
+      }
     }
   }
 </script>

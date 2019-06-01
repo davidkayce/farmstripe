@@ -29,9 +29,9 @@
           <section class="footer">
             <button 
             class="btn-modal" 
-            @click=" signedIn? invest() : goSign()"
+            @click="invest()"
             :disabled="!farm.available_units">
-              {{signedIn? (farm.available_units ? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
+              {{(farm.available_units ? 'Invest in this Farm' : 'There is no available unit to invest')}}
             </button>
           </section>
         </div>
@@ -75,16 +75,18 @@
       close () {
         this.$emit('close')
       },
-      goSign () {
-        this.$router.push('/sign-in')
-      },
       invest () {
         const data = {
           farm_id: this.farm.id,
           units: this.investUnits
         }
-        console.log(data)
+        this.$Progress.start()
         this.$store.dispatch('createInvestment', data)
+          .then(() => {
+            this.$Progress.finish()
+          }).catch(() => {
+            this.$Progress.fail()
+          })
       }
     }
   }

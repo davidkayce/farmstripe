@@ -49,7 +49,13 @@
         const data = {
           amount: this.amount
         }
+        this.$Progress.start()
         this.$store.dispatch('createPayout', data)
+          .then(() => {
+            this.$Progress.finish()
+          }).catch(() => {
+            this.$Progress.fail()
+          })
       }
     }
   }

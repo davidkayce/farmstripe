@@ -74,7 +74,13 @@
         const data = {
           amount: this.amount
         }
+        this.$Progress.start()
         this.$store.dispatch('createDeposit', data)
+          .then(() => {
+            this.$Progress.finish()
+          }).catch(() => {
+            this.$Progress.fail()
+          })
       },
       callback () {
         console.log('You have successfully made your payment')
