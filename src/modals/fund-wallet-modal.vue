@@ -79,7 +79,7 @@
       },
       makeDeposit () {
         const data = {
-          amount: this.amount
+          amount: this.fundAmount
         }
         this.$Progress.start()
         this.$store.dispatch('createDeposit', data)

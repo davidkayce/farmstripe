@@ -49,7 +49,7 @@
             <p class="payment__value">&#8358; {{ wallet.balance? wallet.balance.toFixed(2) : '0.00'}}</p>
           </div>
           <hr>
-          <p class="payment__cta" @click="fundModal()">Fund Wallet</p>
+          <p class="payment__cta" @click="">Fund Wallet</p>
         </div>
       </div>
 
@@ -60,7 +60,7 @@
             <p class="payment__value">&#8358; {{ wallet.total_withdraws? total_withdraws.toFixed(2) : '0.00'}}</p>
           </div>
           <hr>
-          <p class="payment__cta" @click="payoutModal()">Request payout</p>
+          <p class="payment__cta" @click="">Request payout</p>
         </div>
       </div>
     </div>
