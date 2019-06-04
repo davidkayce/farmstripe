@@ -42,14 +42,9 @@
 </template>
 
 <script>
-  import paystack from 'vue-paystack'
-
   export default {
     name: 'farm-modal',
     props: ['farm'],
-    components: {
-      paystack
-    },
     data () {
       return {
         investUnits: 1
