@@ -1,10 +1,10 @@
 <template>
   <main>
     <div class="logo">
-      <router-link to="/">
+      <a href="https://www.farmstripe.com">
         <img src="~@/assets/icons/icon-logo-all-white.png" alt="Farmstripe logo" style="opacity: 0.8" loading="lazy">
         <img src="~@/assets/icons/icon-logo-all-green.png" alt="Farmstripe logo" style="opacity: 0.8" loading="lazy">
-      </router-link>
+      </a>
 
       <p class="options" v-if="!signIn">
         <span class="hide">Already signed up ?</span> <button class="btn btn--link" @click="switchSign()"> Sign In</button>
@@ -42,6 +42,9 @@
               <label for="password">Password</label>
             </div>
             <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
+            <p>
+              <router-link to="/privacy-policy"> Forgot Password? </router-link> 
+            </p>
         </form>
       </div>
 
@@ -68,9 +71,9 @@
             </div>
 
             <p>
-              By creating an account, you are agreeing to Farmstripe's <router-link to="/privacy-policy"> terms and conditions</router-link> regarding use of this service. 
+              By creating an account, you are agreeing to Farmstripe's <a href="https://www.farmstripe.com/privacy-policy"> terms and conditions</a> regarding use of this service. 
             </p>
-            <router-link to="/dashboard"><button type="submit" class="btn" @click="signUp" :disabled="isDisabled"> Sign Up for Priority Access</button></router-link>
+            <button type="submit" class="btn" @click="signUp" :disabled="isDisabled"> Sign Up for Priority Access</button>
           </form>
         </div>
     </div>

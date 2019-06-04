@@ -23,13 +23,16 @@
           v-for="transaction in transactions"
           :key="transaction.id"
         >
-          <div class="transaction__info">
+          <div 
+          class="transaction__info"
+          :style="{borderColor : transaction.state === 'failed' ? 'red' : transaction.state === 'processing' ? 'orange' : 'lemon-green' }"
+          >
             <div class="transaction__left">
               <img
                 src="~@/assets/icons/icon-transfers.png"
                 alt="transaction type"
                 loading="lazy"
-                :style="{transform : transaction.type === 'Deposit' ? 'rotate(180deg)' : '' }"
+                :style="{transform : transaction.state === 'failed' ? 'rotate(180deg)' : '' }"
               >
             </div>
 
