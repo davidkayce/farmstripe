@@ -16,12 +16,7 @@ Vue.use(VueProgressBar, {
   height: '3px'
 })
 
-Vue.use(Notifications, {
-  position: 'top center',
-  width: '100%',
-  closeOnClick: true,
-  max: 3
-})
+Vue.use(Notifications)
 
 // Setting API URL and header based on environment for http requests
 axios.defaults.baseURL = process.env.API_ENDPOINT
