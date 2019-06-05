@@ -30,7 +30,7 @@ export default new Router({
     {
       path: '/forgot-password',
       name: 'forgotPassword',
-      component: () => import('../auth/sign-in/sign-in')
+      component: () => import('../auth/forgot-password')
     },
     {
       path: '/dashboard',

@@ -43,7 +43,7 @@
             </div>
             <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
             <p>
-              <router-link to="/privacy-policy"> Forgot Password? </router-link> 
+              <router-link to="/forgot-password"> Forgot Password? </router-link> 
             </p>
         </form>
       </div>
