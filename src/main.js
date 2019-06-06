@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import App from './App'
-import router from './router'
-import store from './store'
+import Vue from "vue"
+import App from "./App.vue"
+import router from "./router"
+import store from "./store"
 import axios from 'axios'
+import "./registerServiceWorker"
 
 import VueProgressBar from 'vue-progressbar'
-import Notifications from 'vue-notification'
 
 Vue.config.productionTip = false
 Vue.use(require('vue-moment'))
@@ -16,10 +16,8 @@ Vue.use(VueProgressBar, {
   height: '3px'
 })
 
-Vue.use(Notifications)
-
 // Setting API URL and header based on environment for http requests
-axios.defaults.baseURL = process.env.API_ENDPOINT
+axios.defaults.baseURL = "https://api.farmstripe.com"
 axios.defaults.timeout = 6000
 const accessToken = localStorage.getItem('access_token')
 if (accessToken) {
@@ -38,11 +36,8 @@ axios.interceptors.response.use(function (response) {
   }
 })
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
   store,
-  template: '<App/>',
-  components: { App }
-})
+  render: h => h(App)
+}).$mount("#app")

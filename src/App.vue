@@ -4,7 +4,6 @@
       <router-view></router-view>
     </transition>
     <vue-progress-bar></vue-progress-bar>
-    <notifications position="top center"/>
   </main>
 </template>
 
@@ -15,8 +14,6 @@
 </script>
 
 <style lang="scss">
-  @import '~styles';
-
   .slide-enter {
     animation: slide-in 500ms ease-out forwards;
   }
