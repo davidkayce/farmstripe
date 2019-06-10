@@ -113,21 +113,9 @@ export default {
   },
   methods: {
     fundModal () {
-      this.$notify({
-        type: 'warn',
-        position: 'top-center',
-        width: 200,
-        text: 'You cannot make a deposit right now on farmstripe, when this feature is available, you would be notified'
-      })
       // this.fundModalVisible = true
     },
     payoutModal () {
-      this.$notify({
-        type: 'warn',
-        position: 'top-center',
-        width: 200,
-        text: 'You cannot request for payout right now on farmstripe, when this feature is available, you would be notified'
-      })
       // this.payoutModalVisible = true
     },
     closePayoutModal () {
