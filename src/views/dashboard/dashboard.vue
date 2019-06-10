@@ -2,7 +2,7 @@
   <main>
     <nav>
       <div class="logo">
-        <router-link to="/"><img src="~@/assets/icons/icon-logo-all-green.png" alt="farmstripe logo" loading="lazy"></router-link>
+        <img src="~@/assets/icons/icon-logo-all-green.png" alt="farmstripe logo" loading="lazy">
       </div>
 
       <div class="nav-wrapper">

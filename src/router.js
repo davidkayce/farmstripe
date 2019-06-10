@@ -10,21 +10,7 @@ export default new Router({
     {
       path: "/",
       name: "signIn",
-      component: () => import(/* webpackChunkName: "sign-in" */'./views/sign-in/sign-in.vue'),
-      beforeEnter: (to, from, next) => {
-        let token = localStorage.getItem('access_token') || null
-        let exp = localStorage.getItem('expiry_date')
-        if (token === null) {
-          next()
-        } else {
-          if (Date.now() > exp) {
-            localStorage.removeItem('access_token')
-            next()
-          } else {
-            next('/dashboard')
-          }
-        }
-      }
+      component: () => import(/* webpackChunkName: "sign-in" */'./views/sign-in/sign-in.vue')
     },
     {
       path: '/forgot-password',
