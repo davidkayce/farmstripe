@@ -6,15 +6,7 @@
   </main>
 </template>
 
-<script>
-  export default {
-    name: 'app'
-  }
-</script>
-
 <style lang="scss">
-  @import '~styles';
-
   .slide-enter {
     animation: slide-in 500ms ease-out forwards;
   }
@@ -45,4 +37,3 @@
     }
   }
 </style>
-
