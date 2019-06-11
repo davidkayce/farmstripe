@@ -12,7 +12,7 @@
         </div>
 
         <div class="contact__details _lg">
-          <p>In partnership with AFEX</p>
+          <p>In partnership with AFEX and Leadway Assurance Ltd.</p>
         </div>
       </div>
 

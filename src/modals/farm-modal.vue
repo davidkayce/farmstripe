@@ -29,9 +29,8 @@
           <section class="footer">
             <button 
             class="btn-modal" 
-            @click=" signedIn? invest() : goSign()"
             :disabled="!farm.available_units">
-              {{signedIn? (farm.available_units ? 'Invest in this Farm' : 'There is no available unit to invest') : 'Sign In to Invest'}}
+              <a href="https://app.farmstripe.com"> Sign in to invest </a>
             </button>
           </section>
         </div>
@@ -42,49 +41,17 @@
 </template>
 
 <script>
-  import paystack from 'vue-paystack'
-
   export default {
     name: 'farm-modal',
     props: ['farm'],
-    components: {
-      paystack
-    },
     data () {
       return {
         investUnits: 1
       }
     },
-    computed: {
-      signedIn () {
-        let token = localStorage.getItem('access_token') || null
-        let exp = localStorage.getItem('expiry_date')
-        if (token === null) {
-          return false
-        } else {
-          if (Date.now() > exp) {
-            localStorage.removeItem('access_token')
-            return false
-          } else {
-            return true
-          }
-        }
-      }
-    },
     methods: {
       close () {
         this.$emit('close')
-      },
-      goSign () {
-        this.$router.push('/sign-in')
-      },
-      invest () {
-        const data = {
-          farm_id: this.farm.id,
-          units: this.investUnits
-        }
-        console.log(data)
-        this.$store.dispatch('createInvestment', data)
       }
     }
   }

@@ -5,5 +5,5 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  API_ENDPOINT: '"http://api.farmstripe.com"'
+  API_ENDPOINT: '"https://api.farmstripe.com"'
 })

@@ -1,4 +1,4 @@
 module.exports = {
   NODE_ENV: '"production"',
-  API_ENDPOINT: '"http://api.farmstripe.com"'
+  API_ENDPOINT: '"https://api.farmstripe.com"'
 }

@@ -1,17 +1,14 @@
 <template>
   <main>
     <app-nav></app-nav>
-
     <header>
       <div class="c__overlay">
         <div class="c__content">
           <h2>Empowering farmers, one community at a time</h2>
           <h4>We keep the food chain going by empowering farmers</h4>
           <div class="mailing-list"> 
-            <p>Join over <strong>{{backers}}</strong> partners already signed up for early access to the next farming cycle</p>
-            <input type="email" class="transparent" placeholder="Contact email address" v-if="!done" v-model="email">
-            <button class="btn" @click="sendEmail" v-if="!done">{{processing? 'Please wait ...':'Empower a Farmer now'}}</button>
-            <div class="btn success" v-if="done"> Your submission has been received </div>
+            <p>Join over <strong>200</strong> partners already signed up for early access to the next farming cycle</p>
+            <a href="https://app.farmstripe.com"><button class="btn">Empower a Farmer now</button></a>
           </div>
         </div>
       </div>
@@ -43,35 +40,6 @@
       'mailing-list': () => import('../join-mailing-list/mailing-list'),
       'why-farmstripe': () => import('../why-farmstripe/why-farmstripe'),
       'how-it-works': () => import('../how-it-works/how-it-works')
-    },
-    data () {
-      return {
-        email: '',
-        processing: false,
-        done: false
-      }
-    },
-    computed: {
-      backers () {
-        return this.$store.getters.allBackers
-      }
-    },
-    methods: {
-      sendEmail () {
-        this.processing = true
-        setTimeout(this.getDone, 1500)
-        setTimeout(this.reset, 3000)
-      },
-      getDone () {
-        this.$store.dispatch('changeBackers')
-        this.done = true
-      },
-      reset () {
-        this.email = ''
-        this.processing = false
-        this.done = false
-        this.$router.push('/sign-in')
-      }
     }
   }
 </script>

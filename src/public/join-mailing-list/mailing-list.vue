@@ -33,14 +33,12 @@
         setTimeout(this.reset, 3000)
       },
       getDone () {
-        this.$store.dispatch('changeBackers')
         this.done = true
       },
       reset () {
         this.email = ''
         this.processing = false
         this.done = false
-        this.$router.push('/sign-in')
       }
     }
   }
