@@ -16,7 +16,7 @@ textarea {
   border-radius: 5px;
   padding: 1.5rem;
   border: 1.2px solid $grey-light;
-  font-family: $font-family-base, Roboto, sans-serif;
+  font-family: 'Averta';
   font-size: 1.3rem;
 
   &:focus {
@@ -46,5 +46,9 @@ textarea {
       color: white
     }
   }
+}
+
+input:disabled {
+  background: rgba(74, 74, 74, 0.1);
 }
 
