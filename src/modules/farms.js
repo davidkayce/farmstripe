@@ -11,13 +11,9 @@ export default {
 
   actions: {
     async getAllFarms ({ commit }) {
-      try {
-        const response = await axios.get('/farms.json')
-        const allFarms = response.data
-        commit('setFarms', allFarms)
-      } catch (error) {
-        console.log(error.message)
-      }
+      const response = await axios.get('/farms.json')
+      const allFarms = response.data
+      commit('setFarms', allFarms)
     }
   },
 

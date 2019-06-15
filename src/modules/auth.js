@@ -12,21 +12,13 @@ export default {
 
   actions: {
     async getProfile ({ commit }) {
-      try {
-        const response = await axios.get('/profile.json')
-        const user = response.data.user
-        commit('auth_success', user)
-      } catch (error) {
-        console.log(error)
-      }
+      const response = await axios.get('/profile.json')
+      const user = response.data.user
+      commit('auth_success', user)
     },
 
     async signUp ({ commit }, signUpData) {
-      try {
-        await axios.post('/register', signUpData)
-      } catch (error) {
-        console.log(error)
-      }
+      await axios.post('/register', signUpData)
     },
 
     async signIn ({ commit }, data) {
@@ -39,7 +31,6 @@ export default {
         axios.defaults.headers.common['Authorization'] = token
         commit('login', token)
       } catch (error) {
-        console.log(error)
         localStorage.removeItem('access_token')
       }
     },

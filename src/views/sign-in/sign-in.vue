@@ -127,30 +127,32 @@
         this.$Progress.start()
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => {
-            this.$router.push('/sign-in')
-            this.signIn = true
+            const data =  {
+              email = this.signUpData.email,
+              password = this.signUpData.password
+            }
             this.$Progress.finish()
+            this.logIn()
           })
           .catch(err => {
             this.$Progress.fail()
-            console.log(err.error.message)
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, we are unable to create your account right now, please try again.'
           })
       },
       logIn () {
         this.$Progress.start()
         this.$store.dispatch('signIn', this.signInData)
           .then(() => {
-            this.$router.push('/dashboard/')
+            this.$router.push('/dashboard')
             this.$Progress.finish()
           })
           .catch(err => {
             this.$Progress.fail()
-            console.log(err.error.message)
-            if (err.error.message === '') {
-              this.feedback.visible = true
-              this.feedback.type = 'danger'
-              this.feedback.message = 'Invalid credentials, please try agaim'
-            }
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Invalid credentials, please try again'
           })
       }
     },
