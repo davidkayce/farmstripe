@@ -17,6 +17,9 @@
 
           <section class="modal-content">
             <p>
+              <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
+            </p>
+            <p>
               {{farm.description}}
             </p>
             <div class="calculator ">
@@ -45,9 +48,17 @@
   export default {
     name: 'farm-modal',
     props: ['farm'],
+    components: {
+      Feedback: () => import('@/components/feedback')
+    },
     data () {
       return {
-        investUnits: 1
+        investUnits: 1,
+        feedback: {
+          visible: false,
+          type: 'danger',
+          message: ''
+        }
       }
     },
     computed: {
@@ -79,19 +90,21 @@
         this.$store.dispatch('createInvestment', data)
           .then(() => {
             this.$Progress.finish()
-            this.close()
+            this.feedback.visible = true
+            this.feedback.type = 'success'
+            this.feedback.message = 'You have successfully made an investment in this farm. You would be redirected to your wallets now'
+            setTimeout(() => {
+              this.close()
+            }, 2500)
             this.$router.push('/dashboard/wallets')
-            this.$notify({
-              type: 'success',
-              text: 'You have successfully created an investment with farmstripe.'
-            })
           }).catch(() => {
             this.$Progress.fail()
-            this.close()
-            this.$notify({
-              type: 'error',
-              text: 'There was a problem in creating your investment. Please check your balance or try again later.'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, you cannot make an investment in this farm. Please confirm you have sufficient balance in your wallet and try again.'
+            setTimeout(() => {
+              this.close()
+            }, 2500)
           })
       }
     }

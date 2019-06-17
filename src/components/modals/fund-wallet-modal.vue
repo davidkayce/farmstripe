@@ -15,6 +15,9 @@
           </header>
 
           <section class="modal-content --small">
+            <p>
+              <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
+            </p>
             <p>You can make a minimum payment of <strong>&#8358;1000</strong> and a maximum payment of <strong>&#8358;800,000</strong> to fund your wallet.</p>
             <p>Thank you for investing with farmstripe </p>
             <input type="number" v-model="fundAmount" @change="makeDeposit()"> 
@@ -49,13 +52,19 @@
   export default {
     name: 'fund-wallet-modal',
     components: {
-      paystack
+      paystack,
+      Feedback: () => import('@/components/feedback')
     },
     data () {
       return {
         fundAmount: 1000,
         paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
-        reference: ''
+        reference: '',
+        feedback: {
+          visible: false,
+          type: 'danger',
+          message: ''
+        }
       }
     },
     computed: {
@@ -86,21 +95,19 @@
           .then(() => {
             this.$Progress.finish()
             this.close()
-          }).catch(() => {
+          }).catch((err) => {
             this.$Progress.fail()
-            this.close()
-            this.$notify({
-              type: 'error',
-              text: 'We are sorry, there was a problem while making your deposit. Please try again later'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, we are unable to fund your wallet right now, please try again.'
+            setTimeout(() => {
+              this.close()
+            }, 2000);
           })
       },
-      callback () {
+      callback (response) {
+        console.log(response.reference)
         this.close()
-        this.$notify({
-          type: 'success',
-          text: 'You have succesfully made a deposit to your Farmstripe wallet'
-        })
       }
     }
   }

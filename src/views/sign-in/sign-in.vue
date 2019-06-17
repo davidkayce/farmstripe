@@ -7,7 +7,7 @@
       </a>
 
       <p class="options" v-if="!signIn">
-        <span class="hide">Already signed up ?</span> <button class="btn btn--link" @click="switchSign()"> Sign In</button>
+        <span>Already signed up ?</span> <button class="btn btn--link" @click="switchSign()"> Sign In</button>
       </p>
 
       <p class="options" v-else>
@@ -42,9 +42,9 @@
               <label for="password">Password</label>
             </div>
             <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
-            <p>
+            <!-- <p>
               <router-link to="/forgot-password"> Forgot Password? </router-link> 
-            </p>
+            </p> -->
         </form>
       </div>
 
@@ -128,11 +128,19 @@
         this.$store.dispatch('signUp', this.signUpData)
           .then(() => {
             const data =  {
-              email = this.signUpData.email,
-              password = this.signUpData.password
+              email: this.signUpData.email,
+              password: this.signUpData.password
             }
             this.$Progress.finish()
-            this.logIn()
+            this.$store.dispatch('signIn', data)
+            .then(() => {
+              this.$router.push('/dashboard')
+            })
+            .catch(err => {
+              this.$Progress.fail()
+              this.$router.push('/')
+              this.signIn = true
+            })
           })
           .catch(err => {
             this.$Progress.fail()

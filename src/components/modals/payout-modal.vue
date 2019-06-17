@@ -15,6 +15,9 @@
           </header>
 
           <section class="modal-content --small">
+            <p>
+              <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
+            </p>
             <h3>How much would you like to withdraw?</h3>
             <p>Please note that you can make a minimum withdrawal of <strong>&#8358;1000</strong>. Withdrawals from your account would require a fee of 2% of the transaction amount.</p>
             <p>Thank you for investing with farmstripe.</p>
@@ -38,8 +41,16 @@
     name: 'payout-modal',
     data () {
       return {
-        amount: 1000
+        amount: 1000,
+        feedback: {
+          visible: false,
+          type: 'danger',
+          message: ''
+        }
       }
+    },
+    components: {
+      Feedback: () => import('@/components/feedback')
     },
     methods: {
       close () {
@@ -67,11 +78,12 @@
             })
           }).catch(() => {
             this.$Progress.fail()
-            this.close()
-            this.$notify({
-              type: 'error',
-              text: 'We are sorry, there was a problem in processing your request for payout. Please check your wallet balance and try again'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, we are unable to process your withdrawal right now. Please confirm you have sufficient balance in your wallet and try again.'
+            setTimeout(() => {
+              this.close()
+            }, 2500)
           })
       }
     }

@@ -113,10 +113,10 @@ export default {
   },
   methods: {
     fundModal () {
-      // this.fundModalVisible = true
+      this.fundModalVisible = true
     },
     payoutModal () {
-      // this.payoutModalVisible = true
+      this.payoutModalVisible = true
     },
     closePayoutModal () {
       this.payoutModalVisible = false
