@@ -126,8 +126,8 @@
     methods: {
       updateUser () {
         const data = {
-          name: this.name,
-          email: this.email,
+          name: this.name === ''? this.$store.getters.getUser.name: this.name,
+          email: this.email === ''? this.$store.getters.getUser.email: this.email,
           phone: this.phone
         }
         this.$Progress.start()

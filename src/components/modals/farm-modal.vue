@@ -33,7 +33,7 @@
             <button 
             class="btn-modal" 
             @click="invest()"
-            :disabled="!farm.available_units">
+            :disabled="!farm.available_units || investUnits < 1">
               {{(farm.available_units ? 'Invest in this Farm' : 'There is no available unit to invest')}}
             </button>
           </section>
