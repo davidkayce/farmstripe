@@ -13,6 +13,9 @@
       <div class="inner">
         <div class="content">
           <div class="form">
+            <p>
+              <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
+            </p>
             <div v-if="x === 'one'">
               <p>Modify your personal details below</p>
               <div v-if="!password" class="first_option">
@@ -24,7 +27,7 @@
                 class="btn" 
                 @click="updateUser"> Update details</button>
 
-                <button class="btn btn--link" @click="password = true"> Change Password </button>
+                <button class="btn btn--link" @click="password = true" :disabled=true> Change Password </button>
               </div>
 
               <div v-else class="second_option">
@@ -100,6 +103,9 @@
 <script>
   export default {
     name: 'profile',
+    components: {
+      Feedback: () => import('@/components/feedback')
+    },
     data: function () {
       return {
         password: false,
@@ -109,7 +115,12 @@
         phone: '',
         receipient: '',
         bank: '',
-        number: ''
+        number: '',
+        feedback: {
+          visible: false,
+          type: 'danger',
+          message: ''
+        }
       }
     },
     methods: {
@@ -123,9 +134,21 @@
         this.$store.dispatch('updateProfile', data)
           .then(() => {
             this.$Progress.finish()
+            this.feedback.visible = true
+            this.feedback.type = 'success'
+            this.feedback.message = 'Your profile details have been updated successfully'
+            setTimeout(() => {
+              this.feedback.visible = false
+            }, 1200)
           })
           .catch((err) => {
             this.$Progress.fail()
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, we could not change your profile information right now. Please try again.'
+            setTimeout(() => {
+              this.feedback.visible = false
+            }, 1200)
           })
       },
 
@@ -139,17 +162,21 @@
         this.$store.dispatch('updateAccount', data)
           .then(() => {
             this.$Progress.finish()
-            this.$notify({
-              type: 'success',
-              text: 'Your account details have been updated successfully'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'success'
+            this.feedback.message = 'Your account details have been updated successfully'
+            setTimeout(() => {
+              this.feedback.visible = false
+            }, 1200)
           })
           .catch((err) => {
             this.$Progress.fail()
-            this.$notify({
-              type: 'error',
-              text: 'We are sorry, your account details cannot be updated right now'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Sorry, we could not change your account information right now. Please try again.'
+            setTimeout(() => {
+              this.feedback.visible = false
+            }, 1200)
           })
       }
     }

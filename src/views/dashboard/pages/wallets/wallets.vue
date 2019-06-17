@@ -13,7 +13,7 @@
 
       <div
         v-if="transactions.length === 0"
-        style="margin-top: 2rem"
+        class="empty"
       >
         You have not made any transactions yet, please fund your wallet to begin investing in our available farms
       </div>

@@ -71,11 +71,12 @@
         this.$store.dispatch('createPayout', data)
           .then(() => {
             this.$Progress.finish()
-            this.close()
-            this.$notify({
-              type: 'success',
-              text: 'Your request for payout has reached us and would be reflected in your accoutn shortly'
-            })
+            this.feedback.visible = true
+            this.feedback.type = 'danger'
+            this.feedback.message = 'Your request for a withdrawal has reached us and would be reflected in your account shortly'
+            setTimeout(() => {
+              this.close()
+            }, 2500)
           }).catch(() => {
             this.$Progress.fail()
             this.feedback.visible = true
@@ -83,7 +84,7 @@
             this.feedback.message = 'Sorry, we are unable to process your withdrawal right now. Please confirm you have sufficient balance in your wallet and try again.'
             setTimeout(() => {
               this.close()
-            }, 2500)
+            }, 2800)
           })
       }
     }

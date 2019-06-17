@@ -312,3 +312,12 @@ main {
     outline: none
   }
 }
+
+.empty {
+  margin-top: 2rem; 
+  background: white; 
+  padding: 2rem; 
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.06); 
+  font-style: italic;
+  color: $grey-light
+}

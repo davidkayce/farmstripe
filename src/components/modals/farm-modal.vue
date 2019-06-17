@@ -104,7 +104,7 @@
             this.feedback.message = 'Sorry, you cannot make an investment in this farm. Please confirm you have sufficient balance in your wallet and try again.'
             setTimeout(() => {
               this.close()
-            }, 2500)
+            }, 2800)
           })
       }
     }

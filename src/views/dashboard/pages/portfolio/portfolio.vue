@@ -23,8 +23,10 @@
 
       <h3>Your investments</h3>
 
-      <div  v-if="wallet.investments.length === 0">
-        <p> <em>You do not have any investments. Please click on any of the available farms to create an investment</em></p>
+      <div  
+      v-if="wallet.investments.length === 0"
+      class="empty">
+        <p>You do not have any investments. Please click on any of the available farms to create an investment</p>
       </div>
 
       <div v-else>
