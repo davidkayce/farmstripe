@@ -143,6 +143,13 @@ main{
       width: 100%;
       overflow-X: hidden;
       overflow-Y: auto;
+      overflow: -moz-scrollbars-none;
+      overflow-style: marquee,panner;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar { 
+        width: 0 !important 
+      }
     }
     
     @media (min-width: $breakpoint-desktop) {
