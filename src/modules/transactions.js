@@ -22,6 +22,10 @@ export default {
       await axios.post(`/deposits`, amount)
     },
 
+    async confirmDeposit ({ commit }, id, trxn_id) {
+      await axios.post(`/deposits/${id}`, id, trxn_id)
+    },
+
     async createPayout ({ commit }, amount) {
       await axios.post(`/withdraws`, amount)
     },

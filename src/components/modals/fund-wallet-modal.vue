@@ -28,13 +28,14 @@
             :disabled="fundAmount < 1000 || fundAmount > 800000"
             @click="makeDeposit()">
               <paystack
+                style="width: 100%"
                 v-if="!(fundAmount < 1000 || fundAmount > 800000)"
                 :amount="amount"
                 :email="email"
                 :paystackkey="paystackkey"
                 :reference="reference"
                 :callback="callback"
-                :close="close"
+                :close="closePaystack"
                 :embed="false"
                 class="paystack"
               >Fund this wallet</paystack>
@@ -58,7 +59,8 @@
     data () {
       return {
         fundAmount: 1000,
-        paystackkey: 'pk_test_f7fd88a95b0dbe1b377e97eb025d122d934ed673',
+        paystackkey: 'pk_live_1fde1b3d80095b1ab589bc2cdf4e75ddd13c7d3c',
+        payload: {},
         reference: '',
         feedback: {
           visible: false,
@@ -92,9 +94,11 @@
         }
         this.$Progress.start()
         this.$store.dispatch('createDeposit', data)
-          .then(() => {
+          .then((res) => {
+            this.payload = res.data
+            this.reference = payload.txid
             this.$Progress.finish()
-            this.close()
+            this.closePaystack()
           }).catch((err) => {
             this.$Progress.fail()
             this.feedback.visible = true
@@ -106,7 +110,10 @@
           })
       },
       callback (response) {
-        console.log(response.reference)
+        this.$store.dispatch('confirmDeposit', payload.id, response.reference)
+        this.close()
+      },
+      closePaystack() {
         this.close()
       }
     }
