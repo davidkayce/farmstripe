@@ -31,25 +31,22 @@
       <Feedback v-if="feedback.visible" :feedback="feedback"></Feedback>
 
       <div class="input__field" v-if="signIn">
-        <form>
-            <div class="input__option">
-              <input type="email" name="email" id="email" v-model="signInData.email">
-              <label for="email">E-mail address</label>
-            </div>
+        <div>
+        <div class="input__option">
+          <input type="email" name="email" id="email" v-model="signInData.email">
+          <label for="email">E-mail address</label>
+        </div>
 
-            <div class="input__option">
-              <input type="password" name="password" id="password" v-model="signInData.password">
-              <label for="password">Password</label>
-            </div>
-            <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
-            <!-- <p>
-              <router-link to="/forgot-password"> Forgot Password? </router-link> 
-            </p> -->
-        </form>
+        <div class="input__option">
+          <input type="password" name="password" id="password" v-model="signInData.password">
+          <label for="password">Password</label>
+        </div>
+        <router-link to="/dashboard"><button type="submit" class="btn" @click="logIn"> Sign In </button></router-link>
+        </div>
       </div>
 
         <div class="input__field" v-else>
-          <form action="" autocomplete="random-text">
+          <div autocomplete="random-text">
             <div class="input__option">
               <input type="text" name="full_name" id="full_name" v-model="signUpData.name">
               <label for="full_name">Full name</label>
@@ -74,7 +71,7 @@
               By creating an account, you are agreeing to Farmstripe's <a href="https://www.farmstripe.com/privacy-policy"> terms and conditions</a> regarding use of this service. 
             </p>
             <button type="submit" class="btn" @click="signUp" :disabled="isDisabled"> Sign Up for Priority Access</button>
-          </form>
+          </div>
         </div>
     </div>
   </main>
