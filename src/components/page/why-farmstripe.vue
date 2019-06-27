@@ -19,7 +19,7 @@
             </p>
           </section>
         </article>
-        <figure><img src="~@/assets/images/farmstripe.png" alt="Our Vision" data-aos="fade-up" loading="lazy"></figure>
+        <figure><img src="~@/assets/images/why-farmstripe.png" alt="Our Vision" data-aos="fade-up" loading="lazy"></figure>
       </section>
 
       <section>
