@@ -7,8 +7,8 @@
           <h2>Empowering farmers, one community at a time</h2>
           <h4>We keep the food chain going by empowering farmers</h4>
           <div class="mailing-list"> 
-            <p>Join over <strong>200</strong> partners already signed up for early access to the next farming cycle</p>
-            <a href="https://app.farmstripe.com"><button class="btn">Empower a Farmer now</button></a>
+            <p>Join our partners already signed up for early access to the next farming cycle</p>
+            <a href="https://priority.farmstripe.com" target="_blank" rel="noopener"><button class="btn">Join Our Priority Access</button></a>
           </div>
         </div>
       </div>

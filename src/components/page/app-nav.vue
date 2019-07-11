@@ -8,9 +8,9 @@
       </div>
 
       <ul>
-        <li><a href="" target="_blank"> Blog </a></li>
         <li><router-link :to="farmLink"> Available Farms </router-link></li>
-        <li><router-link to="/contact-us">Contact us</router-link></li>
+        <li><router-link to="/contact-us">Contact Us</router-link></li>
+        <li><a href="https://priority.farmstripe.com" target="_blank" rel="noopener">Join Priority</a></li>
         <li><a href="https://app.farmstripe.com"><button class="btn">Get Started</button></a></li>
       </ul>
     </div>
@@ -75,9 +75,7 @@ ul {
     margin-right: 0.5rem;
     font-size: 1.3rem;
 
-    &:nth-of-type(1),
-    &:nth-of-type(2),
-    &:nth-of-type(3) {
+    &:not(:last-of-type) {
       display: none
     }
 
@@ -99,21 +97,18 @@ ul {
     @media (min-width: $breakpoint-tablet) {
       font-size: 1.5rem;
 
-      &:nth-of-type(1),
-      &:nth-of-type(2),
-      &:nth-of-type(3) {
+      &:not(:last-of-type) {
         display: flex;
         margin-top: 1.5rem;
       }
 
-      margin-right: 2rem;
+      margin-right: 1.5rem;
     }
 
     @media (min-width: $breakpoint-desktop) {
 
-      &:nth-of-type(1),
-      &:nth-of-type(2) {
-        margin-right: 5rem;
+      &:not(:last-of-type) {
+        margin-right: 4rem;
       }
     }
   }

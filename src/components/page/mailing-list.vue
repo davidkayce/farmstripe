@@ -7,42 +7,12 @@
         </div>
 
         <div class="get__email">
-          <input type="email" class="transparent" placeholder="Contact email address" v-if="!processing" v-model="email">
-          <button class="btn" @click="sendEmail" v-if="!done">{{processing? 'Please wait ...':'Join for priority access'}}</button>
-          <div class="btn success" v-if="done"> Your submission has been received </div>
+          <button class="btn"> <a href="https://priority.farmstripe.com" target="_blank" rel="noopener">Join for priority access</a></button>
         </div>
       </div>
     </div>
   </main>
 </template>
-
-<script>
-  export default {
-    name: 'mailing-list',
-    data () {
-      return {
-        email: '',
-        processing: false,
-        done: false
-      }
-    },
-    methods: {
-      sendEmail () {
-        this.processing = true
-        setTimeout(this.getDone, 1500)
-        setTimeout(this.reset, 3000)
-      },
-      getDone () {
-        this.done = true
-      },
-      reset () {
-        this.email = ''
-        this.processing = false
-        this.done = false
-      }
-    }
-  }
-</script>
 
 <style lang="scss" scoped>
 .mailing-list {
@@ -94,6 +64,10 @@
       padding: 2rem;
       font-size: 1.5rem;
       font-weight: 600;
+
+      a {
+        color: white;
+      }
     }
 
     @media (min-width: $breakpoint-tablet) {
@@ -115,10 +89,5 @@
       }
     }
   }
-}
-
-.success {
-  padding: 2.5rem;
-  text-align: center;
 }
 </style>
