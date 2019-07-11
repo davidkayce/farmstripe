@@ -1,0 +1,54 @@
+label {
+  font-size: 12px;
+  color: #666;
+  padding-bottom: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  span {
+    font-weight: 500;
+  }
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 1.5rem;
+  border: 1.2px solid $grey-light;
+  font-family: 'Averta';
+  font-size: 1.3rem;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $fstrgreen;
+
+    + label {
+      color: $fstrgreen;
+      font-weight: 600;
+    }
+
+    + .btn--select {
+      border-top: 1px solid $dgreen;
+    }
+  }
+
+  &.field--invalid {
+    border: 1px solid $danger;
+  }
+
+  &.transparent {
+    border: 1px solid $white;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: $white;
+
+    &::placeholder {
+      color: white
+    }
+  }
+}
+
+input:disabled {
+  background: rgba(74, 74, 74, 0.1);
+}
+
