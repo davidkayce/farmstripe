@@ -19,7 +19,7 @@ Vue.use(VueProgressBar, {
 })
 
 // Setting API URL and header based on environment for http requests
-axios.defaults.baseURL = "https://api.farmstripe.com"
+axios.defaults.baseURL = "http://api.com"
 axios.defaults.timeout = 6000
 const accessToken = localStorage.getItem('access_token')
 if (accessToken) {
