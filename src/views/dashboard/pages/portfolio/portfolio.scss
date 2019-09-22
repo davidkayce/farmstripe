@@ -1,0 +1,323 @@
+main {
+  width: 85%;
+  margin: 3rem auto 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+    margin: 4rem auto;
+    flex-direction: row
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 3rem 0;
+  }
+
+  .main__section {
+    h1 {
+      color: $grey-medium;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 50%;
+      margin-right: 7rem;
+    }
+  
+    @media (min-width: $breakpoint-desktop) {
+      width: 70%;
+      margin-right: 5rem;
+    }
+  }
+  
+  .sidebar {  
+    @media (min-width: $breakpoint-tablet) {
+      width: 45%;
+    }
+
+    @media (min-width: 1200px) {
+      width: 30%;
+    }
+  }
+}
+
+.portfolio__info{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: $green-dash;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 3px 15px 0 rgba(52, 89, 72, 0.06);
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 80%;
+    margin-top: 3rem;
+  }
+  
+  @media (min-width: 1200px) {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 3rem;
+  }
+
+  hr {
+    width: 100%;
+    margin: 1.5rem 0;
+    opacity: 0.2;
+    border: 1px solid $white;
+
+    @media (min-width: 1200px) {
+      margin: 0;
+      width: 0;
+    }
+
+  }
+
+  .portfolio__blocks {
+    p {
+      display: flex;
+      color: white;
+    }
+  
+    .portfolio__options {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 100;
+      margin-bottom: 1rem;
+    }
+  
+    .portfolio__value {
+      text-align: center;
+      font-weight: 600;
+      font-size: 3rem;
+    }
+  }
+}
+
+.investment__card {
+  background-color: #fcfcfc;
+  padding: 3rem;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  border-top: 5px;
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $breakpoint-desktop) {
+    border-top: none;
+    padding: 2rem;
+    border-right: 5px;
+    margin-top: 3rem;
+  }
+}
+
+.investment__info{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+  }
+
+  .investment__blocks {
+    margin-bottom: 1.5rem;
+
+    p {
+      display: flex;
+    }
+    
+    .investment__title {
+      font-weight: 600;
+      color: $dgreen;
+      font-size: 2rem;
+
+      .farm__id {
+        color: $grey-medium;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        margin-left: 2rem;
+      }
+    }
+
+    .investment__units {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+
+    .rate {
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    .returns {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: $grey-light;
+      margin: 0.8rem 0 0 0.7rem;
+    }
+
+    .investment__tenure {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: $grey-light;
+    }
+  
+    .tenure__value {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-bottom: 0;
+
+      &:first-of-type {
+        width: 57%
+      }
+    }
+  }
+}
+
+.mobile {
+  .btn {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    font-weight: 600
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none
+  }
+}
+
+.large__screen{
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block
+  }
+
+  h4 {
+    margin: 1rem 2rem 2rem 0;
+    color: $grey-medium;
+
+    @media (min-width: $breakpoint-desktop) {
+      margin-top: 2rem
+    }
+  }
+
+  a {
+    margin: 0 35%;
+    padding-top: 2rem;
+  }
+}
+
+.progress_bar {
+  display: inline-block;
+  width: 100%;
+  margin: 1rem 0;
+
+  ul {
+    counter-reset: step;
+  }
+
+  li {
+    float: left;
+    width: 25%;
+    position: relative;
+    color: $grey-light;
+    font-size: 1.2rem;
+    text-align: center;
+
+    &:before {
+      content: counter(step);
+      counter-increment: step;
+      position: relative;
+      background: $white;
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      text-align: center;
+      font-size: 1.1rem; 
+      border: 1px solid $grey-light;
+      margin: 1.2rem auto;
+      border-radius: 100%;
+      color: $grey-light;
+      z-index: 2;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1.5px;
+      background-color: $grey-light;
+      top: 2.2rem;
+      left: -45%;
+      z-index: 1;
+      // z-index: -1; // there is an issue here
+    }
+
+    &:first-child:after {
+      content: none;
+    }
+  }
+
+  .active_first {
+    color: orange;
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
+
+
+    &:before {
+      color: orange;
+      border: 2px solid orange;
+      font-weight: 600;
+    }
+
+    &:after{
+      background-color: orange;
+      height: 2.2px;
+    }
+  }
+
+  .passed {
+    color: $grey;
+
+    &:before {
+      color: $grey;
+      border: 2px solid $grey;
+      font-weight: 600;
+    }
+
+    &:after{
+      background-color: $grey;
+    }
+  }
+}
+
+.btn--link {
+  margin-top: 1rem;
+  font-weight: 600;
+
+  &:focus {
+    outline: none
+  }
+}
+
+.empty {
+  margin-top: 2rem; 
+  background: white; 
+  padding: 2rem; 
+  box-shadow: 3px 3px 15px 0 rgba(0, 0, 0, 0.06); 
+  font-style: italic;
+  color: $grey-light
+}

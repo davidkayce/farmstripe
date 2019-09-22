@@ -1,29 +1,19 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from 'axios'
+import Vue from "vue";
+import Vuex from "vuex";
+import Farms from './modules/farms'
+import Transactions from './modules/transactions'
+import Profile from './modules/profile'
+import Auth from './modules/auth'
 
-Vue.use(Vuex)
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
-  state: {
-    farms: []
-  },
-  getters: {
-    allFarms: state => state.farms
-  },
-  mutations: {
-    setFarms: (state, allFarms) => (state.farms = allFarms)
-  },
-  actions: {
-    async getAllFarms ({ commit }) {
-      try {
-        const response = await axios.get('/farms.json')
-        const allFarms = response.data
-        commit('setFarms', allFarms)
-      } catch (error) {
-        console.log(error.message)
-      }
-    }
+  modules: {
+    Farms,
+    Transactions,
+    Profile,
+    Auth
   }
-})
+});

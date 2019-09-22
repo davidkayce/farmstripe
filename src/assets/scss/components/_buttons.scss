@@ -22,3 +22,20 @@
     transition: all 0.2s ease-in-out;
   }
 }
+
+.btn--link {
+  background: transparent;
+  color: $dgreen;
+  padding: 0;
+
+  &.--danger {
+    color: $danger;
+  }
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+

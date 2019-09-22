@@ -3,6 +3,7 @@
     <transition name="slide" mode="out-in">
       <router-view></router-view>
     </transition>
+    <vue-progress-bar></vue-progress-bar>
   </main>
 </template>
 

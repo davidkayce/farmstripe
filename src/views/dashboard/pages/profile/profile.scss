@@ -1,0 +1,186 @@
+main {
+  position: relative;
+  width: 90%;
+  margin: 3rem auto 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -5;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 90%;
+    margin: 4rem auto;
+  }
+
+  #wrap {
+    position: absolute;
+    top: 0;
+    border-radius: 1rem;
+    width: 99%;
+    height: 45rem;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 85%;
+      height: 51rem;
+    }
+
+    .frame {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: transform 400ms cubic-bezier(1, 0.385, 0.42, 1);
+    }
+
+    input[type='radio']{
+      opacity: 0;
+      z-index: 2;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @for $i from 1 through 2 {
+        &:nth-of-type(#{$i}) {
+          &:hover {
+            & ~ .nav {
+              &:nth-of-type(#{$i}) {
+                &:before {
+                  color: $fstrgreen;
+                }
+              }
+            }
+          }
+          
+          &:checked {
+            & ~ .nav {
+              &:nth-of-type(#{$i}) {
+                &:before {
+                  color: #fff;
+                  transform: translate(-50%, -50%) rotate(-90deg) scale(1.2);
+                  transition-delay: 0.1s;
+                }
+              }
+            }
+
+            & ~ .indicator {
+              transform: translateY(#{($i - 1) * 100%});
+            }
+          }
+        }
+      }
+    }
+
+    input[type='radio'],
+    .nav,
+    .indicator {
+      height: 50%;
+      position: absolute;
+      width: 10%;
+      left: 0;
+
+      @for $i from 1 through 2 {
+        &:nth-of-type(#{$i}) {
+          top: #{($i - 1) * 50%};
+        }
+      }
+    }
+
+    .nav {
+      z-index: 1;
+
+      &:nth-of-type(2) {
+        &:before {
+          content: 'ACCOUNT';
+        }
+      }
+
+      &:before {
+        content: 'PERSONAL';
+        position: absolute;
+        color: $green-dash;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        transition: all 200ms cubic-bezier(1, 0.885, 0.32, 1);
+      }
+    }
+
+    .indicator {
+      background: $dgreen;
+      transition: all 200ms cubic-bezier(1, 0.885, 0.32, 1);
+      box-shadow: none;
+    }
+
+    .inner {
+      position: absolute;
+      width: 90%;
+      left: 10%;
+      top: 0;
+      overflow: hidden;
+      height: 100%;
+
+      .content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        background-color: #F7F7FF;
+      }
+
+      .content {
+        .form {
+          max-width: 90%;
+          margin: 5%;
+          line-height: 1.5;
+          padding: 2rem;
+           
+          p {
+            margin-bottom: 2rem;
+          }
+
+          .first_option {
+            input {
+              margin-bottom: 2rem;
+
+              @media (min-width: $breakpoint-desktop) {
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                  width: 49.6%;
+                }
+              }
+            }
+          }
+
+          .second_option {
+            input {
+              margin-bottom: 2rem;
+            }
+          }
+
+          .account {
+            input,
+            select {
+              margin-bottom: 2rem;
+            }
+          }
+
+          button {
+            width: 100%;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
